@@ -1,7 +1,6 @@
 @use './scss/reset.scss';
 @use './scss/variables';
 
-
 body {
   background-color: variables.$white;
 }
@@ -9,5 +8,32 @@ body {
 body, button, input, textarea, table {
   font-family: 'Poppins', sans-serif;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { 
+  height: 100%; 
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 1210px;
+  margin: 0 auto;
+}
+
+.button{
+  border-radius: 4px;
+  box-shadow: 0px 9px 20px rgba(58, 182, 125, 0.4);
+  border: none;
+  color: variables.$white;
+  padding: 1rem;
+}
+
+.button-green {
+  background-color: variables.$green-600;
+}
+
+.button-gray {
+  background-color: variables.$gray-600;
+}
