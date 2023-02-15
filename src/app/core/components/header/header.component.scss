@@ -6,6 +6,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  padding: 0 1.5rem;
 }
 
 h1 {
@@ -18,4 +19,9 @@ nav ul {
   display: flex;
   align-items: center;
   gap: 2.875rem;
+
+  li {
+    font-size: 1rem;
+    font-weight: 500;
+  }
 }
