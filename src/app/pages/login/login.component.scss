@@ -39,16 +39,14 @@
 
 }
 
-
-
 .backGround {
-    height: calc(100vh - 80px);
+    height: calc(100% - 80px);
 
     &::before {
         content: '';
         position: absolute;
-        height: 100vh;
-        width: 100vw;
+        min-height: 100%;
+        width: 100%;
         top: 0;
         background-image: url("../../../assets/images/background.png");
         z-index: -1;

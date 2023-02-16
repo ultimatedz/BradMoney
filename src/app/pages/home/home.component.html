@@ -9,7 +9,9 @@
         <span>Único com controle de investimentos integrado, prático, fácil e com gráficos para melhor visualização.</span>
       </div>
       <div class="main-content-buttons">
-        <button class="button button-green" [routerLink]="['teste']">Cria a sua conta</button>
+        <a [routerLink]="['register']">
+          <button class="button button-green">Crie a sua conta</button>
+        </a>
         <a [routerLink]="['login']">
           <button class="button button-gray">Entrar</button>
         </a>
@@ -19,21 +21,76 @@
 
   <section class="main-description">
     <div class="main-description-customer">
-      <div>
-        <img src="../assets/images/customer.png" alt="Ímagem de um cliente">
-        <div>
-          <h3>João Miguel</h3>
-          <span>Assistente Financeiro</span>
+      <div class="slider">
+        <div class="slides">
+          <input type="radio" name="radio-btn" id="customer1" class="btn-customer1">
+          <input type="radio" name="radio-btn" id="customer2" class="btn-customer2">
+          <input type="radio" name="radio-btn" id="customer3" class="btn-customer3">
+          <input type="radio" name="radio-btn" id="customer4" class="btn-customer4">
+
+
+          <div class="main-description-customer-card-container slide-first">
+            <div class="main-description-customer-card-content">
+              <img src="../assets/images/customer.png" alt="Ímagem de um cliente">
+              <div>
+                <h3>João Miguel</h3>
+                <span>Assistente Financeiro</span>
+              </div>
+            </div>
+      
+            <p>Comecei usar o aplicativo diariamente há mais de 6 meses e ele atende muito bem as necessidades. Excelente app, muito completo, vários recursos úteis e interessantes. Recomendo muito.</p>
+          </div>
+    
+          <div class="main-description-customer-card-container">
+            <div class="main-description-customer-card-content">
+              <img src="../assets/images/customer.png" alt="Ímagem de um cliente">
+              <div>
+                <h3>Luis Henrique</h3>
+                <span>Representante Comercial</span>
+              </div>
+            </div>
+      
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum mollitia quae consectetur qui earum, fuga aut voluptate, atque eius rem officiis cupiditate perferendis laborum tempore maiores.</p>
+          </div>
+
+          <div class="main-description-customer-card-container">
+            <div class="main-description-customer-card-content">
+              <img src="../assets/images/customer.png" alt="Ímagem de um cliente">
+              <div>
+                <h3>Pedro Souza</h3>
+                <span>Representante Comercial</span>
+              </div>
+            </div>
+      
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur officia sequi consectetur provident natus a incidunt laboriosam voluptatem expedita? Nobis tenetur.</p>
+          </div>
+
+          <div class="main-description-customer-card-container">
+            <div class="main-description-customer-card-content">
+              <img src="../assets/images/customer.png" alt="Ímagem de um cliente">
+              <div>
+                <h3>Fernanda Lima</h3>
+                <span>Representante Comercial</span>
+              </div>
+            </div>
+      
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam rem temporibus dignissimos quam, vero culpa qui repudiandae reprehenderit sed, debitis necessitatibus porro fugit nihil ab delenit.</p>
+          </div>
+
+          <div class="main-description-customer-navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+          </div>
         </div>
       </div>
 
-      <p>Comecei usar o aplicativo diariamente há mais de 6 meses e ele atende muito bem as necessidades. Excelente app, muito completo, vários recursos úteis e interessantes. Recomendo muito.</p>
-
       <div class="main-description-customer-navigation">
-        <button></button>
-        <button></button>
-        <button></button>
-        <button></button>
+        <label for="customer1" class="manual-btn"></label>
+        <label for="customer2" class="manual-btn"></label>
+        <label for="customer3" class="manual-btn"></label>
+        <label for="customer4" class="manual-btn"></label>
       </div>
 
       <img src="../assets/icons/timer-background.svg" alt="Ícone de relógio verde" class="timer-background">
