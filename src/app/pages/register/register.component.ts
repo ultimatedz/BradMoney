@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
+  teste(event: SubmitEvent){
+    event.preventDefault()
+    console.log('ok')
+  }
+
 }

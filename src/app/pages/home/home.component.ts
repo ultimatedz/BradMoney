@@ -29,4 +29,8 @@ export class HomeComponent implements OnInit {
     const elementSelected: HTMLInputElement = document.querySelector(`#customer${this.count}`)!
     elementSelected.checked = true
   }
+
+  updateCount(id: number){
+    this.count = id
+  }
 }
