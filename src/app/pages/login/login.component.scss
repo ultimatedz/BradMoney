@@ -1,42 +1,66 @@
 @use '../../../scss/variables';
 
 .left-content {
-    padding: 30px 0 0 30px;
+    display: flex;
+    flex: 1;
+
+    flex-direction: column;
+    padding: 2.5rem;
     text-align: left;
+    background-color: white;
 
     h1 {
-        font-weight: bold;
+        font-weight: 900;
         font-size: 2.5rem;
         color: variables.$gray-600;
+        padding-bottom: 15px;
     }
 
     p {
-        padding-top: 10px;
-        color: variables.$gray-600;
+        color: variables.$gray-300;
+    }
+
+    .paddTop {
+        padding-top: 15%;
+    }
+
+    small {
+        font-size: 0.7em;
+        margin-top: -30%;
+        margin-left: 40%;
     }
 
     .inputLogin {
-        width: 70%;
+        width: 95%;
         height: 40px;
         border-radius: 4px;
         border-color: variables.$gray-300;
         margin-top: 18px;
         padding-left: 10px;
     }
+
+    ::placeholder{
+        color: variables.$gray-300
+    }
     
 
     .buttonLogin {
-        width: 118px;
-        padding: 18px 0 15px 10px;
+        width: 35%;
         border-color: variables.$gray-300;
     }
     
     .buttonCancel {
-        width: 160px;
+        width: 35%;
         margin-left: 22px;
     }
-    
+}
 
+.right-content{
+    display: flex;
+    width: 50%;
+    background-image: url(../../../assets/images/background-login.png);
+    background-size: auto;
+    height: 100%;
 }
 
 .backGround {
@@ -54,15 +78,19 @@
 }
 
 .card {
-    width: 50vw;
-    height: 40vh;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 150px;
+    display: flex;
+    width: 60%;
+    height: 460px;
+    margin: 150px auto 0;
     align-items: center;
     text-align: center;
-    background-color: pink;
+    position: relative;
+    background-color: white;
     border-radius: 20px;
+    box-shadow: 5px 5px 40px rgba(172, 176, 202, 0.6);
+    justify-content: space-between;
+    overflow: hidden;
+    
 }
 
 
