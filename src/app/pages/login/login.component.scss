@@ -26,8 +26,7 @@
 
     small {
         font-size: 0.7em;
-        margin-top: -30%;
-        margin-left: 40%;
+        padding-left: 55%;
     }
 
     .inputLogin {
@@ -39,28 +38,56 @@
         padding-left: 10px;
     }
 
-    ::placeholder{
+    input :focus, :hover {
+        border-color: variables.$gray-300;
+        color: variables.$gray-300;
+    }
+
+    ::placeholder {
         color: variables.$gray-300
     }
-    
 
     .buttonLogin {
-        width: 35%;
+        width: 45%;
         border-color: variables.$gray-300;
     }
-    
+
     .buttonCancel {
-        width: 35%;
+        width: 45%;
         margin-left: 22px;
     }
 }
 
-.right-content{
+.right-content {
     display: flex;
     width: 50%;
     background-image: url(../../../assets/images/background-login.png);
     background-size: auto;
     height: 100%;
+
+    h2 {
+        font-weight: 400;
+        font-size: 1.3rem;
+    }
+
+    #itens{
+        align-items: center;
+        text-align: left;
+        color: white;
+        padding: 25% 30%;
+    }
+
+    img {
+        width: 20px;
+    }
+
+    p {
+        padding-top: 20px;
+    }
+
+    span {
+        font-weight: 800;
+    }
 }
 
 .backGround {
@@ -90,7 +117,4 @@
     box-shadow: 5px 5px 40px rgba(172, 176, 202, 0.6);
     justify-content: space-between;
     overflow: hidden;
-    
 }
-
-
