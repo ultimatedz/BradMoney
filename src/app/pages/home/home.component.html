@@ -1,155 +1,162 @@
-<section class="main-container ">
-  <section class="main-content">
-    <img src="../assets/images/banner-home.png" alt="">
+<app-header></app-header>
 
-    <div class="main-content-titles">
-      <h2>Saiba tudo sobre suas finanças</h2>
-      <div>
-        <h1>BradMoney o seu sistema para controle financeiro</h1>
-        <span>Único com controle de investimentos integrado, prático, fácil e com gráficos para melhor visualização.</span>
+
+<div class="container">
+  <section class="main-container">
+    <section class="main-content">
+      <img src="../assets/images/banner-home.png" alt="">
+
+      <div class="main-content-titles">
+        <h2>Saiba tudo sobre suas finanças</h2>
+        <div>
+          <h1>BradMoney o seu sistema para controle financeiro</h1>
+          <span>Único com controle de investimentos integrado, prático, fácil e com gráficos para melhor
+            visualização.</span>
+        </div>
+        <div class="main-content-buttons">
+          <a [routerLink]="['register']">
+            <button class="button button-green">Crie a sua conta</button>
+          </a>
+          <a [routerLink]="['login']">
+            <button class="button button-gray">Entrar</button>
+          </a>
+        </div>
       </div>
-      <div class="main-content-buttons">
-        <a [routerLink]="['register']">
-          <button class="button button-green">Crie a sua conta</button>
-        </a>
-        <a [routerLink]="['login']">
-          <button class="button button-gray">Entrar</button>
-        </a>
+    </section>
+
+    <section class="main-description">
+      <div class="main-description-customer">
+        <app-slider [slidesList]="customerList"></app-slider>
+
+        <img src="../assets/icons/timer-background.svg" alt="Ícone de relógio verde" class="timer-background">
       </div>
-    </div>
+
+      <div class="main-description-highlights">
+        <div>
+          <span>01.</span>
+          <h3>Cadastre o seu usuário e senha.</h3>
+        </div>
+        <div>
+          <span>02.</span>
+          <h3>Informe seus gastos e investimentos.</h3>
+        </div>
+        <div>
+          <span>03.</span>
+          <h3>Tenha tudo na palma da sua mão.</h3>
+        </div>
+      </div>
+    </section>
   </section>
 
-  <section class="main-description">
-    <div class="main-description-customer">
-      <app-slider [slidesList]="customerList"></app-slider>
-
-      <img src="../assets/icons/timer-background.svg" alt="Ícone de relógio verde" class="timer-background">
+  <section class="main-brief-presentation">
+    <div>
+      <h2>Como o BradMoney vai me ajudar?</h2>
+      <p>Proporcionando meios para você realizar seus sonhos, metas e objetivos. Controlar e calcular seus
+        investimentos, seus gastos e seus ganhos, a qualquer hora tudo na palma da sua mão.</p>
     </div>
-
-    <div class="main-description-highlights">
-      <div>
-        <span>01.</span>
-        <h3>Cadastre o seu usuário e senha.</h3>
-      </div>
-      <div>
-        <span>02.</span>
-        <h3>Informe seus gastos e investimentos.</h3>
-      </div>
-      <div>
-        <span>03.</span>
-        <h3>Tenha tudo na palma da sua mão.</h3>
-      </div>
-    </div>
+    <img src="../assets/images/banner-investments.png" alt="Vários papéis com gráficos financeiros sobre a mesa">
   </section>
-</section>
 
-<section class="main-brief-presentation">
-  <div>
-    <h2>Como o BradMoney vai me ajudar?</h2>
-    <p>Proporcionando meios para você realizar seus sonhos, metas e objetivos. Controlar e calcular seus investimentos, seus gastos e seus ganhos, a qualquer hora tudo na palma da sua mão.</p>
-  </div>
-  <img src="../assets/images/banner-investments.png" alt="Vários papéis com gráficos financeiros sobre a mesa">
-</section>
+  <section class="main-cards">
+    <h2>Benefícios da BradMoney</h2>
 
-<section class="main-cards">
-  <h2>Benefícios da BradMoney</h2>
+    <section>
+      <mat-card class="card-container">
+        <img src="../assets/icons/task-dashboard.png" alt="Ícone de prancheta com vários gráficos impressos no papel">
+        <h2>Controle seus investimentos</h2>
+        <mat-card-content>
+          <p>Acompanhe seu crescimento rumo a sua independência financeira. Gerencie seu patrimônio, acompanhe a
+            evolução dos seus investimentos e todos os demais ativos.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Como funciona?</button>
+        </mat-card-actions>
+      </mat-card>
 
-  <section>
-    <mat-card class="card-container">
-      <img src="../assets/icons/task-dashboard.png" alt="Ícone de prancheta com vários gráficos impressos no papel">
-      <h2>Controle seus investimentos</h2>
-      <mat-card-content>
-        <p>Acompanhe seu crescimento rumo a sua independência financeira.  Gerencie seu patrimônio, acompanhe a evolução dos seus investimentos e todos os demais ativos.</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Como funciona?</button>
-      </mat-card-actions>
-    </mat-card>
+      <mat-card class="card-container">
+        <img src="../assets/icons/money.png" alt="Ícone de várias notas monetárias">
+        <h2>Controle suas despesas</h2>
+        <mat-card-content>
+          <p>Gerencie com precisão todas as despesas dos seus cartões de crédito. Tenha controle do cartão titular e dos
+            adicionais. Receba lembretes para pagar suas faturas e contas em dia.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Como funciona?</button>
+        </mat-card-actions>
+      </mat-card>
 
-    <mat-card class="card-container">
-      <img src="../assets/icons/money.png" alt="Ícone de várias notas monetárias">
-      <h2>Controle suas despesas</h2>
-      <mat-card-content>
-        <p>Gerencie com precisão todas as despesas dos seus cartões de crédito. Tenha controle do cartão titular e dos adicionais. Receba lembretes para pagar suas faturas e contas em dia.</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Como funciona?</button>
-      </mat-card-actions>
-    </mat-card>
+      <mat-card class="card-container">
+        <img src="../assets/icons/calendar.png" alt="Ícone de uma calendário">
+        <h2>Acompanhe seu dinheiro</h2>
+        <mat-card-content>
+          <p>Acompanhe sua evolução. Gerencie seus objetivos financeiros de curto, médio e longo prazo. Fique cada vez
+            mais perto de alcançar seus sonhos e objetivos.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Como funciona?</button>
+        </mat-card-actions>
+      </mat-card>
 
-    <mat-card class="card-container">
-      <img src="../assets/icons/calendar.png" alt="Ícone de uma calendário">
-      <h2>Acompanhe seu dinheiro</h2>
-      <mat-card-content>
-        <p>Acompanhe sua evolução. Gerencie seus objetivos financeiros de curto, médio e longo prazo. Fique cada vez mais perto de alcançar seus sonhos e objetivos.</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Como funciona?</button>
-      </mat-card-actions>
-    </mat-card>
+      <mat-card class="card-container">
+        <img src="../assets/icons/clock.png" alt="Ícone de um relógio de parede">
+        <h2>Gerencie seu dinheiro a qualquer hora</h2>
+        <mat-card-content>
+          <p>Aplicativo para você gerenciar seus ativos e passivos a qualquer hora do dia, tudo na palma da sua mão.</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Como funciona?</button>
+        </mat-card-actions>
+      </mat-card>
 
-    <mat-card class="card-container">
-      <img src="../assets/icons/clock.png" alt="Ícone de um relógio de parede">
-      <h2>Gerencie seu dinheiro a qualquer hora</h2>
-      <mat-card-content>
-        <p>Aplicativo para você gerenciar seus ativos e passivos a qualquer hora do dia, tudo na palma da sua mão.</p>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>Como funciona?</button>
-      </mat-card-actions>
-    </mat-card>
-
-    <img class="card-background" src="../assets/icons/card-background.svg" alt="Ícone de fundo para cards">
-    <img class="creditCard-background" src="../assets/icons/creditCard-background.svg" alt="Ícone de cartão de crédito">
+      <img class="card-background" src="../assets/icons/card-background.svg" alt="Ícone de fundo para cards">
+      <img class="creditCard-background" src="../assets/icons/creditCard-background.svg"
+        alt="Ícone de cartão de crédito">
+    </section>
   </section>
-</section>
 
-<section class="main-video">
-  <h2>Apresentação do BradMoney</h2>
+  <section class="main-video">
+    <h2>Apresentação do BradMoney</h2>
 
-  <mat-card class="card-container">
-    <mat-card-content>
-      <div>
-        <p>
-          <img src="../../../assets/icons/check.svg" alt="Ícone de Ok">
-          <span>Completo e de fácil utilização</span>
-        </p>
-        <p>
-          <img src="../../../assets/icons/check.svg" alt="Ícone de Ok">
-          <span>Controle de gastos completo</span>
-        </p>
-        <p>
-          <img src="../../../assets/icons/check.svg" alt="Ícone de Ok">
-          <span>Controle de investimentos e bolsa de valores</span>
-        </p>
-        <p>
-          <img src="../../../assets/icons/check.svg" alt="Ícone de Ok">
-          <span>Funcional e de simples utilização</span>
-        </p>
-        <p>
-          <img src="../../../assets/icons/check.svg" alt="Ícone de Ok">
-          <span>Sua informações seguras e em ambiente protegido</span>
-        </p>
-        <p>
-          <img src="../../../assets/icons/check.svg" alt="Ícone de Ok">
-          <span>Controle quanto está gastando com cada filho, veículo ou imóvel.</span>
-        </p>
-        <p>
-          <img src="../../../assets/icons/check.svg" alt="Ícone de Ok">
-          <span>Saiba a origem das despesas e receitas.</span>
-        </p>
-      </div>
-      <iframe 
-        src="https://www.youtube.com/embed/JBBQJEgY6rs?controls=0" 
-        title="Platform presentation" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen>
-      </iframe>
-    </mat-card-content>
-  </mat-card>
+    <mat-card class="card-container">
+      <mat-card-content>
+        <div>
+          <p>
+            <img src="../../../assets/icons/check.svg" alt="Ícone de Ok">
+            <span>Completo e de fácil utilização</span>
+          </p>
+          <p>
+            <img src="../../../assets/icons/check.svg" alt="Ícone de Ok">
+            <span>Controle de gastos completo</span>
+          </p>
+          <p>
+            <img src="../../../assets/icons/check.svg" alt="Ícone de Ok">
+            <span>Controle de investimentos e bolsa de valores</span>
+          </p>
+          <p>
+            <img src="../../../assets/icons/check.svg" alt="Ícone de Ok">
+            <span>Funcional e de simples utilização</span>
+          </p>
+          <p>
+            <img src="../../../assets/icons/check.svg" alt="Ícone de Ok">
+            <span>Sua informações seguras e em ambiente protegido</span>
+          </p>
+          <p>
+            <img src="../../../assets/icons/check.svg" alt="Ícone de Ok">
+            <span>Controle quanto está gastando com cada filho, veículo ou imóvel.</span>
+          </p>
+          <p>
+            <img src="../../../assets/icons/check.svg" alt="Ícone de Ok">
+            <span>Saiba a origem das despesas e receitas.</span>
+          </p>
+        </div>
+        <iframe src="https://www.youtube.com/embed/JBBQJEgY6rs?controls=0" title="Platform presentation" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </mat-card-content>
+    </mat-card>
 
-  <img class="bars-background" src="../assets/icons/bars-background.svg" alt="Ícone de barras de gráfico">
-</section>
-
+    <img class="bars-background" src="../assets/icons/bars-background.svg" alt="Ícone de barras de gráfico">
+  </section>
+</div>
 <app-footer></app-footer>
