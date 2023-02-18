@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+  checked = false;
 
   teste(event: SubmitEvent){
     event.preventDefault()

@@ -43,3 +43,19 @@ button {
 .button-gray {
   background-color: variables.$gray-600;
 }
+
+.mat-mdc-checkbox.mat-accent .mdc-checkbox--selected~.mdc-checkbox__ripple {
+  background: variables.$green-600!important; 
+   
+}
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: variables.$green-600!important; 
+}
+
+.mdc-checkbox--selected{
+  background-color:variables.$green-600!important; 
+}
+
+.mat-mdc-checkbox .mdc-form-field {
+  color:variables.$gray-300;
+}
