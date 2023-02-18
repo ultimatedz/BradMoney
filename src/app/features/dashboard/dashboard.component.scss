@@ -7,13 +7,70 @@
     background-image: url("../../../assets/images/background.png");
 }
 .dashboard-menu{
-    width: 300px;
+    width: 250px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-right: 2rem;
+    background-color: variables.$white;
+    box-shadow: 0px 0px 20px rgba(192, 197, 233, 0.6);
 }
 
 .dashboard-title{
     margin-top: 2rem;
-    width: 150px;
+    margin-bottom: 3rem;
+    font-weight: 700px;
+    line-height: 15px;
+    width: 100%;
     text-align: center;
     color: variables.$green-600;
     font-weight: 900;
+}
+.hr-main{
+    height: 6px;
+    background-color: variables.$green-600;
+    border-style: none;
+    border-radius: 6px;
+    margin-top: 14px;
+    margin-bottom: 20px;
+
+}
+
+.dashboard-user-content{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.dashboard-active{
+    background-color: variables.$green-600;
+}
+.dashboard-active span{
+    color: white;
+}
+
+.dashboard-card{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500px;
+    line-height: 12px;
+    color: variables.$gray-600;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+.dashboard-card img{
+    padding-left: 1rem;
+}
+
+.dashboard-card span{
+    font-weight: 700px;
+}
+
+
+.dashboard-icons{
+    width: 16px;
 }
