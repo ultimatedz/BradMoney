@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { NewPasswordComponent } from './pages/new-password/new-password.component';
+import {DashboardHomeComponent} from './features/dashboard/pages/dashboard-home/dashboard-home.component'
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -13,7 +13,8 @@ const routes: Routes = [
   {path: 'recovery', component: RecoveryComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'newPassword', component: NewPasswordComponent},
-  {path: 'dashboard', component: DashboardComponent}
+  {path: 'dashboard', component: DashboardHomeComponent}
+  
 ];
 
 @NgModule({

@@ -11,7 +11,9 @@
                 <p class="padd"><small><a [routerLink]="['../recovery']">Esqueceu sua senha?</a></small></p>
             </form>
             <div class="main-content-buttons paddTop">
-                <button class="button button-green buttonLogin">Login</button>
+                <a [routerLink]="['/dashboard']">
+                    <button class="button button-green buttonLogin">Login</button>
+                </a>
                 <button class="button button-gray buttonCancel">Cadastrar</button>
             </div>
 

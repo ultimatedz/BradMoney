@@ -10,14 +10,20 @@
             </div>
             <hr class="hr-main">
             <div class="dashboard-options-content">
-                <div class="dashboard-card dashboard-active">
-                    <img src="./../../../assets/icons/user-icon-alpha.svg" class="dashboard-icons">
-                    <span>Home</span>
-                </div>
-                <div class="dashboard-card">
-                    <img src="./../../../assets/icons/payment-icon.png" class="dashboard-icons">
-                    <span>Pagamentos</span>
-                </div>
+                <a [routerLink]="['../']">
+                    <div class="dashboard-card dashboard-active">
+                        <img src="./../../../assets/icons/user-icon-alpha.svg" class="dashboard-icons">
+                        <span>Home</span>
+                    </div>
+                </a>
+
+                <a [routerLink]="['./pagamentos']">
+                    <div class="dashboard-card">
+                        <img src="./../../../assets/icons/payment-icon.png" class="dashboard-icons">
+                        <span>Pagamentos</span>                    
+                    </div>
+                 </a>
+
                 <div class="dashboard-card">
                     <img src="./../../../assets/icons/investimento-icon.png" class="dashboard-icons">
                     <span>Investimentos</span>
@@ -26,12 +32,17 @@
                     <img src="./../../../assets/icons/fale-conosco-icon.png" class="dashboard-icons">
                     <span>Fale Conosco</span>
                 </div>
-                <div class="dashboard-card">
-                    <img src="./../../../assets/icons/exit-icon.png" class="dashboard-icons">
-                    <span>Sair</span>
-                </div>
+                <a [routerLink]="['']">
+                    <div class="dashboard-card">
+                        <img src="./../../../assets/icons/exit-icon.png" class="dashboard-icons">
+                        <span>Sair</span>
+                    </div>
+                </a>
             </div>
         </div>
         <hr>
+    </div>
+    <div class="outlet">
+        <router-outlet></router-outlet>
     </div>
 </div>
