@@ -8,7 +8,7 @@
             <form class="paddTop">
                 <input class="inputLogin" type="text" placeholder="Usuário" required>
                 <input class="inputLogin" type="password" placeholder="Senha" required>
-                <p class="padd"><small>Esqueceu sua senha?</small></p>
+                <p class="padd"><small><a [routerLink]="['../recovery']">Esqueceu sua senha?</a></small></p>
             </form>
             <div class="main-content-buttons paddTop">
                 <button class="button button-green buttonLogin">Login</button>
@@ -18,11 +18,18 @@
         </div>
         <div class="right-content">
             <div id="itens">
-                <h2>BENEFÍCIOS DO <br> <p><span>BRADMONEY</span></p></h2>
-                <p><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp; Intuítivo</span></p>
-                <p><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp; Confiável</span></p>
-                <p><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp; Completo</span></p>
-                <p><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp; Gratuíto</span></p>
+                <h2>BENEFÍCIOS DO <br>
+                    <p><span>BRADMONEY</span></p>
+                </h2>
+                <br>   
+                <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
+                        Intuítivo</span></div>
+                <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
+                        Confiável</span></div>
+                <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
+                        Completo</span></div>
+                <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
+                        Gratuíto</span></div>
             </div>
         </div>
     </div>

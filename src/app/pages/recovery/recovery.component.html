@@ -1,0 +1,20 @@
+<app-header></app-header>
+<section class="backGround">
+    <div class="card">
+        <div class="left-content">
+            <h1>Esqueceu sua senha?</h1>
+            <p>verificamos sua identida com seu usuário e CPF</p>
+
+            <form class="paddTop">
+                <input class="inputLogin" type="text" placeholder="Usuário" required>
+                <input class="inputLogin" type="text" placeholder="CPF" required>
+            </form>
+            <br>
+            <div class="main-content-buttons paddTop">
+                <button class="button button-green buttonLogin" [routerLink]="['newPassword']">Nova senha</button>
+                <button class="button button-gray buttonCancel" [routerLink]="['']">Cancelar</button>
+            </div>
+
+        </div>
+    </div>
+</section>

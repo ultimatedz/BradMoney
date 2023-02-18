@@ -13,6 +13,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import {MatCardModule} from '@angular/material/card';
 import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
+import { RecoveryComponent } from './pages/recovery/recovery.component';
+import { NewPasswordComponent } from './pages/new-password/new-password.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { FeaturesModule } from './features/features.module';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RecoveryComponent,
+    NewPasswordComponent
   ],
   imports: [
     BrowserModule,
