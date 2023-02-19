@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AuthChangeEvent, AuthSession, createClient, Session, SupabaseClient } from '@supabase/supabase-js';
 import { environment } from 'src/app/environments/environments';
+import { RegisterForm } from '../models/register-form.model';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +33,7 @@ export class SupabaseService {
   addUser(user: any) {
     return this.supabase
       .from('users')
-      .insert({ name: user.name, email: user.email, password: user.password })
+      .insert({ name: user.name, email: user.email, password: user.password, cpf: user.cpf, terms: user.terms })
       .select()
   }
 

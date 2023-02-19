@@ -1,155 +1,167 @@
 @use '../../../scss/variables';
 
 .left-content {
-    display: flex;
-    flex: 1;
+  display: flex;
+  flex: 1;
 
-    flex-direction: column;
-    padding: 2.5rem;
-    text-align: left;
-    background-color: white;
+  flex-direction: column;
+  padding: 2.5rem;
+  text-align: left;
+  background-color: white;
 
-    h1 {
-        font-weight: 900;
-        font-size: 2.5rem;
-        color: variables.$gray-600;
-        padding-bottom: 15px;
+  h1 {
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: variables.$gray-600;
+  }
+
+  p {
+    color: variables.$gray-300;
+    margin-top: .5rem;
+  }
+
+  form {
+    margin-top: 2rem;
+
+    .form-checkbox, .form-buttons{
+      margin-top: .5rem;
     }
+  
+  }
 
-    p {
-        padding-top: 15px;
-        color: variables.$gray-300;
-    }
+  .checkbox {
+    color: variables.$gray-300;
+  }
 
-    .checkbox {
-        color: variables.$gray-300;
-    }
+  .paddTop {
+    padding-top: 2rem;
+  }
 
-    .paddTop {
-        padding-top: 2rem;
-    }
+  small {
+    font-size: 0.7em;
+    padding-left: 60%;
+    color: variables.$green-600;
 
-    small {
-        font-size: 0.7em;
-        padding-left: 60%;
-        color: variables.$green-600;
+  }
 
-    }
-    small :hover, small :focus{
-        color: variables.$red-600;
-    }
+  small :hover,
+  small :focus {
+    color: variables.$red-600;
+  }
 
-    .inputLogin {
-        width: 95%;
-        height: 40px;
-        border-radius: 4px;
-        border: 1px solid variables.$gray-300;
-        outline-color: variables.$gray-600;
-        margin-top: 18px;
-        padding-left: 10px;
-        color: variables.$gray-600;
+  .inputLogin {
+    width: 95%;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid variables.$gray-300;
+    outline-color: variables.$gray-600;
+    margin-top: 18px;
+    padding-left: 10px;
+    color: variables.$gray-600;
 
-    }
+  }
 
-    input :focus, input :hover {
-        border-color: variables.$gray-300;
-        color: variables.$gray-300;
-    }
+  input :focus,
+  input :hover {
+    border-color: variables.$gray-300;
+    color: variables.$gray-300;
+  }
 
-    ::placeholder {
-        color: variables.$gray-300
-    }
+  ::placeholder {
+    color: variables.$gray-300
+  }
 
-    .buttonLogin {
-        width: 45%;
-        border-color: variables.$gray-300;
-    }
+  .buttonLogin {
+    width: 45%;
+    border-color: variables.$gray-300;
+  }
 
-    .buttonCancel {
-        width: 45%;
-        margin-left: 22px;
-    }
+  .buttonCancel {
+    width: 45%;
+    margin-left: 22px;
+  }
 
-    .mat-mdc-checkbox.mat-accent {
-        --mdc-checkbox-selected-hover-icon-color:#3AB67D;
-        --mdc-checkbox-selected-focus-icon-color: #3AB67D;
-        --mdc-checkbox-selected-icon-color: #3AB67D;
-        --mdc-checkbox-selected-pressed-icon-color: transparent;
-        --mdc-checkbox-unselected-focus-icon-color: #212121;
-        --mdc-checkbox-unselected-hover-icon-color: #212121;
-        --mdc-checkbox-disabled-selected-icon-color: rgba(0, 0, 0, 0.1);
-        --mdc-checkbox-disabled-unselected-icon-color: rgba(0, 0, 0, 0.1);
-        --mdc-checkbox-unselected-icon-color: rgba(0, 0, 0, 0.1);
-        --mdc-checkbox-unselected-pressed-icon-color: rgba(0, 0, 0, 0.1);
-    }
+  .mat-mdc-checkbox.mat-accent {
+    --mdc-checkbox-selected-hover-icon-color: #3AB67D;
+    --mdc-checkbox-selected-focus-icon-color: #3AB67D;
+    --mdc-checkbox-selected-icon-color: #3AB67D;
+    --mdc-checkbox-selected-pressed-icon-color: transparent;
+    --mdc-checkbox-unselected-focus-icon-color: #212121;
+    --mdc-checkbox-unselected-hover-icon-color: #212121;
+    --mdc-checkbox-disabled-selected-icon-color: rgba(0, 0, 0, 0.1);
+    --mdc-checkbox-disabled-unselected-icon-color: rgba(0, 0, 0, 0.1);
+    --mdc-checkbox-unselected-icon-color: rgba(0, 0, 0, 0.1);
+    --mdc-checkbox-unselected-pressed-icon-color: rgba(0, 0, 0, 0.1);
+  }
 
 
-      
+
 }
 
 .right-content {
+  display: flex;
+  width: 50%;
+  background-image: url(../../../assets/images/background-login.png);
+  background-size: cover;
+  height: 100%;
+
+  h2 {
+    font-weight: 400;
+    font-size: 1.3rem;
+  }
+
+  #itens {
+    align-items: center;
+    text-align: left;
+    color: white;
+    padding: 40% 30%;
+  }
+
+  img {
+    width: 20px;
+  }
+
+  p {
+    padding-top: 20px;
+  }
+
+  span {
+    font-weight: 800;
+  }
+
+  div .align {
     display: flex;
-    width: 50%;
-    background-image: url(../../../assets/images/background-login.png);
-    background-size: cover;
-    height: 100%;
-
-    h2 {
-        font-weight: 400;
-        font-size: 1.3rem;
-    }
-
-    #itens{
-        align-items: center;
-        text-align: left;
-        color: white;
-        padding: 40% 30%;
-    }
-
-    img {
-        width: 20px;
-    }
-
-    p {
-        padding-top: 20px;
-    }
-
-    span {
-        font-weight: 800;
-    }
-    div .align {
-        display: flex;
-        align-items: center;
-        padding-top: 20px;
-    }
+    align-items: center;
+    padding-top: 20px;
+  }
 }
 
 .backGround {
-    height: calc(100% - 240px); 
+  height: calc(100% - 240px);
 
-    &::before {
-        content: '';
-        position: absolute;
-        min-height: 100%;
-        width: 100%;
-        top: 0;
-        background-image: url("../../../assets/images/background.png");
-        z-index: -1;
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+    top: 0;
+    background-image: url("../../../assets/images/background.png");
+    z-index: -1;
+  }
 }
 
 .card {
-    display: flex;
-    width: 60%;
-    max-width: 800px;
-    height: 560px;
-    margin: 150px auto 0;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 5px 5px 40px rgba(172, 176, 202, 0.6);
-    justify-content: space-between;
-    overflow: hidden;
+  display: flex;
+  width: 60%;
+  max-width: 800px;
+  height: 560px;
+  margin: 150px auto 0;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 40px rgba(172, 176, 202, 0.6);
+  justify-content: space-between;
+  overflow: hidden;
 }

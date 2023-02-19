@@ -1,0 +1,13 @@
+@use '../../../../../scss/variables';
+
+p {
+  background-color: variables.$red-600;
+  font-size: .8rem;
+  padding: .5rem;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.error-message {
+  color: variables.$white;
+}

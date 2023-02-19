@@ -24,13 +24,14 @@
         padding-top: 15%;
     }
 
-    small {
-        font-size: 0.7em;
-        padding-left: 60%;
+    .recovery-password {
+        font-size: 0.8em;
+        text-align: end;
         color: variables.$green-600;
-
+        margin-top: .25rem;
     }
-    small :hover, small :focus{
+    
+    .recovery-password :hover, .recovery-password :focus{
         color: variables.$red-600;
     }
 

@@ -17,6 +17,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "websocket",
+              "cross-fetch"
+            ],
             "outputPath": "dist/brad-money",
             "index": "src/index.html",
             "main": "src/main.ts",

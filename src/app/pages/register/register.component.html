@@ -1,40 +1,42 @@
 <app-header></app-header>
 <section class="backGround">
-    <div class="card">
-        <div class="left-content">
-            <h1>REGISTRO</h1>
-            <p>Registre o seu usuário</p>
-            <form>
-                <input class="inputLogin" type="email" placeholder="Email" required>
-                <input class="inputLogin" type="password" placeholder="Senha" required>
-                <input class="inputLogin" type="password" placeholder="Confirme sua senha" required>
-                <input class="inputLogin" type="text" placeholder="CPF" required>
-                <br>
-                   <div class="align"><mat-checkbox [checked]="checked" (change)="checked = !checked">Eu aceito os termos de uso</mat-checkbox></div>
-            </form>
-            <div class="main-content-buttons">
-                <br>
-                <a [routerLink]="['/login']"><button class="button button-green buttonLogin">REGISTRAR</button></a>
-                <a [routerLink]="['']"><button class="button button-gray buttonCancel">CANCELAR</button></a>
-            </div>
+  <div class="card">
+    <div class="left-content">
+      <h1>REGISTRO</h1>
+      <p>Realize seu cadastro!</p>
+      <form (ngSubmit)="handleSubmit($event)" [formGroup]="registerForm">
+        <input class="inputLogin" type="text" id="name" placeholder="Nome" formControlName="name">
+        <input class="inputLogin" type="email" id="email" placeholder="Email" formControlName="email">
+        <input class="inputLogin" type="password" id="password" placeholder="Senha" formControlName="password">
+        <input class="inputLogin" type="text" id="cpf" placeholder="CPF" formControlName="cpf">
+        <div class="align form-checkbox">
+          <mat-checkbox formControlName="terms">Eu aceito os termos de uso</mat-checkbox>
+        </div>
+
+        <div class="main-content-buttons form-buttons">
+          <button type="submit" class="button button-green buttonLogin">REGISTRAR</button>
+          <a [routerLink]="['']"><button type="button" class="button button-gray buttonCancel">CANCELAR</button></a>
+        </div>
+      </form>
 
 
-        </div>
-        <div class="right-content">
-            <div id="itens">
-                <h2>BENEFÍCIOS DO <br>
-                    <p><span>BRADMONEY</span></p>
-                </h2>
-                <br>
-                <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
-                        Intuítivo</span></div>
-                <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
-                        Confiável</span></div>
-                <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
-                        Completo</span></div>
-                <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
-                        Gratuíto</span></div>
-            </div>
-        </div>
+
     </div>
+    <div class="right-content">
+      <div id="itens">
+        <h2>BENEFÍCIOS DO <br>
+          <p><span>BRADMONEY</span></p>
+        </h2>
+        <br>
+        <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
+            Intuítivo</span></div>
+        <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
+            Confiável</span></div>
+        <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
+            Completo</span></div>
+        <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
+            Gratuíto</span></div>
+      </div>
+    </div>
+  </div>
 </section>
