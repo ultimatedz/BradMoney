@@ -5,10 +5,11 @@
             <h1>Login</h1>
             <p>Realize seu login no seu aplicativo</p>
 
-            <form class="paddTop">
-                <input class="inputLogin" type="text" placeholder="Usuário" required>
-                <input class="inputLogin" type="password" placeholder="Senha" required>
+            <form class="paddTop" [formGroup]="loginForm" (ngSubmit)="handleSubmit($event)">
+                <input class="inputLogin" type="email" id="email" placeholder="Email" required formControlName="email">
+                <input class="inputLogin" type="password" placeholder="Senha" required formControlName="password">
                 <p class="padd"><small><a [routerLink]="['../recovery']">Esqueceu sua senha?</a></small></p>
+                <button class="button button-green buttonLogin">Teste</button>
             </form>
             <div class="main-content-buttons paddTop">
                 <a [routerLink]="['/dashboard']"><button class="button button-green buttonLogin">LOGIN</button></a>

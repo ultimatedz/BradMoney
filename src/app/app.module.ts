@@ -11,7 +11,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 import { MatCardModule } from '@angular/material/card';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
@@ -37,7 +37,8 @@ import { NewPasswordComponent } from './pages/new-password/new-password.componen
     BrowserAnimationsModule,
     MatCardModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
