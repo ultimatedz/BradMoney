@@ -12,6 +12,9 @@ import { DashboardHomeComponent } from './dashboard/pages/dashboard-home/dashboa
   imports: [
     CommonModule,
     AppRoutingModule
+  ],
+  exports: [
+    DashboardHomeComponent
   ]
 })
 export class FeaturesModule { }

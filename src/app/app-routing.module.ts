@@ -14,7 +14,6 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'new-password', component: NewPasswordComponent},
   {path: 'dashboard', component: DashboardHomeComponent}
-  
 ];
 
 @NgModule({

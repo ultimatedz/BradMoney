@@ -9,12 +9,12 @@
                 <input class="inputLogin" type="email" id="email" placeholder="Email" required formControlName="email">
                 <input class="inputLogin" type="password" placeholder="Senha" required formControlName="password">
                 <p class="padd"><small><a [routerLink]="['../recovery']">Esqueceu sua senha?</a></small></p>
-                <button class="button button-green buttonLogin">Teste</button>
+                <div class="main-content-buttons paddTop">
+                    <button type="submit" class="button button-green buttonLogin">LOGIN</button>
+                    <a [routerLink]="['/register']"><button type="button" class="button button-gray buttonCancel">CADASTRAR</button></a>
+                </div>
             </form>
-            <div class="main-content-buttons paddTop">
-                <a [routerLink]="['/dashboard']"><button class="button button-green buttonLogin">LOGIN</button></a>
-                <a [routerLink]="['/register']"><button class="button button-gray buttonCancel">CADASTRAR</button></a>
-            </div>
+            
 
         </div>
         <div class="right-content">
