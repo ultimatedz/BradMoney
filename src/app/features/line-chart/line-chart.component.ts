@@ -13,7 +13,7 @@ export class LineChartComponent {
     this.createChart();
     const canvas = <HTMLCanvasElement> document.getElementById('myChart');
     const ctx = canvas.getContext('2d');
-    console.log(ctx)
+    console.log(ctx);
   }
 
   createChart(){
@@ -30,7 +30,7 @@ export class LineChartComponent {
             backgroundColor: '#2F80ED',
             fill: false,
             borderColor: '#2F80ED',
-            tension: 0.1
+            tension: 0.2
           },
           {
             label: "AÇÕES",
@@ -38,7 +38,7 @@ export class LineChartComponent {
             backgroundColor: '#EB5757',
             fill: false,
             borderColor: '#EB5757',
-            tension: 0.1
+            tension: 0.2
           }  ,
           {
             label: "TESOURO",
@@ -46,7 +46,7 @@ export class LineChartComponent {
             backgroundColor: '#F2C94C',
             fill: false,
             borderColor: '#F2C94C',
-            tension: 0.1
+            tension: 0.2
           }  ,
           {
             label: "FIAGRO",
@@ -54,20 +54,35 @@ export class LineChartComponent {
             backgroundColor: '#3AB67D',
             fill: false,
             borderColor: '#3AB67D',
-            tension: 0.1
+            tension: 0.2
           }  
         ]
       },
       options: {
         layout:{
           padding:{
-            right: 40
+            right: 55
           }
         },
         plugins:{
           datalabels:{
+            font:{
+              family: "Poppins",
+              weight: 700
+            },
+            formatter: function(value){
+              return value + ('%')
+            },
             anchor:'end',
-            align:'right'
+            align:'right',
+            offset: 5,
+            display: function (context){
+              return (context.dataIndex === context.dataset.data.length-1);
+            },
+            opacity: function(context){
+              return context.active ? 1 :0.5;
+            }
+            
           }
         },
         elements:{
@@ -90,6 +105,7 @@ export class LineChartComponent {
     Chart.defaults.elements.line.borderWidth = 7
     Chart.defaults.elements.line.tension=1
 
-
+    
   }
+  
 }
