@@ -53,7 +53,6 @@
 }
 
 .main-content-buttons {
-  // margin-top: 2rem;
   display: flex;
   gap: 1.25rem;
 
@@ -78,18 +77,10 @@
   max-width: 30%;
   position: relative;
 
-  p {
-    margin-top: 1rem;
-    font-weight: 500;
-    font-size: .875rem;
-    color: variables.$gray-600;
-    line-height: 1.3rem;
-  }
-
   .timer-background {
     position: absolute;
     right: -4.5rem;
-    top: 50%;
+    top: 60%;
     width: 150px;
     z-index: -1;
   }
@@ -289,9 +280,309 @@
 
   .bars-background{
     position: absolute;
-    bottom: -6rem;
+    bottom: -5rem;
     left: 0;
     z-index: -1;
-    width: 150px;
+    width: 200px;
+  }
+}
+
+// Medias Queries
+
+@media only screen and (max-width: 1024px) {
+  .main-content {
+    margin-top: 1rem;
+
+    img {
+      width: 500px;
+      height: 400px;
+      object-fit: contain;
+    }
+  }
+
+  .main-content-titles {
+    padding: 2rem 0;
+  }
+
+  .main-description-customer {
+    max-width: 45%;
+
+    .timer-background {
+      width: 125px;
+      right: -3.5rem;
+    }
+  }
+
+  .main-description-highlights {
+    div {
+      h3 {
+        font-size: .85rem;
+        line-height: 1.25rem;
+      }
+    }
+  }
+
+  .main-brief-presentation{
+    margin-top: 5rem;
+
+    div {
+      max-width: 100%;
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    img {
+      max-width: 50%;
+    }
+  }
+
+  .main-cards{
+    section {
+      margin-top: 2rem;
+  
+      .card-container {
+        min-height: 480px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main-container {
+    min-height: calc(100vh - 2rem);
+  }
+  
+  .main-content {
+    margin-top: 2rem;
+
+    img {
+      display: none;
+    }
+  }
+
+  .main-content-titles {
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .main-description-customer {
+    max-width: 65%;
+    height: fit-content;
+  
+    .timer-background {
+      right: -3.5rem;
+      top: 65%;
+      width: 125px;
+    }
+  }
+
+  .main-description-highlights {
+    justify-content: space-between;
+    gap: initial;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 1rem 0;
+    margin-top: 1rem;
+  
+    div {
+      font-size: 1rem;
+      margin-top: initial;
+      padding-top: initial;
+  
+      &::before {
+        content: '';
+        height: 2px;
+      }
+  
+      h3 {
+        margin-top: .1rem;
+        line-height: 1.2rem;
+        font-size: .8rem;
+      }
+    }
+  }
+
+  .main-brief-presentation{
+    padding: 0 1rem;
+    position: relative;
+    gap: 1rem;
+    margin-top: 2rem;
+    
+    div{
+      max-width: 100%;
+  
+      h2 {
+        font-size: 2rem;
+        position: absolute;
+        top: -3rem;
+      }
+    
+      p {
+        margin-top: 0;
+      }
+    }
+
+    img {
+      width: 50%;
+    }
+  }
+
+  .main-cards{
+    padding: 0 1rem;
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    section {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+  
+      .card-container {
+        border-radius: 10px;
+        max-width: 48%;
+        min-height: 380px;
+      }
+    }
+  
+    .card-background, .creditCard-background {
+      width: 125px;
+    }
+  
+    .creditCard-background{
+      right: 1rem;
+      bottom: -7rem;
+    }
+  }
+
+  .main-video {
+    padding: 0 1rem;
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    .card-container{
+      mat-card-content{    
+        flex-direction: column;
+        
+        div {
+          order: 2;
+          font-size: .85rem;
+          max-width: 100%;
+          line-height: initial;
+          flex-wrap: wrap;
+          gap: .5rem;
+          justify-content: space-between;
+  
+          p {
+            align-items: initial;
+          }
+        }
+  
+        iframe {
+          order: 1;
+          height: 300px;
+        }
+      }
+    }
+  
+    .bars-background{
+      width: 125px;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .main-content h1 {
+    line-height: 3rem;
+  }
+  
+  .main-description {
+    padding: 0 .5rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .main-description-customer {
+    border-radius: 10px;
+    padding: 1rem;
+    max-width: 100%;
+  
+    .timer-background {
+      display: none;
+    }
+  }
+
+  .main-description-highlights {
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .main-brief-presentation{
+    padding: 0 .5rem;
+    margin-top: 4rem;
+    flex-direction: column;
+    
+    div{
+      order: 2;
+      h2 {
+        font-size: 1.5rem;
+        top: -2.5rem;
+      }
+    }
+
+    img {
+      order: 1;
+      max-width: 100%;
+      width: 80%;
+    }
+  }
+
+  .main-cards{
+    margin-top: 2.5rem;
+    padding: 0 .5rem;
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    section {
+      flex-direction: column;
+      flex-wrap: nowrap;
+  
+      .card-container {
+        max-width: 80%;
+        min-height: 300px;
+      }
+    }
+  
+    .card-background, .creditCard-background {
+      display: none;
+    }
+  }
+
+  .main-video {
+    padding: 0 .5rem;
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .card-container{
+      mat-card-content{      
+        iframe {
+          order: 1;
+          height: 200px;
+          border-radius: 4px;
+        }
+      }
+    }
+  
+    .bars-background{
+      display: none;
+    }
   }
 }

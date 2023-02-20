@@ -59,3 +59,28 @@ button {
 .mat-mdc-checkbox .mdc-form-field {
   color:variables.$gray-300;
 }
+
+// Medias Queries
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    max-width: 996px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 736px;
+  }
+}
+
+
+@media only screen and (max-width: 425px) {
+  html, body {
+    font-size: 14px;
+  }
+
+  .container {
+    max-width: 98%;
+  }
+}

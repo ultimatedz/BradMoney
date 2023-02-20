@@ -1,9 +1,14 @@
 @use '../../../../scss/variables';
 
+footer{
+  width: 100%;
+  background-color: variables.$green-600;
+}
+
 footer .container{
   margin-top: 5rem;
   height: 100px;
-  background-color: variables.$green-600;
+  
   color: variables.$white;
   display: flex;
   align-items: center;
@@ -34,6 +39,28 @@ footer .container{
       img {
         width: 25px;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  footer .container{
+    height: fit-content;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem 1.5rem;
+    gap: 2.5rem;
+
+    div {
+      width: 45%;
+    }
+  
+    h2 {
+      font-size: 1.1rem;
+    }
+  
+    ul{
+      margin-top: 1rem;
     }
   }
 }

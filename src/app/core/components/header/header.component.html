@@ -1,4 +1,4 @@
-<header class="container">
+<header class="container header-desktop">
   <a [routerLink]="['']"><img src="../../../../assets/images/BradMoney-logo.png"></a>
   <nav>
     <ul>
@@ -7,4 +7,17 @@
       <li>Contato</li>
     </ul>
   </nav>
+</header>
+
+<header class="container header-mobile">
+  <a [routerLink]="['']"><img src="../../../../assets/images/BradMoney-logo.png"></a>
+
+  <div>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item><a [routerLink]="['']">Home</a></button>
+      <button mat-menu-item>Serviços</button>
+      <button mat-menu-item>Contato</button>
+    </mat-menu>
+  </div>
 </header>
