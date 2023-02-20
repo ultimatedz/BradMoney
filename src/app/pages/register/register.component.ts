@@ -38,11 +38,7 @@ export class RegisterComponent implements OnInit {
   async handleSubmit(event: SubmitEvent) {
     event.preventDefault()
 
-    
-
-    if(this.registerForm.valid){
-      await this.supaBaseService.signUp(this.registerForm.value.email!, this.registerForm.value.password!)
-
+    if (this.registerForm.valid) {
       const { error, data } = await this.supaBaseService.addUser(
         {
           'name': this.registerForm.value.name,
@@ -52,7 +48,9 @@ export class RegisterComponent implements OnInit {
           'terms': this.registerForm.value.terms
         })
 
-      if(data![0]){
+      await this.supaBaseService.signUp(this.registerForm.value.email!, this.registerForm.value.password!) 
+
+      if (data![0]) {
         this.router.navigate(['/login'])
       }
     }

@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'recovery', component: RecoveryComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'new-password', component: NewPasswordComponent},
-  {path: 'dashboard', component: DashboardHomeComponent}
+  {path: 'dashboard', component: DashboardHomeComponent},
 ];
 
 @NgModule({
