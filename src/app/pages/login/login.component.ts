@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoginForm } from 'src/app/shared/models/login-form.model';
 import { SupabaseService } from 'src/app/shared/services/supabase.service';
 
@@ -12,6 +12,7 @@ import { SupabaseService } from 'src/app/shared/services/supabase.service';
 export class LoginComponent implements OnInit {
   session = this.supaBaseService.session
   loginForm!: FormGroup<LoginForm>
+  signUpConfirm!: boolean
 
   emailInvalid!: boolean
   passwordInvalid!: boolean
@@ -20,7 +21,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private supaBaseService: SupabaseService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -34,6 +36,17 @@ export class LoginComponent implements OnInit {
     if (session) {
       this.router.navigate(['/dashboard'])
     }
+
+    if(this.activatedRoute.snapshot.url[1]){
+      this.signUpConfirm = true
+      if(this.activatedRoute.snapshot.url[1].path === 'signUp'){
+        setTimeout(() => {
+          this.signUpConfirm = false
+          this.router.navigate(['/dashboard'])
+        },2000)
+      }
+    }
+    
   }
 
   async handleSubmit(event: SubmitEvent) {

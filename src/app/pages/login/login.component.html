@@ -1,45 +1,50 @@
 <app-header></app-header>
 <section class="backGround">
+  <div class="container">
+    <app-alert *ngIf="signUpConfirm" [alertTimer]="500" [message]="'Email confirmado com sucesso!'"></app-alert>
     <div class="card">
-        <div class="left-content">
-            <h1>Login</h1>
-            <p>Realize seu login no seu aplicativo</p>
-
-            <form class="paddTop" [formGroup]="loginForm" (ngSubmit)="handleSubmit($event)">
-
-                <app-form-validation *ngIf="loginInvalid" [message]="'Email ou senha incorreto!'"></app-form-validation>
-
-                <input class="inputLogin" type="email" id="email" placeholder="Email" formControlName="email">
-                <app-input-validation *ngIf="emailInvalid" [message]="'Email Inválido!'"></app-input-validation>
-
-                <input class="inputLogin" type="password" placeholder="Senha" formControlName="password">
-                <app-input-validation *ngIf="passwordInvalid" [message]="'Campo obrigatório!'"></app-input-validation>
-
-                <p class="padd recovery-password"><a [routerLink]="['../recovery']">Esqueceu sua senha?</a></p>
-
-                <div class="main-content-buttons paddTop">
-                    <button type="submit" class="button button-green buttonLogin">LOGIN</button>
-                    <a [routerLink]="['/register']"><button type="button" class="button button-gray buttonCancel">CADASTRAR</button></a>
-                </div>
-            </form>
-            
-
+      <div class="left-content">
+        <h1>Login</h1>
+        <p>Realize seu login no seu aplicativo</p>
+  
+        <form class="paddTop" [formGroup]="loginForm" (ngSubmit)="handleSubmit($event)">
+  
+          <app-form-validation *ngIf="loginInvalid" [message]="'Email ou senha incorreto!'"></app-form-validation>
+  
+          <input class="inputLogin" type="email" id="email" placeholder="Email" formControlName="email">
+          <app-input-validation *ngIf="emailInvalid" [message]="'Email Inválido!'"></app-input-validation>
+  
+          <input class="inputLogin" type="password" placeholder="Senha" formControlName="password">
+          <app-input-validation *ngIf="passwordInvalid" [message]="'Campo obrigatório!'"></app-input-validation>
+  
+          <p class="padd recovery-password"><a [routerLink]="['../recovery']">Esqueceu sua senha?</a></p>
+  
+          <div class="main-content-buttons paddTop">
+            <button type="submit" class="button button-green buttonLogin">LOGIN</button>
+            <a [routerLink]="['/register']"><button type="button"
+                class="button button-gray buttonCancel">CADASTRAR</button></a>
+          </div>
+        </form>
+  
+  
+      </div>
+      <div class="right-content">
+        <div id="itens">
+          <h2>BENEFÍCIOS DO <br>
+            <p><span>BRADMONEY</span></p>
+          </h2>
+          <br>
+          <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
+              Intuítivo</span></div>
+          <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
+              Confiável</span></div>
+          <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
+              Completo</span></div>
+          <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
+              Gratuíto</span></div>
         </div>
-        <div class="right-content">
-            <div id="itens">
-                <h2>BENEFÍCIOS DO <br>
-                    <p><span>BRADMONEY</span></p>
-                </h2>
-                <br>   
-                <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
-                        Intuítivo</span></div>
-                <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
-                        Confiável</span></div>
-                <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
-                        Completo</span></div>
-                <div class="align"><img src="../../../assets/icons/checkmark.svg" alt="Checkmark icon"><span>&nbsp;
-                        Gratuíto</span></div>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
+  
 </section>

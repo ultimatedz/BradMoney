@@ -93,9 +93,26 @@
     --mdc-checkbox-unselected-icon-color: rgba(0, 0, 0, 0.1);
     --mdc-checkbox-unselected-pressed-icon-color: rgba(0, 0, 0, 0.1);
   }
+}
 
+.account-created {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 7rem;
+  gap: 3rem;
 
+  h2 {
+    color: variables.$green-600;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
 
+  .account-created-subtitle {
+    margin-top: 1rem;
+    color: variables.$gray-600;
+    line-height: 1.5rem;
+  }
 }
 
 .right-content {

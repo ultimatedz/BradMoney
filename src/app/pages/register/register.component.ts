@@ -11,6 +11,7 @@ import { SupabaseService } from 'src/app/shared/services/supabase.service';
 })
 export class RegisterComponent implements OnInit {
   session = this.supaBaseService.session
+  accountCreated!: boolean
   registerForm!: FormGroup<RegisterForm>
 
   constructor(
@@ -28,6 +29,8 @@ export class RegisterComponent implements OnInit {
       terms: [false, Validators.requiredTrue]
     })
 
+    this.accountCreated = false
+
     const session = this.supaBaseService.session
 
     if (session) {
@@ -39,19 +42,31 @@ export class RegisterComponent implements OnInit {
     event.preventDefault()
 
     if (this.registerForm.valid) {
-      const { error, data } = await this.supaBaseService.addUser(
-        {
-          'name': this.registerForm.value.name,
-          'email': this.registerForm.value.email,
-          'password': this.registerForm.value.password,
-          'cpf': this.registerForm.value.cpf,
-          'terms': this.registerForm.value.terms
-        })
+      try {
+        const { error } = await this.supaBaseService.addUser(
+          {
+            'name': this.registerForm.value.name,
+            'email': this.registerForm.value.email,
+            'password': this.registerForm.value.password,
+            'cpf': this.registerForm.value.cpf,
+            'terms': this.registerForm.value.terms
+          })
 
-      await this.supaBaseService.signUp(this.registerForm.value.email!, this.registerForm.value.password!) 
+        if (error) throw error
 
-      if (data![0]) {
-        this.router.navigate(['/login'])
+      } catch (error) {
+        console.log(error)
+      }
+
+      try {
+        const { data, error } = await this.supaBaseService.signUp(this.registerForm.value.email!, this.registerForm.value.password!)
+
+        if (data.user) {
+          this.accountCreated = true
+        }
+        if (error) throw error
+      } catch (error) {
+        console.log(error)
       }
     }
   }

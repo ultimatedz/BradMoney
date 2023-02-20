@@ -39,6 +39,10 @@ export class SliderComponent implements OnInit, OnDestroy{
   }
 
   updateCount(id: number){
+    clearInterval(this.nextImageInterval)
+    this.nextImageInterval = setInterval(() => {
+      this.nextImage()
+    }, 3000)
     this.count = id
   }
 }

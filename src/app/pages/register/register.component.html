@@ -1,7 +1,7 @@
 <app-header></app-header>
-<section class="backGround">
+<section class="backGround" >
   <div class="card">
-    <div class="left-content">
+    <div class="left-content" *ngIf="!accountCreated">
       <h1>REGISTRO</h1>
       <p>Realize seu cadastro!</p>
       <form (ngSubmit)="handleSubmit($event)" [formGroup]="registerForm">
@@ -19,7 +19,18 @@
         </div>
       </form>
 
+    </div>
 
+    <div class="left-content account-created" *ngIf="accountCreated">
+      <div>
+        <h1>REGISTRO</h1>
+        <p>Realize seu cadastro!</p>
+      </div>
+      
+      <div>
+        <h2>Conta cadastrada com sucesso!</h2>
+        <p class="account-created-subtitle">Agora falta pouco para ter acesso a sua plataforma, verifique seu email para confirmar a sua inscrição.</p>
+      </div>
 
     </div>
     <div class="right-content">
