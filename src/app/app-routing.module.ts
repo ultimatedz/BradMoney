@@ -6,6 +6,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { NewPasswordComponent } from './pages/new-password/new-password.component';
 import { DashboardHomeComponent } from './features/dashboard/pages/dashboard-home/dashboard-home.component'
+import { ModalComponent } from './shared/components/modal/modal.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'new-password', component: NewPasswordComponent},
   {path: 'dashboard', component: DashboardHomeComponent},
+  {path: 'modal', component: ModalComponent},
 ];
 
 @NgModule({

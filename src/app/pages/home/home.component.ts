@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
 import { Slider } from 'src/app/shared/models/slider.model';
+import { Modal } from 'src/app/shared/models/modal.model';
 
 @Component({
   selector: 'app-home',
@@ -33,4 +35,40 @@ export class HomeComponent  {
       feedback: 'Estou usando a alguns anos e recomendo! Impressionante que um app para gerenciamento de finanças seja tão completo e, ao mesmo tempo, tão intuitivo no uso.'
     },
   ]
+
+  modalList: Modal[] = [
+    {
+      backImage: 'task-dashboard.png',
+      title: 'Controle seus investimentos',
+      textOne: 'Poder total para controlar todos os seus investimento',
+      textTwo: 'Dashboard completa com os valores investidos',
+      textThree: 'Gráficos com frudos de investimento por tipo',
+      textFour: 'Fácil, rápido e gratuíto'
+    },
+    {
+      backImage: 'money.png',
+      title: 'Controle suas despesas',
+      textOne: 'Gerenciamento total das suas despesas',
+      textTwo: 'Controle dos cartões de crédito e débito',
+      textThree: 'Centro de custos e despesas',
+      textFour: 'Metas de Gastos'
+    },
+    {
+      backImage: 'calendar.png',
+      title: 'Acompanhe seu dinheiro',
+      textOne: 'Objetivos financeiros claros e de fácil compreensão',
+      textTwo: 'Gráficos com acompanhamento de despesas e receitas',
+      textThree: 'Defina metas de despesas',
+      textFour: 'Alcançe seus objetivos'
+    },
+    {
+      backImage: 'clock.png',
+      title: 'Gerencie seu dinheiro',
+      textOne: 'Gerenciamento de passivos e ativos a qualquer momento',
+      textTwo: 'Aplicativo de fácil acesso, prático, fácil e rápido',
+      textThree: 'Atualizações automáticas e em real-time',
+      textFour: 'Controle total do seu dinheiro'
+    }
+  ]
+
 }

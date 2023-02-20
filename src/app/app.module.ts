@@ -18,6 +18,7 @@ import { FeaturesModule } from './features/features.module';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { NewPasswordComponent } from './pages/new-password/new-password.component';
 import { ChartComponent } from './features/chart/chart.component';
+import { ModalComponent } from './shared/components/modal/modal.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ChartComponent } from './features/chart/chart.component';
     RegisterComponent,
     RecoveryComponent,
     NewPasswordComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
