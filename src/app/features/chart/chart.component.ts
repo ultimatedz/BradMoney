@@ -3,7 +3,6 @@ import { Chart, registerables } from 'chart.js';
 import { plugins } from 'chart.js/dist';
 Chart.register(...registerables);
 
-
 @Component({
   selector: 'app-chart',
   templateUrl: './chart.component.html',

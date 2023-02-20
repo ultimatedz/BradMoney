@@ -11,12 +11,12 @@ export class LineChartComponent {
   public chart: any;
   ngOnInit(){
     this.createChart();
+    const canvas = <HTMLCanvasElement> document.getElementById('myChart');
+    const ctx = canvas.getContext('2d');
+    console.log(ctx)
   }
 
-
   createChart(){
-
-  
     this.chart = new Chart("MyChart", {
       plugins: [ChartDataLabels],
       type: 'line', 

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, SimpleChanges } from '@angular/core';
 import { Slider } from '../../models/slider.model';
 
 @Component({
@@ -6,11 +6,14 @@ import { Slider } from '../../models/slider.model';
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
-export class SliderComponent implements OnInit{
+export class SliderComponent implements OnInit, OnDestroy{
 
   @Input() slidesList: Slider[] = []
 
   count = 1
+  nextImageInterval = setInterval(() => {
+    this.nextImage()
+  }, 3000)
 
   ngOnInit(): void {
     const radioElement: HTMLInputElement = document.querySelector('#customer1')!
@@ -18,9 +21,11 @@ export class SliderComponent implements OnInit{
       radioElement.checked = true
     }
 
-    setInterval(() => {
-      this.nextImage()
-    }, 3000)
+    this.nextImageInterval
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.nextImageInterval)
   }
 
   nextImage(){
