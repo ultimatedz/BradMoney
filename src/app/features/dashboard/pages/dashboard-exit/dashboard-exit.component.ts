@@ -2,12 +2,13 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { SupabaseService } from 'src/app/shared/services/supabase.service';
 
+
 @Component({
-  selector: 'app-dashboard-home',
-  templateUrl: './dashboard-home.component.html',
-  styleUrls: ['./dashboard-home.component.scss']
+  selector: 'app-dashboard-exit',
+  templateUrl: './dashboard-exit.component.html',
+  styleUrls: ['./dashboard-exit.component.scss']
 })
-export class DashboardHomeComponent {
+export class DashboardExitComponent {
 
   session = this.supaBaseService.session
 
@@ -29,4 +30,6 @@ export class DashboardHomeComponent {
 
     this.router.navigate(['/'])
   }
+  
+
 }

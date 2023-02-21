@@ -10,9 +10,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { TableHistoryComponent } from './table-history/table-history.component';
-
-
-
+import { DashboardExitComponent } from './dashboard/pages/dashboard-exit/dashboard-exit.component';
+import { DashboardContactComponent } from './dashboard/pages/dashboard-contact/dashboard-contact.component';
 
 
 
@@ -20,6 +19,8 @@ import { TableHistoryComponent } from './table-history/table-history.component';
   declarations: [
     DashboardComponent,
     DashboardHomeComponent,
+    DashboardExitComponent,
+    DashboardContactComponent,
     ChartComponent,
     LineChartComponent,
     TableHistoryComponent,

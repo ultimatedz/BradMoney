@@ -21,29 +21,30 @@ import { ChartComponent } from './features/chart/chart.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
 
 
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    LoginComponent,
-    RegisterComponent,
-    RecoveryComponent,
-    NewPasswordComponent,
-    ModalComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CoreModule,
-    SharedModule,
-    FeaturesModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatCheckboxModule,
-    FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        LoginComponent,
+        RegisterComponent,
+        RecoveryComponent,
+        NewPasswordComponent,
+        ModalComponent,
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        CoreModule,
+        SharedModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatCheckboxModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FeaturesModule
+    ]
 })
 export class AppModule { }

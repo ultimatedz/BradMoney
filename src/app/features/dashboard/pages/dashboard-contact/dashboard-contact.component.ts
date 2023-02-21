@@ -3,12 +3,11 @@ import { Router } from '@angular/router';
 import { SupabaseService } from 'src/app/shared/services/supabase.service';
 
 @Component({
-  selector: 'app-dashboard-home',
-  templateUrl: './dashboard-home.component.html',
-  styleUrls: ['./dashboard-home.component.scss']
+  selector: 'app-dashboard-contact',
+  templateUrl: './dashboard-contact.component.html',
+  styleUrls: ['./dashboard-contact.component.scss']
 })
-export class DashboardHomeComponent {
-
+export class DashboardContactComponent {
   session = this.supaBaseService.session
 
   constructor(private supaBaseService: SupabaseService, private router: Router){}
@@ -24,9 +23,6 @@ export class DashboardHomeComponent {
     }
   }
 
-  async handleSignOut(){
-    await this.supaBaseService.signOut()
-
-    this.router.navigate(['/'])
-  }
 }
+
+

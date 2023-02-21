@@ -24,11 +24,4 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  async handleSignOut(){
-    await this.supaBaseService.signOut()
-
-    this.router.navigate(['/'])
-  }
-
-
 }
