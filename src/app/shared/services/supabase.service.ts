@@ -19,15 +19,7 @@ export class SupabaseService {
       this._session = data.session
     })
     return this._session
-  }
-
-  get authStateChange(){
-    const test = this.supabase.auth.onAuthStateChange(((event, session) => {
-      return {event, session}
-    }))
-
-    return test
-  }
+  }  
 
   get users() {
     return this.supabase.from('users').select()
@@ -48,6 +40,14 @@ export class SupabaseService {
     return this.supabase.auth.resetPasswordForEmail(email, {
       redirectTo: 'http://localhost:4200/new-password',
     })
+  }
+
+  updateUserDataBase(email: string, password: string){
+    return this.supabase.from('users').update({ password: password }).eq('email', email)
+  }
+
+  updateUserAuth(password: string){
+    return this.supabase.auth.updateUser({password: password})
   }
 
   authChanges(callback: (event: AuthChangeEvent, session: Session | null) => void) {

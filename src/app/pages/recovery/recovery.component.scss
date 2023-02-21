@@ -1,86 +1,133 @@
 @use '../../../scss/variables';
 
+.card {
+  display: flex;
+  width: 50%;
+  max-width: 600px;
+  height: 460px;
+  margin: 150px auto 0;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 5px 5px 40px rgba(172, 176, 202, 0.6);
+  justify-content: space-between;
+  overflow: hidden;
+}
+
 .left-content {
+  .recovery-loader{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .6);
+    width: 100%;
+    height: calc(100% + 2rem);
+    top: -1rem;
+    left: 0;
+    border-radius: 20px 0 0 20px;
+    z-index: 1;
     display: flex;
-    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
 
-    flex-direction: column;
-    padding: 2.5rem;
-    background-color: white;
+  display: flex;
+  flex: 1;
 
-    h1 {
-        font-weight: 900;
-        font-size: 2.5rem;
-        color: variables.$gray-600;
-        padding-top: 0.6rem;
-    }
+  flex-direction: column;
+  padding: 2.5rem;
+  background-color: white;
 
-    p {
-        color: variables.$gray-300;
-        padding-top: 0.8rem;
-    }
+  h1 {
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: variables.$gray-600;
+    padding-top: 0.6rem;
+  }
 
-    .paddTop {
-        padding-top: 2rem;
-    }
+  p {
+    color: variables.$gray-300;
+    padding-top: 0.8rem;
+  }
 
-    .inputLogin {
-        width: 65%;
-        height: 40px;
-        border-radius: 4px;
-        border: 1px solid variables.$gray-300;
-        outline-color: variables.$gray-600;
-        margin-top: 18px;
-        padding-left: 10px;
-        color: variables.$gray-600;
-    }
+  .paddTop {
+    padding-top: 2rem;
+  }
 
-    input :focus, input :hover {
-        border-color: variables.$gray-300;
-        color: variables.$gray-300;
-    }
+  .inputLogin {
+    width: 65%;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid variables.$gray-300;
+    outline-color: variables.$gray-600;
+    margin-top: 18px;
+    padding-left: 10px;
+    color: variables.$gray-600;
+  }
 
-    ::placeholder {
-        color: variables.$gray-300
-    }
+  input :focus,
+  input :hover {
+    border-color: variables.$gray-300;
+    color: variables.$gray-300;
+  }
 
-    .buttonLogin {
-        width: 30%;
-        border-color: variables.$gray-300;
-    }
+  ::placeholder {
+    color: variables.$gray-300
+  }
 
-    .buttonCancel {
-        width: 30%;
-        margin-left: 22px;
-    }
+  .buttonConfirm,
+  .buttonCancel {
+    width: 30%;
+    text-transform: uppercase;
+  }
+
+  .buttonConfirm {
+    border-color: variables.$gray-300;
+  }
+
+  .buttonCancel {
+    margin-left: 1.5rem;
+  }
 }
 
 .backGround {
-    height: calc(100% - 240px);
+  height: calc(100% - 240px);
 
-    &::before {
-        content: '';
-        position: absolute;
-        min-height: 100%;
-        width: 100%;
-        top: 0;
-        background-image: url("../../../assets/images/background.png");
-        z-index: -1;
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+    top: 0;
+    background-image: url("../../../assets/images/background.png");
+    z-index: -1;
+  }
 }
 
-.card {
-    display: flex;
-    width: 50%;
-    max-width: 600px;
-    height: 460px;
-    margin: 150px auto 0;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 5px 5px 40px rgba(172, 176, 202, 0.6);
-    justify-content: space-between;
-    overflow: hidden;
+.request-successfully {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem;
+  
+  h1 {
+    color: variables.$green-600;
+    font-size: 1.85rem;
+    font-weight: 600;
+  }
+
+  p {
+    color: variables.$gray-600;
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+  }
+
+  button {
+    width: 80%;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+  }
 }
+

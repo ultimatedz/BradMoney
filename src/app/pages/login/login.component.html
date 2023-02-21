@@ -12,7 +12,7 @@
           <app-form-validation *ngIf="loginInvalid" [message]="'Email ou senha incorreto!'"></app-form-validation>
   
           <input class="inputLogin" type="email" id="email" placeholder="Email" formControlName="email">
-          <app-input-validation *ngIf="emailInvalid" [message]="'Email Inválido!'"></app-input-validation>
+          <app-input-validation *ngIf="emailInvalid" type="input" [message]="'Email Inválido!'"></app-input-validation>
   
           <input class="inputLogin" type="password" placeholder="Senha" formControlName="password">
           <app-input-validation *ngIf="passwordInvalid" [type]="'input'" [message]="'Campo obrigatório!'"></app-input-validation>
@@ -20,9 +20,9 @@
           <p class="padd recovery-password"><a [routerLink]="['../recovery']">Esqueceu sua senha?</a></p>
   
           <div class="main-content-buttons paddTop">
-            <button type="submit" class="button button-green buttonLogin">LOGIN</button>
+            <button type="submit" class="button button-green buttonLogin">Login</button>
             <a [routerLink]="['/register']"><button type="button"
-                class="button button-gray buttonCancel">CADASTRAR</button></a>
+                class="button button-gray buttonCancel">Cadastrar</button></a>
           </div>
         </form>
   

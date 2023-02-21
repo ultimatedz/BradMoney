@@ -1,21 +1,32 @@
 <app-header></app-header>
 <section class="backGround">
-    <div class="card">
-        <div class="left-content">
-            <h1>Esqueceu sua senha?</h1>
-            <p>verificamos sua identida com seu usuário e CPF</p>
+  <div class="card">
+    <div class="left-content" *ngIf="!recoverySuccessfully">
+      <div class="recovery-loader" *ngIf="showRecoveryLoader">
+        <app-loader></app-loader>
+      </div>
 
-            <form class="paddTop">
-                <input class="inputLogin" type="text" placeholder="Usuário" required>
-                <input class="inputLogin" type="text" placeholder="CPF" required>
-            </form>
-            <br>
-            <div class="main-content-buttons paddTop">
-                <!-- <a [routerLink]="['/new-password']"><button class="button button-green buttonLogin">NOVA SENHA</button></a> -->
-                <button (click)="handleResetPassword()" class="button button-green buttonLogin">Nova Senha</button>
-                <button class="button button-gray buttonCancel" [routerLink]="['']">CANCELAR</button>
-            </div>
+      <h1>Esqueceu sua senha?</h1>
+      <p>Insira seu email para receber as instrução</p>
 
+      <form class="paddTop" (ngSubmit)="handleResetPassword($event)" [formGroup]="recoveryForm">
+        <app-input-validation *ngIf="requestAlreadyMade" type="input" [message]="'Por segurança, você só pode requisitar a alteração a cada um minuto.'"></app-input-validation>
+
+        <input class="inputLogin" type="email" placeholder="Email" id="email" formControlName="email">
+        <app-input-validation *ngIf="emailInvalid" type="input" [message]="'Email Inválido!'"></app-input-validation>
+
+        <div class="main-content-buttons paddTop">
+          <button type="submit" class="button button-green buttonConfirm">Nova Senha</button>
+          <button type="button" class="button button-gray buttonCancel" [routerLink]="['/login']">Cancelar</button>
         </div>
+      </form>
     </div>
+
+    <div class="request-successfully" *ngIf="recoverySuccessfully">
+      <h1>Pedido realizado com sucesso!</h1>
+      <p>Enviamos um email com as instruções para realizar a alteração de senha, verifique sua caixa de email.</p>
+
+      <button class="button button-green" [routerLink]="['/login']">Login</button>
+    </div>
+  </div>
 </section>
