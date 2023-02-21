@@ -15,7 +15,7 @@
           <app-input-validation *ngIf="emailInvalid" [message]="'Email Inválido!'"></app-input-validation>
   
           <input class="inputLogin" type="password" placeholder="Senha" formControlName="password">
-          <app-input-validation *ngIf="passwordInvalid" [message]="'Campo obrigatório!'"></app-input-validation>
+          <app-input-validation *ngIf="passwordInvalid" [type]="'input'" [message]="'Campo obrigatório!'"></app-input-validation>
   
           <p class="padd recovery-password"><a [routerLink]="['../recovery']">Esqueceu sua senha?</a></p>
   
@@ -25,7 +25,6 @@
                 class="button button-gray buttonCancel">CADASTRAR</button></a>
           </div>
         </form>
-  
   
       </div>
       <div class="right-content">

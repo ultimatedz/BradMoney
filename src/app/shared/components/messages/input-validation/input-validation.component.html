@@ -1,1 +1,3 @@
-<p class="error-message">{{ message }}</p>
+<p *ngIf="type === 'input'" class="error-message">{{ message }}</p>
+
+<span *ngIf="type === 'checkbox'" class="error-message">{{ message }}</span>

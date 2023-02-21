@@ -3,11 +3,25 @@
 .left-content {
   display: flex;
   flex: 1;
-
   flex-direction: column;
   padding: 2.5rem;
   text-align: left;
   background-color: white;
+  position: relative;
+
+  .register-loader{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .6);
+    width: 100%;
+    height: calc(100% + 2rem);
+    top: -1rem;
+    left: 0;
+    border-radius: 20px 0 0 20px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   h1 {
     font-weight: 900;
@@ -26,7 +40,7 @@
     .form-checkbox, .form-buttons{
       margin-top: .5rem;
     }
-  
+
   }
 
   .checkbox {
@@ -58,7 +72,17 @@
     margin-top: 18px;
     padding-left: 10px;
     color: variables.$gray-600;
+  }
 
+  .input-password {
+    position: relative;
+
+    .input-password-tooltip {
+      position: absolute;
+      right: 0;
+      top: 3.5rem;
+      z-index: 1;
+    }
   }
 
   input :focus,

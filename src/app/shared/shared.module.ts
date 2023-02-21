@@ -4,6 +4,8 @@ import { SliderComponent } from './components/slider/slider.component';
 import { InputValidationComponent } from './components/messages/input-validation/input-validation.component';
 import { FormValidationComponent } from './components/messages/form-validation/form-validation.component';
 import { AlertComponent } from './components/messages/alert/alert.component';
+import { TooltipComponent } from './components/tooltip/tooltip.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -11,6 +13,8 @@ import { AlertComponent } from './components/messages/alert/alert.component';
     InputValidationComponent,
     FormValidationComponent,
     AlertComponent,
+    TooltipComponent,
+    LoaderComponent,
   ],
   imports: [
     CommonModule
@@ -19,7 +23,9 @@ import { AlertComponent } from './components/messages/alert/alert.component';
     SliderComponent,
     InputValidationComponent,
     FormValidationComponent,
-    AlertComponent
+    AlertComponent,
+    TooltipComponent,
+    LoaderComponent
   ]
 })
 export class SharedModule { }

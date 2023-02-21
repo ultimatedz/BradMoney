@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class InputValidationComponent {
   @Input() message!:string
+  @Input() type!:string
 }

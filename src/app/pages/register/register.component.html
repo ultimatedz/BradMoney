@@ -2,15 +2,34 @@
 <section class="backGround" >
   <div class="card">
     <div class="left-content" *ngIf="!accountCreated">
+
+      <div class="register-loader" *ngIf="showLoader">
+        <app-loader></app-loader>
+      </div>
+
       <h1>REGISTRO</h1>
       <p>Realize seu cadastro!</p>
       <form (ngSubmit)="handleSubmit($event)" [formGroup]="registerForm">
+
         <input class="inputLogin" type="text" id="name" placeholder="Nome" formControlName="name">
+        <app-input-validation *ngIf="inputValidations.name.invalid" [type]="'input'" [message]="inputValidations.name.error"></app-input-validation>
+
         <input class="inputLogin" type="email" id="email" placeholder="Email" formControlName="email">
-        <input class="inputLogin" type="password" id="password" placeholder="Senha" formControlName="password">
-        <input class="inputLogin" type="text" id="cpf" placeholder="CPF" formControlName="cpf">
+        <app-input-validation *ngIf="inputValidations.email.invalid" [type]="'input'" [message]="inputValidations.email.error"></app-input-validation>
+
+        <div class="input-password">
+          <input class="inputLogin" type="password" id="password" placeholder="Senha" (focus)="handleShowTooltipPassword(true)" (focusout)="handleShowTooltipPassword(false)" formControlName="password">
+          <app-tooltip class="input-password-tooltip" *ngIf="showTooltipPassword"></app-tooltip>
+        </div>
+
+        <app-input-validation *ngIf="inputValidations.password.invalid" [type]="'input'" [message]="inputValidations.password.error"></app-input-validation>
+
+        <input class="inputLogin" type="text" id="cpf" placeholder="CPF" (input)="maskCPF()" formControlName="cpf">
+        <app-input-validation *ngIf="inputValidations.cpf.invalid" [type]="'input'" [message]="inputValidations.cpf.error"></app-input-validation>
+
         <div class="align form-checkbox">
           <mat-checkbox formControlName="terms">Eu aceito os termos de uso</mat-checkbox>
+          <app-input-validation *ngIf="inputValidations.terms.invalid" [type]="'checkbox'" [message]="inputValidations.terms.error"></app-input-validation>
         </div>
 
         <div class="main-content-buttons form-buttons">
