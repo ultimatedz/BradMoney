@@ -11,7 +11,8 @@
             </form>
             <br>
             <div class="main-content-buttons paddTop">
-                <a [routerLink]="['/new-password']"><button class="button button-green buttonLogin">NOVA SENHA</button></a>
+                <!-- <a [routerLink]="['/new-password']"><button class="button button-green buttonLogin">NOVA SENHA</button></a> -->
+                <button (click)="handleResetPassword()" class="button button-green buttonLogin">Nova Senha</button>
                 <button class="button button-gray buttonCancel" [routerLink]="['']">CANCELAR</button>
             </div>
 

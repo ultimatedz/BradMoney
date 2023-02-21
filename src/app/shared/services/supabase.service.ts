@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AuthChangeEvent, AuthSession, createClient, Session, SupabaseClient } from '@supabase/supabase-js';
 import { environment } from 'src/app/environments/environments';
-import { RegisterForm } from '../models/register-form.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +21,14 @@ export class SupabaseService {
     return this._session
   }
 
+  get authStateChange(){
+    const test = this.supabase.auth.onAuthStateChange(((event, session) => {
+      return {event, session}
+    }))
+
+    return test
+  }
+
   get users() {
     return this.supabase.from('users').select()
   }
@@ -35,6 +42,12 @@ export class SupabaseService {
       .from('users')
       .insert({ name: user.name, email: user.email, password: user.password, cpf: user.cpf, terms: user.terms })
       .select()
+  }
+
+  resetPassword(email: string){
+    return this.supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: 'http://localhost:4200/new-password',
+    })
   }
 
   authChanges(callback: (event: AuthChangeEvent, session: Session | null) => void) {
