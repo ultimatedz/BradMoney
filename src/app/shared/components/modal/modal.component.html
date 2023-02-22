@@ -1,9 +1,9 @@
 <div class="modal-container hidden" id="modal">
-  <div class="modal-content">
+  <div class="modal-content" *ngIf="modalList">
     
     <img class="modal-close-button" src="../../../../assets/icons/close-icon.svg" (click)="handleCloseModal()" alt="Ícone de saída">
     
-    <h1>{{ modalList.title }}</h1>
+    <h1 >{{ modalList.title }}</h1>
 
     <ul>
       <li>
