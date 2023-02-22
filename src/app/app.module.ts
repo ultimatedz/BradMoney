@@ -20,6 +20,8 @@ import { NewPasswordComponent } from './pages/new-password/new-password.componen
 import { ChartComponent } from './features/dashboard/components/chart/chart.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
 import { DashboardRoutingModule } from './features/dashboard/dashboard-routing.module';
+import { ServicePageComponent } from './pages/service-page/service-page.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { DashboardRoutingModule } from './features/dashboard/dashboard-routing.m
         RecoveryComponent,
         NewPasswordComponent,
         ModalComponent,
+        ServicePageComponent,
+        ContactPageComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

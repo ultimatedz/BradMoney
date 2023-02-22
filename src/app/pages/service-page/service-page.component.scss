@@ -1,0 +1,589 @@
+@use '../../../scss/variables';
+
+.main-container {
+  min-height: calc(100vh - 120px);
+}
+
+.main-content {
+  margin-top: 2.5rem;
+  display: flex;
+  padding: 0 1.5rem;
+}
+
+.main-content-titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5rem 0;
+
+  div:first-of-type span {
+    margin-top: 1.2rem;
+  }
+}
+
+.main-content h2 {
+  color: variables.$green-600;
+  position: relative;
+  font-weight: bold;
+  font-size: 1.5rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 313px;
+    background-color: variables.$gray-300;
+    top: -1rem;
+    border-radius: 10px;
+  }
+}
+
+.main-content h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: variables.$gray-600;
+}
+
+.main-content-titles span {
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+  color: variables.$gray-600;
+  line-height: 1.5rem;
+}
+
+.main-content-buttons {
+  display: flex;
+  gap: 1.25rem;
+
+  button:last-of-type {
+    padding: 1rem 2rem;
+  }
+}
+
+.main-description {
+  margin-top: 3rem;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.main-description-customer {
+  background-color: variables.$white;
+  box-shadow: 5px 5px 40px rgba(172, 176, 202, 0.6);
+  border-radius: 20px;
+  padding: 1.5rem;
+  max-width: 30%;
+  position: relative;
+
+  .timer-background {
+    position: absolute;
+    right: -4.5rem;
+    top: 60%;
+    width: 150px;
+    z-index: -1;
+  }
+}
+
+.main-description-highlights {
+  display: flex;
+  gap: 1.5rem;
+  max-width: 55%;
+
+  div {
+    color: variables.$gray-600;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    margin-top: 1rem;
+    padding-top: .5rem;
+    min-width: 60%;
+
+    &::before {
+      content: '';
+      top: -.8rem;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      background-color: variables.$gray-600;
+    }
+
+    h3 {
+      margin-top: .625rem;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+.main-brief-presentation{
+  margin-top: 2.5rem;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: variables.$gray-600;
+  
+  div{
+    max-width: 40%;
+
+    h2 {
+      font-weight: bold;
+      font-size: 2.5rem;
+    }
+  
+    p {
+      margin-top: 1rem;
+      font-weight: 500;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+.main-cards{
+  margin-top: 5.5rem;
+  padding: 0 1.5rem;
+  color: variables.$gray-600;
+  position: relative;
+
+  h2 {
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    .card-container {
+      box-shadow: 10px 10px 40px rgba(192, 197, 233, 0.6);
+      border-radius: 20px;
+      max-width: 23%;
+      padding: 2rem 1rem 4rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      min-height: 430px;
+
+      h2 {
+        margin-top: 2rem;
+        font-weight: bold;
+        font-size: 1rem;
+        text-transform: uppercase;
+        text-align: center;
+        min-height: 2rem;
+      }
+
+      mat-card-content{
+        margin-top: 1rem;
+        font-weight: 500;
+        font-size: .875rem;
+        line-height: 20px;
+      }
+
+      mat-card-actions{
+        position: absolute;
+        padding: 0;
+        min-height: auto;
+        width: 100%;
+        bottom: 0;
+        border-radius: 0 0 20px 20px;
+
+        button {
+          background-color: variables.$white;
+          width: 100%;
+          border: none;
+          border-radius: 0 0 20px 20px;
+          padding: 1rem;
+          color: variables.$green-600;
+          font-weight: 500;
+          font-size: 1rem;
+          transition: all .4s ease-in-out;
+
+          &:hover {
+            color: variables.$white;
+            background-color: variables.$green-600;
+          }
+        }
+      }
+    }
+  }
+
+  .card-background, .creditCard-background {
+    position: absolute;
+    width: 150px;
+    z-index: -1;
+  }
+
+  .card-background {
+    right: 1rem;
+    top: -2.5rem;
+  }
+
+  .creditCard-background{
+    right: 2rem;
+    bottom: -9rem;
+  }
+}
+
+.main-video {
+  position: relative;
+  padding: 0 1.5rem;
+  margin-top: 5.5rem;
+  color: variables.$gray-600;
+  border-radius: 10px;
+
+  h2 {
+    font-weight: bold;
+    font-size: 2.5rem;
+  }
+
+  .card-container{
+    margin-top: 2rem;
+
+    mat-card-content{
+      display: flex;
+      padding: 0;
+      
+      div {
+        padding: 1.5rem;
+        max-width: 25%;
+        line-height: 1.5rem;
+        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        p {
+          display: flex;
+          align-items: center;
+          gap: .5rem;
+
+          span {
+            margin-top: .2rem;
+          }
+
+          img {
+            width: 25px;
+          }
+        }
+      }
+
+      iframe {
+        width: 100%;
+        border-radius: 0 4px 4px 0;
+      }
+    }
+  }
+
+  .bars-background{
+    position: absolute;
+    bottom: -5rem;
+    left: 0;
+    z-index: -1;
+    width: 200px;
+  }
+}
+
+// Medias Queries
+
+@media only screen and (max-width: 1024px) {
+  .main-content {
+    margin-top: 1rem;
+
+    img {
+      width: 500px;
+      height: 400px;
+      object-fit: contain;
+    }
+  }
+
+  .main-content-titles {
+    padding: 2rem 0;
+  }
+
+  .main-description-customer {
+    max-width: 45%;
+
+    .timer-background {
+      width: 125px;
+      right: -3.5rem;
+    }
+  }
+
+  .main-description-highlights {
+    div {
+      h3 {
+        font-size: .85rem;
+        line-height: 1.25rem;
+      }
+    }
+  }
+
+  .main-brief-presentation{
+    margin-top: 5rem;
+
+    div {
+      max-width: 100%;
+
+      h2 {
+        font-size: 2rem;
+      }
+    }
+
+    img {
+      max-width: 50%;
+    }
+  }
+
+  .main-cards{
+    section {
+      margin-top: 2rem;
+  
+      .card-container {
+        min-height: 480px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main-container {
+    min-height: calc(100vh - 2rem);
+  }
+  
+  .main-content {
+    margin-top: 2rem;
+
+    img {
+      display: none;
+    }
+  }
+
+  .main-content-titles {
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .main-description-customer {
+    max-width: 65%;
+    height: fit-content;
+  
+    .timer-background {
+      right: -3.5rem;
+      top: 65%;
+      width: 125px;
+    }
+  }
+
+  .main-description-highlights {
+    justify-content: space-between;
+    gap: initial;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 1rem 0;
+    margin-top: 1rem;
+  
+    div {
+      font-size: 1rem;
+      margin-top: initial;
+      padding-top: initial;
+  
+      &::before {
+        content: '';
+        height: 2px;
+      }
+  
+      h3 {
+        margin-top: .1rem;
+        line-height: 1.2rem;
+        font-size: .8rem;
+      }
+    }
+  }
+
+  .main-brief-presentation{
+    padding: 0 1rem;
+    position: relative;
+    gap: 1rem;
+    margin-top: 2rem;
+    
+    div{
+      max-width: 100%;
+  
+      h2 {
+        font-size: 2rem;
+        position: absolute;
+        top: -3rem;
+      }
+    
+      p {
+        margin-top: 0;
+      }
+    }
+
+    img {
+      width: 50%;
+    }
+  }
+
+  .main-cards{
+    padding: 0 1rem;
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    section {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+  
+      .card-container {
+        border-radius: 10px;
+        max-width: 48%;
+        min-height: 380px;
+      }
+    }
+  
+    .card-background, .creditCard-background {
+      width: 125px;
+    }
+  
+    .creditCard-background{
+      right: 1rem;
+      bottom: -7rem;
+    }
+  }
+
+  .main-video {
+    padding: 0 1rem;
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    .card-container{
+      mat-card-content{    
+        flex-direction: column;
+        
+        div {
+          order: 2;
+          font-size: .85rem;
+          max-width: 100%;
+          line-height: initial;
+          flex-wrap: wrap;
+          gap: .5rem;
+          justify-content: space-between;
+  
+          p {
+            align-items: initial;
+          }
+        }
+  
+        iframe {
+          order: 1;
+          height: 300px;
+        }
+      }
+    }
+  
+    .bars-background{
+      width: 125px;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .main-content h1 {
+    line-height: 3rem;
+  }
+  
+  .main-description {
+    padding: 0 .5rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .main-description-customer {
+    border-radius: 10px;
+    padding: 1rem;
+    max-width: 100%;
+  
+    .timer-background {
+      display: none;
+    }
+  }
+
+  .main-description-highlights {
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .main-brief-presentation{
+    padding: 0 .5rem;
+    margin-top: 4rem;
+    flex-direction: column;
+    
+    div{
+      order: 2;
+      h2 {
+        font-size: 1.5rem;
+        top: -2.5rem;
+      }
+    }
+
+    img {
+      order: 1;
+      max-width: 100%;
+      width: 80%;
+    }
+  }
+
+  .main-cards{
+    margin-top: 2.5rem;
+    padding: 0 .5rem;
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    section {
+      flex-direction: column;
+      flex-wrap: nowrap;
+  
+      .card-container {
+        max-width: 80%;
+        min-height: 300px;
+      }
+    }
+  
+    .card-background, .creditCard-background {
+      display: none;
+    }
+  }
+
+  .main-video {
+    padding: 0 .5rem;
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    .card-container{
+      mat-card-content{      
+        iframe {
+          order: 1;
+          height: 200px;
+          border-radius: 4px;
+        }
+      }
+    }
+  
+    .bars-background{
+      display: none;
+    }
+  }
+}
