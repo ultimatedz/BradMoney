@@ -8,6 +8,9 @@ import { Modal } from '../../models/modal.model';
 })
 export class ModalComponent {
   
-  @Input() modalsList: Modal[] = []
+  @Input() modalList!: Modal 
 
+  handleCloseModal(){
+    document.querySelector('#modal')?.classList.add('hidden')
+  }
 }

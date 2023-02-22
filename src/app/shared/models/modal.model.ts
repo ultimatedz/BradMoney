@@ -1,9 +1,11 @@
 export interface Modal {
-    backImage: string,
+    bannerImage: string,
     title: string,
-    textOne: string,
-    textTwo: string,
-    textThree: string,
-    textFour: string
+    highlights: {
+      highlightOne: string,
+      highlightTwo: string,
+      highlightThree: string,
+      highlightFour: string,
+    },
   }
   

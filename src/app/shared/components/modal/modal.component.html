@@ -1,15 +1,32 @@
-<div class="card hidden" *ngFor="let item of modalsList; index as i">
-    <img class="backgroundImage" src="../../../assets/icons/{{ item.backImage }}" alt="Icon">
-    <div class="content">
-        <h1>{{ item.title }}</h1>
-        <div id="itens">
-            <div class="align"><img src="../../../assets/icons/check.svg"  alt="Checkmark icon"><span>&nbsp; {{ item.textOne }}</span></div>
+<div class="modal-container hidden" id="modal">
+  <div class="modal-content">
+    
+    <img class="modal-close-button" src="../../../../assets/icons/close-icon.svg" (click)="handleCloseModal()" alt="Ícone de saída">
+    
+    <h1>{{ modalList.title }}</h1>
 
-            <div class="align"><img src="../../../assets/icons/check.svg"  alt="Checkmark icon"><span>&nbsp; {{ item.textTwo }}</span></div>
+    <ul>
+      <li>
+        <img src="../../../../assets/icons/check.svg" alt="Ícone de okay">
+        <span>{{ modalList.highlights.highlightOne }}</span>
+      </li>
 
-            <div class="align"><img src="../../../assets/icons/check.svg"  alt="Checkmark icon"><span>&nbsp; {{ item.textThree }}</span></div>
+      <li>
+        <img src="../../../../assets/icons/check.svg" alt="Ícone de okay">
+        <span>{{ modalList.highlights.highlightTwo }}</span>
+      </li>
 
-            <div class="align"><img src="../../../assets/icons/check.svg"  alt="Checkmark icon"><span>&nbsp; {{ item.textFour }}</span></div>
-        </div>
-    </div>
+      <li>
+        <img src="../../../../assets/icons/check.svg" alt="Ícone de okay">
+        <span>{{ modalList.highlights.highlightThree }}</span>
+      </li>
+
+      <li>
+        <img src="../../../../assets/icons/check.svg" alt="Ícone de okay">
+        <span>{{ modalList.highlights.highlightFour}}</span>
+      </li>
+    </ul>
+
+    <img class="modal-banner" src="../../../../assets/icons/{{modalList.bannerImage}}" alt="Ícone de prancheta com vários gráficos impressos no papel">
+  </div>
 </div>

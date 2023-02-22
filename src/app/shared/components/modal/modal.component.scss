@@ -1,62 +1,73 @@
 @use '../../../../scss/variables';
 
-.backgroundImage{
-    z-index: 990;
-    right: 2rem;
-    bottom: 2rem;
-    position: absolute;
-    width: 5rem;
-}
+.modal-container {
+  position: fixed;
+  background-color: rgba(0, 0, 0, .7);
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.content {
+  .modal-content {
+    background-color: variables.$white;
+    padding: 3rem 6rem 3rem 3rem;
+    border-radius: 8px;
     display: flex;
-    flex: 1;
     flex-direction: column;
-    padding: 2.5rem;
-    text-align: left;
-    z-index: 995;
+    gap: 2rem;
+    box-shadow: 5px 5px 40px rgba(157, 160, 179, 0.6);
+    position: relative;
+
+    .modal-close-button {
+      position: absolute;
+      right: .8rem;
+      top: .8rem;
+      cursor: pointer;
+    }
 
     h1 {
-        font-weight: 900;
-        font-size: 2.5rem;
-        color: variables.$gray-600;
-        padding-bottom: 15px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      color: variables.$gray-600;
     }
-    
-    div .align {
+
+    ul {
+      li {
         display: flex;
         align-items: center;
-        padding-top: 20px;
+        gap: .25rem;
+
+        img {
+          width: 30px;
+        }
+
+        span {
+          color: variables.$gray-600;
+          font-weight: 500;
+        }
+
+        &:not(:first-child){
+          margin-top: 1rem;
+        }
+      }
     }
 
-    img {
-        width: 20px;
+    .modal-banner {
+      width: 80px;
+      position: absolute;
+      bottom: 2.5rem;
+      right: 2.5rem;
+      transform: rotate(30deg);
     }
-
-    #itens{
-        align-items: center;
-        text-align: center;
-        color:variables.$gray-600;
-    }
+  }
 }
 
-.card {
-    display: flex;
-    width: 50%;
-    max-width: 800px;
-    height: 400px;
-    margin: 150px auto 0;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 5px 5px 40px rgba(172, 176, 202, 0.6);
-    justify-content: space-between;
-    overflow: hidden;
-    z-index: 985;
-}
-
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }

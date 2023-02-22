@@ -1,6 +1,9 @@
 <app-header></app-header>
 
 <div class="container">
+
+  <app-modal [modalList]="modalSelected"></app-modal>
+
   <section class="main-container">
     <section class="main-content">
       <img src="../assets/images/banner-home.png" alt="">
@@ -68,7 +71,7 @@
             evolução dos seus investimentos e todos os demais ativos.</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>Como funciona?</button>
+          <button mat-button (click)="handleOpenModal(0)">Como funciona?</button>
         </mat-card-actions>
       </mat-card>
 
@@ -80,7 +83,7 @@
             adicionais. Receba lembretes para pagar suas faturas e contas em dia.</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>Como funciona?</button>
+          <button mat-button (click)="handleOpenModal(1)">Como funciona?</button>
         </mat-card-actions>
       </mat-card>
 
@@ -92,7 +95,7 @@
             mais perto de alcançar seus sonhos e objetivos.</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>Como funciona?</button>
+          <button mat-button (click)="handleOpenModal(2)">Como funciona?</button>
         </mat-card-actions>
       </mat-card>
 
@@ -103,7 +106,7 @@
           <p>Aplicativo para você gerenciar seus ativos e passivos a qualquer hora do dia, tudo na palma da sua mão.</p>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-button>Como funciona?</button>
+          <button mat-button (click)="handleOpenModal(3)">Como funciona?</button>
         </mat-card-actions>
       </mat-card>
 
@@ -111,7 +114,6 @@
       <img class="creditCard-background" src="../assets/icons/creditCard-background.svg"
         alt="Ícone de cartão de crédito">
     </section>
-    <app-modal [modalsList]="modalList"></app-modal>
   </section>
 
   <section class="main-video">

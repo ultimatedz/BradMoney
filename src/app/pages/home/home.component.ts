@@ -38,37 +38,52 @@ export class HomeComponent  {
 
   modalList: Modal[] = [
     {
-      backImage: 'task-dashboard.png',
+      bannerImage: 'task-dashboard.png',
       title: 'Controle seus investimentos',
-      textOne: 'Poder total para controlar todos os seus investimento',
-      textTwo: 'Dashboard completa com os valores investidos',
-      textThree: 'Gráficos com frudos de investimento por tipo',
-      textFour: 'Fácil, rápido e gratuíto'
+      highlights: {
+        highlightOne: 'Poder total para controlar todos os seus investimento',
+        highlightTwo: 'Dashboard completa com os valores investidos',
+        highlightThree: 'Gráficos com frudos de investimento por tipo',
+        highlightFour: 'Fácil, rápido e gratuíto',
+      }
     },
     {
-      backImage: 'money.png',
+      bannerImage: 'money.png',
       title: 'Controle suas despesas',
-      textOne: 'Gerenciamento total das suas despesas',
-      textTwo: 'Controle dos cartões de crédito e débito',
-      textThree: 'Centro de custos e despesas',
-      textFour: 'Metas de Gastos'
+      highlights: {
+        highlightOne: 'Gerenciamento total das suas despesas',
+        highlightTwo: 'Controle dos cartões de crédito e débito',
+        highlightThree: 'Centro de custos e despesas',
+        highlightFour: 'Metas de Gastos',
+      }
     },
     {
-      backImage: 'calendar.png',
+      bannerImage: 'calendar.png',
       title: 'Acompanhe seu dinheiro',
-      textOne: 'Objetivos financeiros claros e de fácil compreensão',
-      textTwo: 'Gráficos com acompanhamento de despesas e receitas',
-      textThree: 'Defina metas de despesas',
-      textFour: 'Alcançe seus objetivos'
+      highlights: {
+        highlightOne: 'Objetivos financeiros claros e de fácil compreensão',
+        highlightTwo: 'Gráficos com acompanhamento de despesas e receitas',
+        highlightThree: 'Defina metas de despesas',
+        highlightFour: 'Alcançe seus objetivos',
+      }
     },
     {
-      backImage: 'clock.png',
+      bannerImage: 'clock.png',
       title: 'Gerencie seu dinheiro',
-      textOne: 'Gerenciamento de passivos e ativos a qualquer momento',
-      textTwo: 'Aplicativo de fácil acesso, prático, fácil e rápido',
-      textThree: 'Atualizações automáticas e em real-time',
-      textFour: 'Controle total do seu dinheiro'
+      highlights: {
+        highlightOne: 'Gerenciamento de passivos e ativos a qualquer momento',
+        highlightTwo: 'Aplicativo de fácil acesso, prático, fácil e rápido',
+        highlightThree: 'Atualizações automáticas e em real-time',
+        highlightFour: 'Controle total do seu dinheiro',
+      }
     }
   ]
+
+  modalSelected!: Modal
+
+  handleOpenModal(identifier: number){
+    this.modalSelected = this.modalList[identifier]
+    document.querySelector('#modal')?.classList.remove('hidden')
+  }
 
 }
