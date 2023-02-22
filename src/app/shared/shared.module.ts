@@ -6,6 +6,7 @@ import { FormValidationComponent } from './components/messages/form-validation/f
 import { AlertComponent } from './components/messages/alert/alert.component';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { SplitPipe } from './pipes/split.pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     AlertComponent,
     TooltipComponent,
     LoaderComponent,
+    SplitPipe,
   ],
   imports: [
     CommonModule
@@ -25,7 +27,8 @@ import { LoaderComponent } from './components/loader/loader.component';
     FormValidationComponent,
     AlertComponent,
     TooltipComponent,
-    LoaderComponent
+    LoaderComponent,
+    SplitPipe
   ]
 })
 export class SharedModule { }

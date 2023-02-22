@@ -13,7 +13,7 @@ export class LineChartComponent {
     this.createChart();
     const canvas = <HTMLCanvasElement> document.getElementById('myChart');
     const ctx = canvas.getContext('2d');
-    console.log(ctx);
+    // console.log(ctx);
   }
 
   createChart(){

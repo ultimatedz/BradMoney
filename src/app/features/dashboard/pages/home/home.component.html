@@ -1,0 +1,56 @@
+<div class="dashboard-loader" *ngIf="!user">
+  <app-loader></app-loader>
+</div>
+
+<div class="main" *ngIf="user">
+  <app-dashboard></app-dashboard>
+  <div class="main-container">
+      <div class="upper-container">
+          <div class="investimento-content">
+              <div class="header-investimentos"> 
+                  <div class="title-investimentos">
+                      <span>INVESTIMENTOS</span>
+                  </div>
+                  <div class="year-investimentos">
+                      <span>2022</span>
+                      <img src="./../../../../../assets/icons/drop-down-arrow.png">
+                  </div>
+              </div>
+              <div class="chart-investimento">
+                  <app-line-chart></app-line-chart>
+              </div>
+          </div>
+          <div class="acoes-content">
+              <div class="title-acoes">
+                  <span>AÇÕES</span>
+
+              </div>
+          </div>
+      </div>
+      <div class="lower-container">
+          <div class="pagamentos-content">
+              <div class="header-pagamentos">
+                  <div class="title-pagamentos">
+                      <span>PAGAMENTOS</span>
+                  </div>
+                  <div class="month-pagamentos">
+                      <span>DEZ/22</span>
+                  </div>
+              </div>
+              <hr>
+              <div class="pagamentos-chart">
+                  <app-chart></app-chart>
+              </div>
+          </div>
+          <div class="historico-content">
+              <div class="title-historico">
+                  <span>ULTIMOS PAGAMENTOS</span>
+              </div>
+              <hr>
+              <div class="table-historico">
+                  <app-table-history></app-table-history>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

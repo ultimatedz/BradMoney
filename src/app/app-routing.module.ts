@@ -5,10 +5,6 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { NewPasswordComponent } from './pages/new-password/new-password.component';
-import { ModalComponent } from './shared/components/modal/modal.component';
-import { DashboardExitComponent } from './features/dashboard/pages/dashboard-exit/dashboard-exit.component';
-import { DashboardContactComponent } from './features/dashboard/pages/dashboard-contact/dashboard-contact.component';
-import { DashboardHomeComponent } from './features/dashboard/pages/dashboard-home/dashboard-home.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

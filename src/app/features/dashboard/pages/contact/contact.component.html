@@ -1,0 +1,39 @@
+<div class="main">
+  <app-dashboard></app-dashboard>
+  <div class="main-container">
+    <div class="card">
+      <div class="content">
+        <h1>Fale conosco</h1>
+
+        <form>
+          <div class="form-group-input">
+            <label for="name">Nome</label>
+            <input type="text" id="name">
+          </div>
+          <div class="form-group-input">
+            <label for="email">Email</label>
+            <input type="email" id="email">
+          </div>
+          <div class="form-group-input">
+            <label for="phone">Telefone</label>
+            <input type="phone" id="phone">
+          </div>
+          <div class="form-group-input">
+            <label for="title-message">Assunto</label>
+            <input type="text" id="title-message">
+          </div>
+          <div class="form-group-input">
+            <label for="description-message">Mensagem</label>
+            <textarea id="description-message" cols="30" rows="5"></textarea>
+          </div>
+
+          <div class="form-group-buttons">
+            <button class="button button-green buttonSend">Enviar</button>
+            <button class="button button-gray buttonCancel" [routerLink]="['../dashboard']">Cancelar</button>
+          </div>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>

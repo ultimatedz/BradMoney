@@ -3,18 +3,19 @@ import { Router } from '@angular/router';
 import { SupabaseService } from 'src/app/shared/services/supabase.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class HomeComponent implements OnInit {
   session = this.supaBaseService.session
   user!: any
+  showDashboard = false
 
   constructor(
-    private supaBaseService: SupabaseService, 
-    private router: Router,
-    ){}
+    private supaBaseService: SupabaseService,
+    private router: Router
+  ) { }
 
   async ngOnInit(): Promise<void> {
 
@@ -30,4 +31,9 @@ export class DashboardComponent implements OnInit {
     }
   }
 
+  async handleSignOut() {
+    await this.supaBaseService.signOut()
+
+    this.router.navigate(['/'])
+  }
 }

@@ -1,13 +1,17 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardContactComponent } from "./pages/dashboard-contact/dashboard-contact.component";
-import { DashboardExitComponent } from "./pages/dashboard-exit/dashboard-exit.component";
-import { DashboardHomeComponent } from "./pages/dashboard-home/dashboard-home.component";
+import { ContactComponent } from "./pages/contact/contact.component";
+import { ExitComponent } from "./pages/exit/exit.component";
+import { HomeComponent } from "./pages/home/home.component";
+import { InvestmentsComponent } from "./pages/investments/investments.component";
+import { PaymentsComponent } from "./pages/payments/payments.component";
 
 const routes: Routes = [
-  {path: '', component: DashboardHomeComponent, pathMatch: 'full'},
-  {path: 'exit', component: DashboardExitComponent},
-  {path: 'contact', component: DashboardContactComponent}
+  {path: '', component: HomeComponent, pathMatch: 'full'},
+  {path: 'payments', component: PaymentsComponent},
+  {path: 'investments', component: InvestmentsComponent},
+  {path: 'exit', component: ExitComponent},
+  {path: 'contact', component: ContactComponent}
 ];
 
 @NgModule({

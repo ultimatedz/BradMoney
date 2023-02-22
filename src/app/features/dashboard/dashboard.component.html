@@ -1,50 +1,54 @@
-<div class="main-container" >
-    <div class="dashboard-menu">
-        <div class="dashboard-title" [routerLink]="['']">
-            <img src="../../../../assets/images/BradMoney-logo.png">
-        </div>
-        <div class="dashboard-options">
-            <div class="dashboard-user-content">
-                <img src="./../../../assets/icons/user-icon.png">
-                <span *ngIf="user">{{ user.name }}</span>
-            </div>
-            <hr class="hr-main">
-            <div class="dashboard-options-content">
-                <a [routerLink]="['../dashboard']">
-                    <div class="dashboard-card dashboard-active">
-                        <img src="./../../../assets/icons/user-icon-alpha.svg" class="dashboard-icons">
-                        <span>Home</span>
-                    </div>
-                </a>
-
-                <a [routerLink]="['../pagamentos']">
-                    <div class="dashboard-card">
-                        <img src="./../../../assets/icons/payment-icon.png" class="dashboard-icons">
-                        <span>Pagamentos</span>
-                    </div>
-                </a>
-
-                <div class="dashboard-card">
-                    <img src="./../../../assets/icons/investimento-icon.png" class="dashboard-icons">
-                    <span>Investimentos</span>
-                </div>
-                <a [routerLink]="['../contact']">
-                    <div class="dashboard-card">
-                        <img src="./../../../assets/icons/fale-conosco-icon.png" class="dashboard-icons">
-                        <span>Fale Conosco</span>
-                    </div>
-                </a>
-                <a [routerLink]="['../exit']">
-                    <div class="dashboard-card">
-                        <img src="./../../../assets/icons/exit-icon.png" class="dashboard-icons">
-                        <span>Sair</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <hr>
+<div class="main-container">
+  <div class="dashboard-menu">
+    <div class="dashboard-title" [routerLink]="['']">
+      <img src="../../../../assets/images/BradMoney-logo.png">
     </div>
-    <div class="outlet">
-        <router-outlet></router-outlet>
+    <div class="dashboard-options">
+      <div class="dashboard-user-content">
+        <img src="./../../../assets/icons/user-icon.png">
+        <span *ngIf="user">{{ user.name | split: " ": 0 }} {{ user.name | split: " ": 1 }}</span>
+      </div>
+      <hr class="hr-main">
+      <div class="dashboard-options-content">
+        <a [routerLink]="['../dashboard']">
+          <div class="dashboard-card" routerLinkActive="dashboard-active" #routeHome="routerLinkActive">
+            <img [src]="routeHome.isActive ? './../../../assets/icons/user-icon-white.svg' : './../../../assets/icons/user-icon-gray.svg'" class="dashboard-icons">
+            <span>Home</span>
+          </div>
+        </a>
+
+        <a [routerLink]="['../payments']">
+          <div class="dashboard-card" routerLinkActive="dashboard-active" #routePayment="routerLinkActive">
+            <img [src]="routePayment.isActive ? './../../../assets/icons/payment-icon-white.svg' : './../../../assets/icons/payment-icon-gray.svg'" class="dashboard-icons">
+            <span>Pagamentos</span>
+          </div>
+        </a>
+
+        <a [routerLink]="['../investments']">
+          <div class="dashboard-card" routerLinkActive="dashboard-active" #routeInvestments="routerLinkActive">
+            <img [src]="routeInvestments.isActive ? './../../../assets/icons/investments-icon-white.svg' : './../../../assets/icons/investments-icon-gray.svg'" class="dashboard-icons">
+            <span>Investimentos</span>
+          </div>
+        </a>
+
+        <a [routerLink]="['../contact']">
+          <div class="dashboard-card" routerLinkActive="dashboard-active" #routeContactUs="routerLinkActive">
+            <img [src]="routeContactUs.isActive ? './../../../assets/icons/contactUs-icon-white.svg' : './../../../assets/icons/contactUs-icon-gray.svg'" class="dashboard-icons">
+            <span>Fale Conosco</span>
+          </div>
+        </a>
+
+        <a [routerLink]="['../exit']">
+          <div class="dashboard-card" routerLinkActive="dashboard-active" #routeExit="routerLinkActive">
+            <img [src]="routeExit.isActive ? './../../../assets/icons/exit-icon-white.svg' : './../../../assets/icons/exit-icon-gray.svg'" class="dashboard-icons">
+            <span>Sair</span>
+          </div>
+        </a>
+      </div>
     </div>
+    <hr>
+  </div>
+  <div class="outlet">
+    <router-outlet></router-outlet>
+  </div>
 </div>
