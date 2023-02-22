@@ -72,11 +72,19 @@ export class RegisterComponent implements OnInit {
         this.showLoader = true
         const { error } = await this.supaBaseService.addUser(
           {
-            'name': this.registerForm.value.name,
-            'email': this.registerForm.value.email,
-            'password': this.registerForm.value.password,
-            'cpf': this.registerForm.value.cpf?.replace(/\D/g,""),
-            'terms': this.registerForm.value.terms
+            name: this.registerForm.value.name!,
+            email: this.registerForm.value.email!,
+            password: this.registerForm.value.password!,
+            cpf: this.registerForm.value.cpf?.replace(/\D/g,"")!,
+            terms: this.registerForm.value.terms!,
+            investments: {
+              stocks: [],
+              fiis: [],
+              treasure: [],
+              fiagro: [],
+            },
+            payments: [],
+            history: []
           })
 
         if (error) throw error

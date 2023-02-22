@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AuthChangeEvent, AuthSession, createClient, Session, SupabaseClient } from '@supabase/supabase-js';
 import { environment } from 'src/app/environments/environments';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -26,13 +27,24 @@ export class SupabaseService {
   }
 
   getUser(email: string) {
-    return this.supabase.from('users').select('email, password').eq('email', email)
+    return this.supabase.from('users').select('name, email, cpf, investments, payments, history').eq('email', email)
   }
 
-  addUser(user: any) {
+  addUser(user: User) {
     return this.supabase
       .from('users')
-      .insert({ name: user.name, email: user.email, password: user.password, cpf: user.cpf, terms: user.terms })
+      .insert<User>(
+        { 
+          name: user.name, 
+          email: user.email, 
+          password: user.password, 
+          cpf: user.cpf, 
+          terms: user.terms,
+          investments: user.investments,
+          payments: user.payments,
+          history: user.history
+        }
+      )
       .select()
   }
 

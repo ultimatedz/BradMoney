@@ -1,4 +1,4 @@
-<div class="main-container">
+<div class="main-container" >
     <div class="dashboard-menu">
         <div class="dashboard-title" [routerLink]="['']">
             <img src="../../../../assets/images/BradMoney-logo.png">
@@ -6,7 +6,7 @@
         <div class="dashboard-options">
             <div class="dashboard-user-content">
                 <img src="./../../../assets/icons/user-icon.png">
-                <span>User</span>
+                <span *ngIf="user">{{ user.name }}</span>
             </div>
             <hr class="hr-main">
             <div class="dashboard-options-content">
@@ -17,7 +17,7 @@
                     </div>
                 </a>
 
-                <a [routerLink]="['./pagamentos']">
+                <a [routerLink]="['../pagamentos']">
                     <div class="dashboard-card">
                         <img src="./../../../assets/icons/payment-icon.png" class="dashboard-icons">
                         <span>Pagamentos</span>
