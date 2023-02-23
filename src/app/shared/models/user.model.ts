@@ -10,6 +10,5 @@ export interface User {
     treasure: any;
     fiagro:any
   };
-  payments: {};
-  history: {}
+  payments: [];
 }

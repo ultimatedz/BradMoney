@@ -18,6 +18,7 @@ export class TablePaymentsComponent implements OnInit {
   showModal: boolean = false
   showTable: boolean = true
   elementEditId!: any 
+  showPaginator: boolean = false
 
 
   @Input() paymentItem: any
@@ -39,18 +40,14 @@ export class TablePaymentsComponent implements OnInit {
     const { data } = await this.supaBaseService.getUser(session?.user.email!)
     this.user = await JSON.parse(JSON.stringify(data![0]))
 
-    const paymentsList: any = []
+    if(this.user.payments.length){
 
-    for(let i = 12; i > 0; i--){
-      this.user.payments['2022'][i].forEach((element: any) => {
-        paymentsList.push(element)
-      })
+      this.showPaginator = true
+  
+      this.dataSource = new MatTableDataSource<PeriodicElement>(this.user.payments);
+  
+      this.dataSource.paginator = this.paginator;
     }
-
-    this.dataSource = new MatTableDataSource<PeriodicElement>(paymentsList);
-
-    this.dataSource.paginator = this.paginator;
-    
   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -74,13 +71,9 @@ export class TablePaymentsComponent implements OnInit {
 
     if (this.paymentsForm.valid) {
 
-      let newList = this.user.payments
+      const user = await this.supaBaseService.getUser(this.user.email)
 
-      for(let i = 1; i <= 12; i++){
-        newList['2022'][i] = newList['2022'][i].filter((element: any) => element.id !== this.elementEditId)
-      }
-
-      const dateMonth = Number(this.paymentsForm.get('date')?.value!.split('-')[1])
+      let newList =  user.data![0].payments.filter((element: any) => element.id !== this.elementEditId)
 
       const dataPaymentFormated = {
         id: this.elementEditId,
@@ -89,20 +82,12 @@ export class TablePaymentsComponent implements OnInit {
         amount: this.paymentsForm.get('amount')?.value!
       }
 
-      newList['2022'][dateMonth].unshift(dataPaymentFormated)
+      newList.unshift(dataPaymentFormated)
 
       try {
         const {data, error} = await this.supaBaseService.updatePaymentsUser(newList, this.user.email)
   
-        const paymentsList: any = []
-  
-        for(let i = 12; i > 0; i--){
-          newList['2022'][i].forEach((element: any) => {
-            paymentsList.push(element)
-          })
-        }
-    
-        this.dataSource = new MatTableDataSource<PeriodicElement>(paymentsList);
+        this.dataSource = new MatTableDataSource<PeriodicElement>(newList);
         this.dataSource.paginator = this.paginator;
 
         this.showModal = false
@@ -115,24 +100,15 @@ export class TablePaymentsComponent implements OnInit {
   }
 
   async handleDeleteItem(id: string){
-    let newList = this.user.payments
-    
-    for(let i = 1; i <= 12; i++){
-      newList['2022'][i] = newList['2022'][i].filter((element: any) => element.id !== id)
-    }
+
+    const user = await this.supaBaseService.getUser(this.user.email)
+
+    let newList = user.data![0].payments.filter((element: any) => element.id !== id)
 
     try {
-      const {data, error} = await this.supaBaseService.updatePaymentsUser(newList, this.user.email)
-
-      const paymentsList: any = []
-
-      for(let i = 12; i > 0; i--){
-        newList['2022'][i].forEach((element: any) => {
-          paymentsList.push(element)
-        })
-      }
+      const {error} = await this.supaBaseService.updatePaymentsUser(newList, this.user.email)
   
-      this.dataSource = new MatTableDataSource<PeriodicElement>(paymentsList);
+      this.dataSource = new MatTableDataSource<PeriodicElement>(newList);
       this.dataSource.paginator = this.paginator;
 
       if(error) throw error
