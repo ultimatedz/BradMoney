@@ -16,6 +16,7 @@ import { ExitComponent } from './pages/exit/exit.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
 import { InvestmentsComponent } from './pages/investments/investments.component';
+import { TablePaymentsComponent } from './components/table-payments/table-payments.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { InvestmentsComponent } from './pages/investments/investments.component'
     TableHistoryComponent,
     PaymentsComponent,
     InvestmentsComponent,
+    TablePaymentsComponent,
   ],
   imports: [
     CommonModule,

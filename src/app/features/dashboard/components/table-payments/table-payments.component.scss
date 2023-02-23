@@ -1,0 +1,25 @@
+@use '../../../../../scss/variables';
+
+table{
+  width: 100%;
+}
+
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+
+  table td {
+    border-bottom: 1px solid variables.$gray-300;
+    text-align: center;
+  }
+  table th{
+    text-align: center;
+  }
+}
+
+.icon-table{
+  width: 24px;
+}
