@@ -24,22 +24,14 @@ export class TableHistoryComponent implements OnInit{
     const { data } = await this.supaBaseService.getUser(session?.user.email!)
     this.user = await JSON.parse(JSON.stringify(data![0]))
 
-    const historyList: any = []
+    if(this.user.payments){
+      const historyList: any = await (await this.supaBaseService.getUser(this.user.email)).data![0].payments
 
-    for(let i = 12; historyList.length < 10; i--){
-      this.user.payments['2022'][i].forEach((element: any) => {
-        if(historyList.length < 10){
-          historyList.push(element)
-        }
-      })
+      this.dataSource = new MatTableDataSource<PeriodicElement>(historyList);
+
+      this.dataSource.paginator = this.paginator;
     }
-
-    this.dataSource = new MatTableDataSource<PeriodicElement>(historyList);
-
-    this.dataSource.paginator = this.paginator;
-    
   }
-
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

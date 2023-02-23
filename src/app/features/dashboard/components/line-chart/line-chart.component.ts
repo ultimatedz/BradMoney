@@ -24,7 +24,8 @@ export class LineChartComponent implements OnInit {
     this.user = await JSON.parse(JSON.stringify(data![0]))
 
 
-    if(!Object.keys(this.user.investments).length){
+    if(Object.keys(this.user.investments['fiis']).length || Object.keys(this.user.investments['stocks']).length  || Object.keys(this.user.investments['treasure']).length  || Object.keys(this.user.investments['fiagro']).length){
+
       const totalizerFiis = this.reducerElements('fiis')
       const totalizerStocks = this.reducerElements('stocks')
       const totalizerTreasure = this.reducerElements('treasure')

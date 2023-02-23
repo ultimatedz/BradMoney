@@ -83,8 +83,7 @@ export class RegisterComponent implements OnInit {
               treasure: [],
               fiagro: [],
             },
-            payments: {},
-            history: {}
+            payments: [],
           })
 
         if (error) throw error

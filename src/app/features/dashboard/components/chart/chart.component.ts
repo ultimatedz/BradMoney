@@ -21,16 +21,16 @@ export class ChartComponent implements OnInit {
     const { data } = await this.supaBaseService.getUser(session?.user.email!)
     this.user = await JSON.parse(JSON.stringify(data![0]))
 
-    let totalizer = []
+    let totalizer = [0,0,0,0,0,0,0,0,0,0,0,0]
 
-    if(!Object.keys(this.user.payments).length){
-      totalizer = [0,0,0,0,0,0,0,0,0,0,0,0]
+    if(!this.user.payments.length){
+      return
     } else {
-      for(let i = 1; i <= 12; i++){
-        totalizer.push(this.user.payments['2022'][i].reduce((accumulator: any, currentValue: any) => {
-          return (accumulator + currentValue.amount)
-        }, 0))
-      }
+      this.user.payments.forEach((element: any) => {
+        const date = element.date.split('/')
+
+        totalizer[Number(date[1]) - 1] += element.amount
+      })
     }
     
     var myChart = new Chart("myChart", {

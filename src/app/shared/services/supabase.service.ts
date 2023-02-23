@@ -27,7 +27,7 @@ export class SupabaseService {
   }
 
   getUser(email: string) {
-    return this.supabase.from('users').select('name, email, cpf, investments, payments, history').eq('email', email)
+    return this.supabase.from('users').select('name, email, cpf, investments, payments').eq('email', email)
   }
 
   addUser(user: User) {
@@ -42,7 +42,6 @@ export class SupabaseService {
           terms: user.terms,
           investments: user.investments,
           payments: user.payments,
-          history: user.history
         }
       )
       .select()
