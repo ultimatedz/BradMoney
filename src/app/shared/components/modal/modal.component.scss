@@ -71,3 +71,76 @@
 .hidden {
   display: none;
 }
+
+
+
+
+
+@media only screen and (max-width: 650px) {
+
+  .modal-container {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .modal-content {
+        background-color: variables.$white;;
+        padding: 3rem 6rem 3rem 6rem;
+        margin: 1.5rem;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        box-shadow: 5px 5px 40px rgba(157, 160, 179, 0.6);
+        position: relative;
+    }
+  }
+  .hidden {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 425px) {
+
+  .modal-container {
+    position: fixed;
+    background-color: rgba(0, 0, 0, .7);
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .modal-content {
+        background-color: variables.$white;;
+        padding: 3rem 6rem 3rem 6rem;
+        margin: 1.5rem;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        box-shadow: 5px 5px 40px rgba(157, 160, 179, 0.6);
+        position: relative;
+    }
+  }
+  .hidden {
+    display: none;
+  }
+}
