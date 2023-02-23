@@ -23,18 +23,17 @@ export class LineChartComponent implements OnInit {
     const { data } = await this.supaBaseService.getUser(session?.user.email!)
     this.user = await JSON.parse(JSON.stringify(data![0]))
 
-
-    if(Object.keys(this.user.investments['fiis']).length || Object.keys(this.user.investments['stocks']).length  || Object.keys(this.user.investments['treasure']).length  || Object.keys(this.user.investments['fiagro']).length){
+    if (Object.keys(this.user.investments['fiis']).length || Object.keys(this.user.investments['stocks']).length || Object.keys(this.user.investments['treasure']).length || Object.keys(this.user.investments['fiagro']).length) {
 
       const totalizerFiis = this.reducerElements('fiis')
       const totalizerStocks = this.reducerElements('stocks')
       const totalizerTreasure = this.reducerElements('treasure')
       const totalizerFiagro = this.reducerElements('fiagro')
-  
+
       const total = totalizerFiis.map((element, i) => {
         return element + totalizerStocks[i] + totalizerTreasure[i] + totalizerFiagro[i]
       })
-  
+   
       const totalizerFiisPercentage = this.reducerElementsPercentage(total, totalizerFiis)
       const totalizerStocksPercentage = this.reducerElementsPercentage(total, totalizerStocks)
       const totalizerTreasurePercentage = this.reducerElementsPercentage(total, totalizerTreasure)
@@ -42,14 +41,14 @@ export class LineChartComponent implements OnInit {
 
       this.createChart(totalizerFiisPercentage, totalizerStocksPercentage, totalizerTreasurePercentage, totalizerFiagroPercentage);
     } else {
-      this.createChart([0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0]);
+      this.createChart([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
     }
 
-    const canvas = <HTMLCanvasElement> document.getElementById('myChart');
+    const canvas = <HTMLCanvasElement>document.getElementById('myChart');
     const ctx = canvas.getContext('2d');
   }
 
-  reducerElementsPercentage(total: Array<number>, currentArray: Array<number> ){
+  reducerElementsPercentage(total: Array<number>, currentArray: Array<number>) {
     const totalizerPercentage = currentArray.map((element, i) => {
       return Number((element / total[i] * 100).toFixed(2))
     })
@@ -57,25 +56,30 @@ export class LineChartComponent implements OnInit {
     return totalizerPercentage
   }
 
-  reducerElements(category: string){
-    let totalizer = []
+  reducerElements(category: string) {
+    let totalizer = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-    for(let i = 1; i <= 12; i++){
-      totalizer.push(this.user.investments[`${category}`]['2022'][i].reduce((accumulator: any, currentValue: any) => {
-        return (accumulator + currentValue.amount)
-      }, 0))
-    }
+    // for (let i = 1; i <= 12; i++) {
+    //   totalizer.push(this.user.investments[`${category}`]['2022'][i].reduce((accumulator: any, currentValue: any) => {
+    //     return (accumulator + currentValue.amount)
+    //   }, 0))
+    // }
+
+    this.user.investments[`${category}`].forEach((element: any) => {
+      const date = element.date.split('/')
+      totalizer[Number(date[1]) - 1] += element.amount
+    })
 
     return totalizer
   }
 
-  createChart(fiss: Array<number>, stocks: Array<number>, treasure: Array<number>, fiagro: Array<number> ){
+  createChart(fiss: Array<number>, stocks: Array<number>, treasure: Array<number>, fiagro: Array<number>) {
     this.chart = new Chart("MyChart", {
       plugins: [ChartDataLabels],
-      type: 'line', 
+      type: 'line',
       data: {
-        labels: ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AUG', 'SET', 'OUT', 'NOV', 'DEZ'], 
-	       datasets: [
+        labels: ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AUG', 'SET', 'OUT', 'NOV', 'DEZ'],
+        datasets: [
           {
             label: "FISS",
             data: fiss,
@@ -91,7 +95,7 @@ export class LineChartComponent implements OnInit {
             fill: false,
             borderColor: '#EB5757',
             tension: 0.2
-          }  ,
+          },
           {
             label: "TESOURO",
             data: treasure,
@@ -99,7 +103,7 @@ export class LineChartComponent implements OnInit {
             fill: false,
             borderColor: '#F2C94C',
             tension: 0.2
-          }  ,
+          },
           {
             label: "FIAGRO",
             data: fiagro,
@@ -107,57 +111,57 @@ export class LineChartComponent implements OnInit {
             fill: false,
             borderColor: '#3AB67D',
             tension: 0.2
-          }  
+          }
         ]
       },
       options: {
-        layout:{
-          padding:{
+        layout: {
+          padding: {
             right: 55
           }
         },
-        plugins:{
-          datalabels:{
-            font:{
+        plugins: {
+          datalabels: {
+            font: {
               family: "Poppins",
               weight: 700
             },
-            formatter: function(value){
+            formatter: function (value) {
               return value + ('%')
             },
-            anchor:'end',
-            align:'right',
+            anchor: 'end',
+            align: 'right',
             offset: 5,
-            display: function (context){
-              return (context.dataIndex === context.dataset.data.length-1);
+            display: function (context) {
+              return (context.dataIndex === context.dataset.data.length - 1);
             },
-            opacity: function(context){
-              return context.active ? 1 :0.5;
+            opacity: function (context) {
+              return context.active ? 1 : 0.5;
             }
-            
+
           }
         },
-        elements:{
-          point:{
-            radius:3
+        elements: {
+          point: {
+            radius: 3
           }
         },
-        aspectRatio:2.5,
-        scales:{
-          y:{
-              ticks:{
-                display:false
-              }
-            
+        aspectRatio: 2.5,
+        scales: {
+          y: {
+            ticks: {
+              display: false
+            }
+
           }
         },
       }
-      
-    }); 
-    Chart.defaults.elements.line.borderWidth = 7
-    Chart.defaults.elements.line.tension=1
 
-    
+    });
+    Chart.defaults.elements.line.borderWidth = 7
+    Chart.defaults.elements.line.tension = 1
+
+
   }
-  
+
 }
