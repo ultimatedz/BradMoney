@@ -23,21 +23,27 @@ export class LineChartComponent implements OnInit {
     const { data } = await this.supaBaseService.getUser(session?.user.email!)
     this.user = await JSON.parse(JSON.stringify(data![0]))
 
-    const totalizerFiis = this.reducerElements('fiis')
-    const totalizerStocks = this.reducerElements('stocks')
-    const totalizerTreasure = this.reducerElements('treasure')
-    const totalizerFiagro = this.reducerElements('fiagro')
 
-    const total = totalizerFiis.map((element, i) => {
-      return element + totalizerStocks[i] + totalizerTreasure[i] + totalizerFiagro[i]
-    })
+    if(!Object.keys(this.user.investments).length){
+      const totalizerFiis = this.reducerElements('fiis')
+      const totalizerStocks = this.reducerElements('stocks')
+      const totalizerTreasure = this.reducerElements('treasure')
+      const totalizerFiagro = this.reducerElements('fiagro')
+  
+      const total = totalizerFiis.map((element, i) => {
+        return element + totalizerStocks[i] + totalizerTreasure[i] + totalizerFiagro[i]
+      })
+  
+      const totalizerFiisPercentage = this.reducerElementsPercentage(total, totalizerFiis)
+      const totalizerStocksPercentage = this.reducerElementsPercentage(total, totalizerStocks)
+      const totalizerTreasurePercentage = this.reducerElementsPercentage(total, totalizerTreasure)
+      const totalizerFiagroPercentage = this.reducerElementsPercentage(total, totalizerFiagro)
 
-    const totalizerFiisPercentage = this.reducerElementsPercentage(total, totalizerFiis)
-    const totalizerStocksPercentage = this.reducerElementsPercentage(total, totalizerStocks)
-    const totalizerTreasurePercentage = this.reducerElementsPercentage(total, totalizerTreasure)
-    const totalizerFiagroPercentage = this.reducerElementsPercentage(total, totalizerFiagro)
+      this.createChart(totalizerFiisPercentage, totalizerStocksPercentage, totalizerTreasurePercentage, totalizerFiagroPercentage);
+    } else {
+      this.createChart([0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0], [0,0,0,0,0,0,0,0,0,0,0,0]);
+    }
 
-    this.createChart(totalizerFiisPercentage, totalizerStocksPercentage, totalizerTreasurePercentage, totalizerFiagroPercentage);
     const canvas = <HTMLCanvasElement> document.getElementById('myChart');
     const ctx = canvas.getContext('2d');
   }

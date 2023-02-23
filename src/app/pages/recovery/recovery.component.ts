@@ -40,7 +40,7 @@ export class RecoveryComponent implements OnInit {
     if(this.recoveryForm.valid){
       this.showRecoveryLoader = true
       try {
-        const {data, error} = await this.supaBaseService.resetPassword('luis.silva9902@gmail.com')
+        const {data, error} = await this.supaBaseService.resetPassword(this.recoveryForm.get('email')?.value!)
 
         if(data){
           this.showRecoveryLoader = false
