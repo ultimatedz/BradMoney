@@ -88,6 +88,7 @@
   }
 }
 
+
 .right-content {
   display: flex;
   width: 50%;
@@ -137,5 +138,103 @@
     top: 0;
     background-image: url("../../../assets/images/background.png");
     z-index: -1;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 750px) {
+  .right-content{
+    display: none;
+  }
+
+  .left-content{
+    margin: 1rem;
+  }
+  .card{
+    margin-left: 1rem;
+    margin-right:1rem;
+  }
+}
+
+
+
+@media only screen and (max-width: 356px) {
+
+  .left-content {
+    display: flex;
+    flex: 1;
+
+    flex-direction: column;
+    padding: 1rem;
+    text-align: left;
+    background-color: white;
+
+    h1 {
+      font-weight: 900;
+      font-size: 2.5rem;
+      color: variables.$gray-600;
+      padding-bottom: 15px;
+    }
+
+    p {
+      color: variables.$gray-300;
+    }
+
+
+
+    .paddTop {
+      padding-top: 15%;
+    }
+
+    .recovery-password {
+      font-size: 0.8em;
+      text-align: end;
+      color: variables.$green-600;
+      margin-top: .25rem;
+    }
+
+    .recovery-password :hover,
+    .recovery-password :focus {
+      color: variables.$red-600;
+    }
+
+    .inputLogin {
+      width: 95%;
+      height: 40px;
+      border-radius: 4px;
+      border: 1px solid variables.$gray-300;
+      outline-color: variables.$gray-600;
+      margin-top: 18px;
+      padding-left: 10px;
+      color: variables.$gray-600;
+    }
+
+    input :focus,
+    input :hover {
+      border-color: variables.$gray-300;
+      color: variables.$gray-300;
+    }
+
+    ::placeholder {
+      color: variables.$gray-300
+    }
+
+    .buttonLogin,
+    .buttonCancel {
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    .buttonLogin {
+      width: 45%;
+      border-color: variables.$gray-300;
+    }
+
+    .buttonCancel {
+      width: 45%;
+      margin-left: 1.3rem;
+    }
   }
 }
