@@ -23,12 +23,12 @@ export class HomeComponent implements OnInit {
 
     const session = this.supaBaseService.session
 
-    const { data } = await this.supaBaseService.getUser(session?.user.email!)
-    this.user = await JSON.parse(JSON.stringify(data![0]))
-
     if (!session) {
       this.router.navigate(['/'])
     }
+
+    const { data } = await this.supaBaseService.getUser(session?.user.email!)
+    this.user = await JSON.parse(JSON.stringify(data![0]))
   }
 
   async handleSignOut() {

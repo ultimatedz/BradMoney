@@ -10,13 +10,6 @@ export interface User {
     treasure: any;
     fiagro:any
   };
-  payments: {
-    amount: any;
-    month: any;
-  }[];
-  history: {
-    category: any;
-    date: any;
-    amount: any
-  }[]
+  payments: {};
+  history: {}
 }

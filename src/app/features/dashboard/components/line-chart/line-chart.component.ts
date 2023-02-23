@@ -1,32 +1,77 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { SupabaseService } from 'src/app/shared/services/supabase.service';
+
 
 @Component({
   selector: 'app-line-chart',
   templateUrl: './line-chart.component.html',
   styleUrls: ['./line-chart.component.scss']
 })
-export class LineChartComponent {
+export class LineChartComponent implements OnInit {
   public chart: any;
-  ngOnInit(){
-    this.createChart();
+  user!: any
+
+  constructor(
+    private supaBaseService: SupabaseService,
+  ) { }
+
+  async ngOnInit() {
+    const session = this.supaBaseService.session
+
+    const { data } = await this.supaBaseService.getUser(session?.user.email!)
+    this.user = await JSON.parse(JSON.stringify(data![0]))
+
+    const totalizerFiis = this.reducerElements('fiis')
+    const totalizerStocks = this.reducerElements('stocks')
+    const totalizerTreasure = this.reducerElements('treasure')
+    const totalizerFiagro = this.reducerElements('fiagro')
+
+    const total = totalizerFiis.map((element, i) => {
+      return element + totalizerStocks[i] + totalizerTreasure[i] + totalizerFiagro[i]
+    })
+
+    const totalizerFiisPercentage = this.reducerElementsPercentage(total, totalizerFiis)
+    const totalizerStocksPercentage = this.reducerElementsPercentage(total, totalizerStocks)
+    const totalizerTreasurePercentage = this.reducerElementsPercentage(total, totalizerTreasure)
+    const totalizerFiagroPercentage = this.reducerElementsPercentage(total, totalizerFiagro)
+
+    this.createChart(totalizerFiisPercentage, totalizerStocksPercentage, totalizerTreasurePercentage, totalizerFiagroPercentage);
     const canvas = <HTMLCanvasElement> document.getElementById('myChart');
     const ctx = canvas.getContext('2d');
-    // console.log(ctx);
   }
 
-  createChart(){
+  reducerElementsPercentage(total: Array<number>, currentArray: Array<number> ){
+    const totalizerPercentage = currentArray.map((element, i) => {
+      return Number((element / total[i] * 100).toFixed(2))
+    })
+
+    return totalizerPercentage
+  }
+
+  reducerElements(category: string){
+    let totalizer = []
+
+    for(let i = 1; i <= 12; i++){
+      totalizer.push(this.user.investments[`${category}`]['2022'][i].reduce((accumulator: any, currentValue: any) => {
+        return (accumulator + currentValue.amount)
+      }, 0))
+    }
+
+    return totalizer
+  }
+
+  createChart(fiss: Array<number>, stocks: Array<number>, treasure: Array<number>, fiagro: Array<number> ){
     this.chart = new Chart("MyChart", {
       plugins: [ChartDataLabels],
       type: 'line', 
       data: {
-        labels: ['01/22', '02/22', '03/22','04/22',
-								 '05/22', '06/22', '07/22','08/22','09/22', '10/22','11/22','12/22' ], 
+        labels: ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AUG', 'SET', 'OUT', 'NOV', 'DEZ'], 
 	       datasets: [
           {
             label: "FISS",
-            data: ['0','3', '5', '7', '9','15','10.5','13','18.55','19','17','20.31'],
+            data: fiss,
             backgroundColor: '#2F80ED',
             fill: false,
             borderColor: '#2F80ED',
@@ -34,7 +79,7 @@ export class LineChartComponent {
           },
           {
             label: "AÇÕES",
-            data: ['0','5', '10', '15', '20','25','27.5','30','33.55','35','40','42.85'],
+            data: stocks,
             backgroundColor: '#EB5757',
             fill: false,
             borderColor: '#EB5757',
@@ -42,7 +87,7 @@ export class LineChartComponent {
           }  ,
           {
             label: "TESOURO",
-            data: ['0','3', '4', '5', '7','9','11','12','13.55','15','17','17.46'],
+            data: treasure,
             backgroundColor: '#F2C94C',
             fill: false,
             borderColor: '#F2C94C',
@@ -50,7 +95,7 @@ export class LineChartComponent {
           }  ,
           {
             label: "FIAGRO",
-            data: ['0','4', '5', '6', '7','8','11','13','14.55','16','17','19.33'],
+            data: fiagro,
             backgroundColor: '#3AB67D',
             fill: false,
             borderColor: '#3AB67D',

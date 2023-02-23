@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterForm } from 'src/app/shared/models/register-form.model';
 import { SupabaseService } from 'src/app/shared/services/supabase.service';
@@ -83,8 +83,8 @@ export class RegisterComponent implements OnInit {
               treasure: [],
               fiagro: [],
             },
-            payments: [],
-            history: []
+            payments: {},
+            history: {}
           })
 
         if (error) throw error
