@@ -1,7 +1,5 @@
 @use '../../../../../scss/variables';
 
-
-
 .main {
   display: flex;
   width: 100%;
@@ -10,89 +8,109 @@
 
   .main-container {
     display: flex;
-    width: 100%;
     flex-direction: column;
-    margin: 3.5rem;
+    margin-top: 2rem;
+    width: 80%;
+    height: 90%;
     gap: 1rem;
   }
 }
 
-.sistema-pagamento{
-  width: 100%;
+.sistema-pagamento {
   border: 0.923613px solid #D2D1DC;
-  box-shadow: 0px 4.61807px 18.4723px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
   border-radius: 4px;
   flex: 50%;
+  background-color: variables.$white;
 }
-.title-payment{
+
+.title-payment {
   margin: 1rem;
   margin-left: 2rem;
 }
-.title-payment span{
+
+.title-payment span {
   color: variables.$gray-600;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
 }
- hr{
+
+hr {
   margin-left: 1rem;
   margin-right: 1rem;
- }
+}
 
-.input-pagamento{
+.input-pagamento {
+  background-color: variables.$white;
   flex: 50%;
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
   border: 0.923613px solid #D2D1DC;
-  box-shadow: 0px 4.61807px 18.4723px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
   border-radius: 4px;
-  
+
 }
 
-.div-pagamento{
+.div-pagamento {
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding: 1rem;
   width: 500px;
   flex-direction: column;
-  height: 100%;
-  gap: 1rem;
+  gap: 2rem;
+
+  h2 {
+    font-size: 1.5rem;
+    color: variables.$gray-600;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .div-pagamento-form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .div-pagamento-form-content-group {
+      display: flex;
+      flex-direction: column;
+      gap: .1rem;
+
+      .input-payment {
+        padding: .25rem 0.5rem;
+        width: 300px;
+        height: 25px;
+        border: 1px solid variables.$gray-600;
+        border-radius: 4px;
+      }
+    }
+  }
 }
 
-.input-payment{
-  padding: 0.3rem;
-  width: 300px;
-  height: 25px;
-  border: 1px solid #687A92;
-  border-radius: 4px;
-}
-
-
-
-.div-description{
-  text-align: right;
-  width: 150px;
-}
-
-.labelDiv{
+.labelDiv {
   width: 50px;
 }
 
-.div-descricao,.div-date, .div-valor, .div-note{
+.div-descricao,
+.div-date,
+.div-valor,
+.div-note {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 
-.div-inputs{
+.div-inputs {
   width: 400px;
 }
 
-.button-payments{
+.button-payments {
   box-shadow: 0px 9px 20px rgba(35, 215, 150, 0.4);
   border: none;
   width: 238px;
@@ -102,9 +120,8 @@
   background-color: variables.$green-600;
 }
 
-label{
+label {
   color: variables.$gray-600;
   font-size: 14px;
   line-height: 21px;
 }
-

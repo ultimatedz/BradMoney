@@ -1,45 +1,49 @@
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import { SupabaseService } from 'src/app/shared/services/supabase.service';
 
 @Component({
   selector: 'app-table-payments',
   templateUrl: './table-payments.component.html',
   styleUrls: ['./table-payments.component.scss']
 })
-export class TablePaymentsComponent {
+export class TablePaymentsComponent implements OnInit {
+  user!: any
+  displayedColumns: string[] = ['name', 'weight', 'symbol', 'edit','delete'];
+  dataSource!: any
 
-  displayedColumns: string[] = ['name', 'weight', 'symbol','note','edit','delete'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  @Input() paymentsList: any
+
+  constructor(
+    private supaBaseService: SupabaseService,
+  ) { }
+
+  async ngOnInit() {
+    const session = this.supaBaseService.session
+
+    const { data } = await this.supaBaseService.getUser(session?.user.email!)
+    this.user = await JSON.parse(JSON.stringify(data![0]))
+
+    const paymentsList: any = []
+
+    for(let i = 12; i > 0; i--){
+      this.user.payments['2022'][i].forEach((element: any) => {
+        paymentsList.push(element)
+      })
+    }
+
+    this.dataSource = new MatTableDataSource<PeriodicElement>(paymentsList);
+
+    this.dataSource.paginator = this.paginator;
+    
+  }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
 }
-
 
 export interface PeriodicElement {
   name: string;
   weight: string;
   symbol: string;
-  note: string;
 }
-
-
-
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { name: 'Supermercado', weight: '09/02/2023', symbol: 'R$617,00', note: 'teste'},
-  { name: 'Farmacia', weight: '09/02/2023', symbol: 'R$32,80', note: 'teste'},
-  { name: 'Restaurante', weight: '09/02/2023', symbol: 'R$160,00', note: 'teste'},
-  { name: 'Estacionamento', weight: '09/02/2023', symbol: 'R$25,00', note: 'teste'},
-  { name: 'iFood', weight: '09/02/2023', symbol: 'R$24,58', note: 'teste'},
-  { name: 'Tia da Esquina', weight: '09/02/2023', symbol: 'R$2,30', note: 'teste'},
-  { name: 'Conta de Luz', weight: '09/02/2023', symbol: 'R$127,80', note: 'teste'},
-  { name: 'Aluguel', weight: '09/02/2023', symbol: 'R$1.200,00', note: 'teste'},
-  { name: 'Restaurante', weight: '09/02/2023', symbol: 'R$158,00', note: 'teste'},
-  { name: 'Restaurante', weight: '09/02/2023', symbol: 'R$345,55', note: 'teste'},
-
-];

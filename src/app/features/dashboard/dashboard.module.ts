@@ -17,6 +17,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PaymentsComponent } from './pages/payments/payments.component';
 import { InvestmentsComponent } from './pages/investments/investments.component';
 import { TablePaymentsComponent } from './components/table-payments/table-payments.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { TablePaymentsComponent } from './components/table-payments/table-paymen
     FormsModule,
     MatPaginatorModule,
     SharedModule,
-    
+    MatExpansionModule
   ],
   exports: [
     HomeComponent

@@ -6,46 +6,31 @@
         <span>SISTEMA DE PAGAMENTOS</span>
       </div>
       <hr>
-      <app-table-payments></app-table-payments>
-      
+      <app-table-payments ></app-table-payments>
     </div>
 
     <div class="input-pagamento">
-      <div class="div-pagamento">
-        <div class="div-descricao">
-          <div class="div-description">
+      <form class="div-pagamento">
+        <h2>Adicione um novo pagamento</h2>
+
+        <div class="div-pagamento-form-content">
+          <div class="div-pagamento-form-content-group">
             <label for="description">Descrição: </label>
-          </div>          
-          <div class="div-inputs">
             <input id="description" class="input-payment" type="text" placeholder="Descrição">
           </div>
+
+          <div class="div-pagamento-form-content-group">
+            <label for="description">Data: </label>
+            <input id="input-data" class="input-payment" type="date">
+          </div>
+
+          <div class="div-pagamento-form-content-group">
+            <label for="description">Valor: </label>
+            <input id="value-input" class="input-payment" type="number" placeholder="Valor">
+          </div>
         </div>
-          <div class="div-date">
-            <div class="div-description">
-              <label for="input-data">Data: </label>
-            </div>
-            <div class="div-inputs">
-              <input id="input-data" class="input-payment" type="date">
-            </div>
-          </div>
-          <div class="div-valor">
-            <div class="div-description">
-              <label for="value-input">Valor: </label>
-            </div>
-            <div class="div-inputs">
-              <input id="value-input" class="input-payment" type="number" placeholder="Valor">
-            </div>
-          </div>
-          <div class="div-note">
-            <div class="div-description">
-              <label for ="note-input">Observação: </label>
-            </div>
-            <div class="div-inputs">
-              <input id="note-input" class="input-payment" type="text" placeholder="Observações">
-            </div>
-          </div>
-          <button class="button-payments">ADICIONAR</button>
-      </div>
+        <button class="button-payments">ADICIONAR</button>
+      </form>
     </div>
   </div>
 </div>

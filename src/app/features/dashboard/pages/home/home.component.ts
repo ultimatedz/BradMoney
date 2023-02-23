@@ -6,7 +6,6 @@ import { SupabaseService } from 'src/app/shared/services/supabase.service';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
   panelOpenState = false;
