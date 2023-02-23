@@ -1,0 +1,32 @@
+<div class="modal-container hidden" id="modal">
+  <div class="modal-content" >
+    
+    <img class="modal-close-button" src="../../../../assets/icons/close-icon.svg" (click)="handleCloseModal()" alt="Ícone de saída">
+    
+    <h1>Editar pagamento</h1>
+
+    <ul>
+      <li>
+        <img src="../../../../assets/icons/check.svg" alt="Ícone de okay">
+        <span>{{ modalList.highlights.highlightOne }}</span>
+      </li>
+
+      <li>
+        <img src="../../../../assets/icons/check.svg" alt="Ícone de okay">
+        <span>{{ modalList.highlights.highlightTwo }}</span>
+      </li>
+
+      <li>
+        <img src="../../../../assets/icons/check.svg" alt="Ícone de okay">
+        <span>{{ modalList.highlights.highlightThree }}</span>
+      </li>
+
+      <li>
+        <img src="../../../../assets/icons/check.svg" alt="Ícone de okay">
+        <span>{{ modalList.highlights.highlightFour}}</span>
+      </li>
+    </ul>
+
+    <img class="modal-banner" src="../../../../assets/icons/{{modalList.bannerImage}}" alt="Ícone de prancheta com vários gráficos impressos no papel">
+  </div>
+</div>

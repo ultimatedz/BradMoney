@@ -1,3 +1,34 @@
+<div class="modal-container" *ngIf="showModal">
+  <div class="modal-content" >
+    
+    <img class="modal-close-button" src="../../../../../assets/icons/close-icon.svg" (click)="handleCloseModal()" alt="Ícone de saída">
+
+    <form>
+      <form class="div-pagamento" (ngSubmit)="handleUpdateItem($event)" [formGroup]="paymentsForm">
+        <h1>Editar pagamento</h1>
+
+        <div class="div-pagamento-form-content">
+          <div class="div-pagamento-form-content-group">
+            <label for="description">Título: </label>
+            <input id="description" class="input-payment" type="text" formControlName="title">
+          </div>
+
+          <div class="div-pagamento-form-content-group">
+            <label for="description">Data: </label>
+            <input id="input-data" class="input-payment" type="date" formControlName="date">
+          </div>
+
+          <div class="div-pagamento-form-content-group">
+            <label for="description">Valor: </label>
+            <input id="value-input" class="input-payment" type="number" formControlName="amount">
+          </div>
+        </div>
+        <button class="button-payments">Alterar</button>
+      </form>
+    </form>
+  </div>
+</div>
+
 <div class="table-container">
     <table mat-table [dataSource]="dataSource">
   
@@ -21,15 +52,21 @@
 
       <ng-container matColumnDef="edit">
         <th mat-header-cell *matHeaderCellDef>ALTERAR</th>
-        <td mat-cell *matCellDef="let element"><img src="../../../../../assets/icons/edit.svg" class="icon-table"></td>
+        <td mat-cell *matCellDef="let element">
+          <button class="buttons" (click)="handleOpenModal(element)">
+            <img src="../../../../../assets/icons/edit.svg" class="icon-table">
+          </button>
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="delete">
         <th mat-header-cell *matHeaderCellDef>APAGAR</th>
-        <td mat-cell *matCellDef="let element"><img src="../../../../../assets/icons/trash.svg" class="icon-table"></td>
+        <td mat-cell *matCellDef="let element">
+          <button class="buttons" (click)="handleDeleteItem(element.id)">
+            <img src="../../../../../assets/icons/trash-icon.svg" class="icon-table">
+          </button>
+        </td>
       </ng-container>
-
-
   
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

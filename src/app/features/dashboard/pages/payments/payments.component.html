@@ -6,30 +6,30 @@
         <span>SISTEMA DE PAGAMENTOS</span>
       </div>
       <hr>
-      <app-table-payments ></app-table-payments>
+      <app-table-payments *ngIf="showTable"></app-table-payments>
     </div>
 
     <div class="input-pagamento">
-      <form class="div-pagamento">
+      <form class="div-pagamento" (ngSubmit)="handleAddItem($event)" [formGroup]="paymentsForm">
         <h2>Adicione um novo pagamento</h2>
 
         <div class="div-pagamento-form-content">
           <div class="div-pagamento-form-content-group">
-            <label for="description">Descrição: </label>
-            <input id="description" class="input-payment" type="text" placeholder="Descrição">
+            <label for="description">Título: </label>
+            <input id="description" class="input-payment" type="text" formControlName="title">
           </div>
 
           <div class="div-pagamento-form-content-group">
             <label for="description">Data: </label>
-            <input id="input-data" class="input-payment" type="date">
+            <input id="input-data" class="input-payment" type="date" formControlName="date">
           </div>
 
           <div class="div-pagamento-form-content-group">
             <label for="description">Valor: </label>
-            <input id="value-input" class="input-payment" type="number" placeholder="Valor">
+            <input id="value-input" class="input-payment" type="number" formControlName="amount">
           </div>
         </div>
-        <button class="button-payments">ADICIONAR</button>
+        <button class="button-payments">Adicionar</button>
       </form>
     </div>
   </div>

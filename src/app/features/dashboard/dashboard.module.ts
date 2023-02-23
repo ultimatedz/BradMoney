@@ -7,7 +7,7 @@ import { LineChartComponent } from './components/line-chart/line-chart.component
 import { TableHistoryComponent } from './components/table-history/table-history.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -18,6 +18,7 @@ import { PaymentsComponent } from './pages/payments/payments.component';
 import { InvestmentsComponent } from './pages/investments/investments.component';
 import { TablePaymentsComponent } from './components/table-payments/table-payments.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     PaymentsComponent,
     InvestmentsComponent,
     TablePaymentsComponent,
+    ModalComponent,
   ],
   imports: [
     CommonModule,
@@ -41,7 +43,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     FormsModule,
     MatPaginatorModule,
     SharedModule,
-    MatExpansionModule
+    MatExpansionModule,
+    ReactiveFormsModule
   ],
   exports: [
     HomeComponent
