@@ -1,22 +1,48 @@
 
-import {AfterViewInit, Component, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import { SupabaseService } from 'src/app/shared/services/supabase.service';
 
 @Component({
   selector: 'app-table-history',
   templateUrl: './table-history.component.html',
   styleUrls: ['./table-history.component.scss']
 })
-export class TableHistoryComponent implements AfterViewInit{
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+export class TableHistoryComponent implements OnInit{
+  user!: any
+  displayedColumns: string[] = ['name', 'weight', 'symbol'];
+  dataSource!: any;
+
+  constructor(
+    private supaBaseService: SupabaseService,
+  ) { }
+
+  async ngOnInit() {
+    const session = this.supaBaseService.session
+
+    const { data } = await this.supaBaseService.getUser(session?.user.email!)
+    this.user = await JSON.parse(JSON.stringify(data![0]))
+
+    const historyList: any = []
+
+    for(let i = 12; historyList.length < 10; i--){
+      this.user.payments['2022'][i].forEach((element: any) => {
+        if(historyList.length < 10){
+          historyList.push(element)
+        }
+      })
+    }
+
+    this.dataSource = new MatTableDataSource<PeriodicElement>(historyList);
+
+    this.dataSource.paginator = this.paginator;
+    
+  }
+
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
 }
 
 export interface PeriodicElement {
@@ -24,7 +50,6 @@ export interface PeriodicElement {
   weight: string;
   symbol: string;
 }
-
 
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -38,5 +63,4 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { name: 'Aluguel', weight: '09/02/2023', symbol: 'R$1.200,00'},
   { name: 'Restaurante', weight: '09/02/2023', symbol: 'R$158,00'},
   { name: 'Restaurante', weight: '09/02/2023', symbol: 'R$345,55'},
-
 ];

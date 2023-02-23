@@ -39,7 +39,8 @@ import { TablePaymentsComponent } from './components/table-payments/table-paymen
     MatFormFieldModule,
     FormsModule,
     MatPaginatorModule,
-    SharedModule
+    SharedModule,
+    
   ],
   exports: [
     HomeComponent

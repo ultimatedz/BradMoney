@@ -4,7 +4,6 @@
   display: flex;
   height: 100%;
   background-image: url("../../../assets/images/background.png");
-
 }
 
 .dashboard-menu {
@@ -14,6 +13,7 @@
   margin-right: 2rem;
   background-color: variables.$white;
   box-shadow: 0px 0px 20px rgba(192, 197, 233, 0.6);
+  min-height: 100%;
 }
 
 .dashboard-title {

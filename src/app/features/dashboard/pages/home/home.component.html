@@ -5,9 +5,7 @@
 <div class="main" *ngIf="user">
   <app-dashboard></app-dashboard>
   <div class="main-container">
-
     <div class="upper-container">
-      
       <div class="investimento-content">
         <div class="header-investimentos">
           <div class="title-investimentos">
@@ -23,21 +21,33 @@
         </div>
       </div>
 
-      <div class="acoes-content">
+      <div class="detailing-investments-content">
+        <div class="header-detailing-investments">
+          <div class="title-detailing-investments">
+            <span>INVESTIMENTOS</span>
+          </div>
+          <div class="year-detailing-investments">
+            <span>2022</span>
+            <img src="./../../../../../assets/icons/drop-down-arrow.png">
+          </div>
+        </div>
         <div class="inner-stocks">
           <div class="stocks-chart">
             <div class="stock-button">
-              +
+              <img src="../../../../../assets/icons/plus-icon.svg" alt="Ícone do símbolo mais">
             </div>
             <div class="stock-content">
               <div class="stock-title">
                 AÇÕES
               </div>
-              <div class="stock-progress-bar">
-                teste
+              <div class="stock-progress-bar progress-bar">
+                <h2>42,90%</h2>
+                <div class="progress-bar-content">
+                  <div></div>
+                </div>
               </div>
-              <div class="stock-value">
-                testew
+              <div class="chart-detailing-investments-value">
+                R$ 13.123,12
               </div>
 
             </div>
@@ -45,17 +55,20 @@
 
           <div class="stocks-chart">
             <div class="fiis-button">
-              +
+              <img src="../../../../../assets/icons/plus-icon.svg" alt="Ícone do símbolo mais">
             </div>
             <div class="stock-content">
               <div class="stock-title">
                 FIIS
               </div>
-              <div class="fiis-progress-bar">
-                teste
+              <div class="fiis-progress-bar progress-bar">
+                <h2>22,90%</h2>
+                <div class="progress-bar-content">
+                  <div></div>
+                </div>
               </div>
-              <div class="fiis-value">
-                testew
+              <div class="chart-detailing-investments-value">
+                R$ 3.123,12
               </div>
 
             </div>
@@ -65,17 +78,20 @@
 
           <div class="stocks-chart">
             <div class="tesouro-button">
-              +
+              <img src="../../../../../assets/icons/plus-icon.svg" alt="Ícone do símbolo mais">
             </div>
             <div class="stock-content">
               <div class="stock-title">
                 TESOURO
               </div>
-              <div class="tesouro-progress-bar">
-                teste
+              <div class="treasure-progress-bar progress-bar">
+                <h2>64,90%</h2>
+                <div class="progress-bar-content">
+                  <div></div>
+                </div>
               </div>
-              <div class="tesouro-value">
-                testew
+              <div class="chart-detailing-investments-value">
+                R$ 2.123,34
               </div>
 
             </div>
@@ -85,17 +101,20 @@
 
           <div class="stocks-chart">
             <div class="fiagro-button">
-              +
+              <img src="../../../../../assets/icons/plus-icon.svg" alt="Ícone do símbolo mais">
             </div>
             <div class="stock-content">
               <div class="stock-title">
                 FIAGRO
               </div>
-              <div class="tesouro-progress-bar">
-                teste
+              <div class="fiagro-progress-bar progress-bar">
+                <h2>12,13%</h2>
+                <div class="progress-bar-content">
+                  <div></div>
+                </div>
               </div>
-              <div class="tesouro-value">
-                testew
+              <div class="chart-detailing-investments-value">
+                R$ 5.456,87
               </div>
 
             </div>
@@ -112,7 +131,7 @@
             <span>PAGAMENTOS</span>
           </div>
           <div class="month-payments">
-            <span>2022</span>
+            <span>DEZ/22</span>
           </div>
         </div>
         <hr>
