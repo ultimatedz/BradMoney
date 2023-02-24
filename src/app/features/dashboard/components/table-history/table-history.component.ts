@@ -25,7 +25,9 @@ export class TableHistoryComponent implements OnInit{
     this.user = await JSON.parse(JSON.stringify(data![0]))
 
     if(this.user.payments){
-      const historyList: any = await (await this.supaBaseService.getUser(this.user.email)).data![0].payments
+      let historyList: any = await (await this.supaBaseService.getUser(this.user.email)).data![0].payments
+
+      historyList = this.sortList(historyList)
 
       this.dataSource = new MatTableDataSource<PeriodicElement>(historyList);
 
@@ -35,6 +37,18 @@ export class TableHistoryComponent implements OnInit{
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+  sortList(list: Array<any>){
+    return list.sort(function(a:any,b:any){
+      const dateOneSplit = a.date.split("/")
+      const dateTwoSplit = b.date.split("/")
+
+      const constDateOneFormatted: any = new Date(dateOneSplit[2], dateOneSplit[1] - 1, dateOneSplit[0])
+      const constDateTwoFormatted: any = new Date(dateTwoSplit[2], dateTwoSplit[1] - 1, dateTwoSplit[0])
+
+      return constDateTwoFormatted - constDateOneFormatted ;
+    });
+  }
+
 }
 
 export interface PeriodicElement {
@@ -42,17 +56,3 @@ export interface PeriodicElement {
   weight: string;
   symbol: string;
 }
-
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { name: 'Supermercado', weight: '09/02/2023', symbol: 'R$617,00'},
-  { name: 'Farmacia', weight: '09/02/2023', symbol: 'R$32,80'},
-  { name: 'Restaurante', weight: '09/02/2023', symbol: 'R$160,00'},
-  { name: 'Estacionamento', weight: '09/02/2023', symbol: 'R$25,00'},
-  { name: 'iFood', weight: '09/02/2023', symbol: 'R$24,58'},
-  { name: 'Tia da Esquina', weight: '09/02/2023', symbol: 'R$2,30'},
-  { name: 'Conta de Luz', weight: '09/02/2023', symbol: 'R$127,80'},
-  { name: 'Aluguel', weight: '09/02/2023', symbol: 'R$1.200,00'},
-  { name: 'Restaurante', weight: '09/02/2023', symbol: 'R$158,00'},
-  { name: 'Restaurante', weight: '09/02/2023', symbol: 'R$345,55'},
-];

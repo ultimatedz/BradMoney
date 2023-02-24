@@ -18,8 +18,6 @@ export class TablePaymentsComponent implements OnInit {
   showModal: boolean = false
   showTable: boolean = true
   elementEditId!: any 
-  showPaginator: boolean = false
-
 
   @Input() paymentItem: any
 
@@ -41,10 +39,9 @@ export class TablePaymentsComponent implements OnInit {
     this.user = await JSON.parse(JSON.stringify(data![0]))
 
     if(this.user.payments.length){
-
-      this.showPaginator = true
+      const newArray = this.sortList(this.user.payments)
   
-      this.dataSource = new MatTableDataSource<PeriodicElement>(this.user.payments);
+      this.dataSource = new MatTableDataSource<PeriodicElement>(newArray);
   
       this.dataSource.paginator = this.paginator;
     }
@@ -86,6 +83,8 @@ export class TablePaymentsComponent implements OnInit {
 
       try {
         const {data, error} = await this.supaBaseService.updatePaymentsUser(newList, this.user.email)
+
+        newList = this.sortList(newList)
   
         this.dataSource = new MatTableDataSource<PeriodicElement>(newList);
         this.dataSource.paginator = this.paginator;
@@ -107,6 +106,8 @@ export class TablePaymentsComponent implements OnInit {
 
     try {
       const {error} = await this.supaBaseService.updatePaymentsUser(newList, this.user.email)
+
+      newList = this.sortList(newList)
   
       this.dataSource = new MatTableDataSource<PeriodicElement>(newList);
       this.dataSource.paginator = this.paginator;
@@ -122,12 +123,23 @@ export class TablePaymentsComponent implements OnInit {
   handleCloseModal(){
     this.showModal = false
   }
+
+  sortList(list: Array<any>){
+    return list.sort(function(a:any,b:any){
+      const dateOneSplit = a.date.split("/")
+      const dateTwoSplit = b.date.split("/")
+
+      const constDateOneFormatted: any = new Date(dateOneSplit[2], dateOneSplit[1] - 1, dateOneSplit[0])
+      const constDateTwoFormatted: any = new Date(dateTwoSplit[2], dateTwoSplit[1] - 1, dateTwoSplit[0])
+
+      return constDateTwoFormatted - constDateOneFormatted ;
+    });
+  }
 }
-
-
 
 export interface PeriodicElement {
   name: string;
   weight: string;
   symbol: string;
 }
+

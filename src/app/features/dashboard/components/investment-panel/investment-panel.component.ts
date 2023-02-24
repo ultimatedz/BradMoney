@@ -56,7 +56,5 @@ export class InvestmentPanelComponent implements OnInit{
       valueTotal: totalInvestment * 11.25,
       percentage: isNaN(Number(( totalInvestment / totalInvestments * 100).toFixed(2))) ? 0 : Number(( totalInvestment / totalInvestments * 100).toFixed(2))
     }
-
-    console.log(this.groupTotalizer)
   }
 }
