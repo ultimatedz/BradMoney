@@ -83,3 +83,47 @@
 .outlet {
   display: flex;
 }
+
+
+
+@media only screen and (max-width: 500px) {
+  
+
+
+  .dashboard-menu {
+    width: 100px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-right: 2rem;
+    background-color: variables.$white;
+    box-shadow: 0px 0px 20px rgba(192, 197, 233, 0.6);
+    min-height: 100%;
+  }
+
+  .dashboard-title {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 700px;
+    line-height: 15px;
+    width: 100%;
+    text-align: center;
+    color: variables.$green-600;
+    font-weight: 900;
+}
+
+.dashboard-title img{
+  display: none;
+}
+
+.dashboard-card span{
+  font-size: 12px
+}
+
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .dashboard-user-content{
+    gap: 0.5rem;
+  }
+}
