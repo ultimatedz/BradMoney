@@ -20,6 +20,9 @@ import { TablePaymentsComponent } from './components/table-payments/table-paymen
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ModalComponent } from './components/modal/modal.component';
 import { InvestmentPanelComponent } from './components/investment-panel/investment-panel.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenu, MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,8 @@ import { InvestmentPanelComponent } from './components/investment-panel/investme
     MatPaginatorModule,
     SharedModule,
     MatExpansionModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatMenuModule
   ],
   exports: [
     HomeComponent

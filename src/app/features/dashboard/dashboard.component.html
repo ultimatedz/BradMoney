@@ -1,4 +1,20 @@
 <div class="main-container">
+
+
+  <header class="container header-mobile">
+    <div>
+      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item><a [routerLink]="['../dashboard']">Home</a></button>
+        <button mat-menu-item><a [routerLink]="['../payments']">Pagamentos</a></button>
+        <button mat-menu-item><a [routerLink]="['../investments']">Investimentos</a></button>
+        <button mat-menu-item><a [routerLink]="['../contact']">Contato</a></button>
+        <button mat-menu-item><a [routerLink]="['../exit']">Sair</a></button>
+      </mat-menu>
+    </div>
+  </header>
+
+
   <div class="dashboard-menu">
     <div class="dashboard-title" [routerLink]="['']">
       <img src="../../../../assets/images/BradMoney-logo.png">
