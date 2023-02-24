@@ -78,10 +78,30 @@ export class RegisterComponent implements OnInit {
             cpf: this.registerForm.value.cpf?.replace(/\D/g,"")!,
             terms: this.registerForm.value.terms!,
             investments: {
-              stocks: [],
-              fiis: [],
-              treasure: [],
-              fiagro: [],
+              "fiis": {
+                "BCFF11": [],
+                "GAME11": [],
+                "GGRC11": [],
+                "MORE11": []
+              },
+              "fiagro": {
+                "AGRX11": [],
+                "DCRA11": [],
+                "RZAG11": [],
+                "VGIA11": []
+              },
+              "stocks": {
+                "BBAS3": [],
+                "BBDC3": [],
+                "CPLE6": [],
+                "PETR4": []
+              },
+              "treasure": {
+                "PREFIXADO": [],
+                "SELIC": [],
+                "IPCA+": [],
+                "RENDA+": []
+              }
             },
             payments: [],
           })

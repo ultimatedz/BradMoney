@@ -34,7 +34,7 @@
         <div class="div-investments-form-content">
           <div class="div-investments-form-content-group-flex">
             <div class="div-investments-form-content-group">
-              <label for="description">Ativo: </label>
+              <label for="investment-type">Ativo: </label>
               <select class="input-investment" name="type" id="investment-type" formControlName='type'>
                 <optgroup label="AÇÕES">
                   <option value="stocks-BBAS3">BBAS3</option>
@@ -63,14 +63,14 @@
               </select>
             </div>
             <div class="div-investments-form-content-group">
-              <label for="description">Quantidade: </label>
-              <input id="description" class="input-investment" type="number" formControlName='amount'>
+              <label for="amount">Quantidade: </label>
+              <input id="amount" autocomplete="off" class="input-investment" type="number" formControlName='amount'>
             </div>
           </div>
 
           <div class="div-investments-form-content-group">
-            <label for="description">Data: </label>
-            <input id="input-data" class="input-investment" type="date" formControlName='date'>
+            <label for="input-date">Data: </label>
+            <input id="input-date" class="input-investment" type="date" formControlName='date'>
           </div>
         </div>
         <button class="button-payments">ADICIONAR</button>

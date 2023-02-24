@@ -23,9 +23,7 @@ export class ChartComponent implements OnInit {
 
     let totalizer = [0,0,0,0,0,0,0,0,0,0,0,0]
 
-    if(!this.user.payments.length){
-      return
-    } else {
+    if(this.user.payments.length){
       this.user.payments.forEach((element: any) => {
         const date = element.date.split('/')
 
