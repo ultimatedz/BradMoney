@@ -1,0 +1,40 @@
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <div [class]="className +  '-button'">
+        <img src="../../../../../assets/icons/plus-icon.svg" alt="Ícone do símbolo mais">
+      </div>
+      <div class="title">{{ investmentType }}</div>
+      <div class="title-amount">QNTD</div>
+    </mat-panel-title>
+    <mat-panel-description>
+      <div class="progress-bar-container">
+        <div [class]="className +  '-progress-bar' " class="progress-bar">
+          <h2>{{ groupTotalizer.percentage }}%</h2>
+          <div class="progress-bar-content">
+            <div [style.width]="groupTotalizer.percentage + '%'"></div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-detailing-investments-value"> {{ groupTotalizer.valueTotal | currency: 'BRL' }} </div>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  
+  <div class="chart-detailing-investments-group">
+    <div class="chart-detailing-investments-group-content" *ngFor="let investment of investmentListArray">
+      <div class="chart-detailing-investments-group-title">
+        <h3>{{ investment }}</h3>
+        <span>{{ investmentListTotalizer[investment].amountTotal }}</span>
+      </div>
+      <div class="progress-sub-bar-container">
+        <div [class]="className +  '-progress-bar'" class="progress-bar">
+          <h2>{{ investmentListTotalizer[investment].percentage }}%</h2>
+          <div class="progress-bar-content">
+            <div [style.width]="investmentListTotalizer[investment].percentage + '%'"></div>
+          </div>
+        </div>
+      </div>
+      <div class="chart-detailing-investments-value">{{ investmentListTotalizer[investment].valueTotal |  currency: 'BRL' }}</div>
+    </div>
+  </div>
+</mat-expansion-panel>

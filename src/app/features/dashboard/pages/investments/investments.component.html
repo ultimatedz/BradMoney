@@ -7,444 +7,75 @@
       </div>
       <hr>
       <div class="inner-stocks">
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <div class="stock-button">
-                <img src="../../../../../assets/icons/plus-icon.svg" alt="Ícone do símbolo mais">
-              </div>
-              <div class="stock-title">
-                AÇÕES
-              </div>
-              <div class="stock-title">
-                QNTD
-              </div>
-            </mat-panel-title>
-            <mat-panel-description>
-              <div class="progress-bar-container">
-                <div class="stock-progress-bar progress-bar">
-                  <h2>42,90%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 13.123,12
-              </div>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <div class="chart-detailing-investments-group">
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>TAEE13</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="stock-progress-bar progress-bar">
-                  <h2>42,90%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 13.123,12
-              </div>
-            </div>
 
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>BBDC3</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="stock-progress-bar progress-bar">
-                  <h2>25%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 3.123,12
-              </div>
-            </div>
+        <app-investment-panel *ngIf="user" [allInvestments]="this.user.investments"
+          [investmentList]="this.user.investments.stocks" [investmentType]="'Ações'"
+          [className]="'stock'"></app-investment-panel>
 
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>CPLE6</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="stock-progress-bar progress-bar">
-                  <h2>35%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 3.123,12
-              </div>
-            </div>
+        <app-investment-panel *ngIf="user" [allInvestments]="this.user.investments"
+          [investmentList]="this.user.investments.fiis" [investmentType]="'Fiis'"
+          [className]="'fiis'"></app-investment-panel>
 
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>RANI3</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="stock-progress-bar progress-bar">
-                  <h2>35%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 3.123,12
-              </div>
-            </div>
-          </div>
-        </mat-expansion-panel>
+        <app-investment-panel *ngIf="user" [allInvestments]="this.user.investments"
+          [investmentList]="this.user.investments.treasure" [investmentType]="'Tesouro'"
+          [className]="'treasure'"></app-investment-panel>
 
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <div class="fiis-button">
-                <img src="../../../../../assets/icons/plus-icon.svg" alt="Ícone do símbolo mais">
-              </div>
-              <div class="stock-title">
-                FIIS
-              </div>
-              <div class="stock-title">
-                QNTD
-              </div>
-            </mat-panel-title>
-            <mat-panel-description>
-              <div class="progress-bar-container">
-                <div class="fiis-progress-bar progress-bar">
-                  <h2>22,90%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 13.123,12
-              </div>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <div class="chart-detailing-investments-group">
-            <div class="chart-detailing-investments-group-content">
-
-              <div class="chart-detailing-investments-group-title">
-                <h3>TAEE13</h3>
-                <span>110</span>
-              </div>
-
-              <div class="progress-sub-bar-container">
-                <div class="fiis-progress-bar progress-bar">
-                  <h2>42,90%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="chart-detailing-investments-value">
-                R$ 13.123,12
-              </div>
-            </div>
-
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>BBDC3</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="fiis-progress-bar progress-bar">
-                  <h2>22,90%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 3.123,12
-              </div>
-            </div>
-
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>CPLE6</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="fiis-progress-bar progress-bar">
-                  <h2>25,00%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 3.123,12
-              </div>
-            </div>
-
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>RANI3</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="fiis-progress-bar progress-bar">
-                  <h2>25,00%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 3.123,12
-              </div>
-            </div>
-          </div>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <div class="tesouro-button">
-                <img src="../../../../../assets/icons/plus-icon.svg" alt="Ícone do símbolo mais">
-              </div>
-              <div class="stock-title">
-                TESOURO
-              </div>
-              <div class="stock-title">
-                QNTD
-              </div>
-            </mat-panel-title>
-            <mat-panel-description>
-              <div class="progress-bar-container">
-                <div class="treasure-progress-bar progress-bar">
-                  <h2>64,90%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 13.123,12
-              </div>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <div class="chart-detailing-investments-group">
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>TAEE11</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="treasure-progress-bar progress-bar">
-                  <h2>25,00%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 13.123,12
-              </div>
-            </div>
-
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>BBDC3</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="treasure-progress-bar progress-bar">
-                  <h2>25,00%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 3.123,12
-              </div>
-            </div>
-
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>CPLE6</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="treasure-progress-bar progress-bar">
-                  <h2>25,00%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 3.123,12
-              </div>
-            </div>
-
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>RANI3</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="treasure-progress-bar progress-bar">
-                  <h2>25,00%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 3.123,12
-              </div>
-            </div>
-          </div>
-        </mat-expansion-panel>
-
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <div class="fiagro-button">
-                <img src="../../../../../assets/icons/plus-icon.svg" alt="Ícone do símbolo mais">
-              </div>
-              <div class="stock-title">
-                FIAGRO
-              </div>
-              <div class="stock-title">
-                QNTD
-              </div>
-            </mat-panel-title>
-            <mat-panel-description>
-              <div class="progress-bar-container">
-                <div class="fiagro-progress-bar progress-bar">
-                  <h2>14,90%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 13.123,12
-              </div>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <div class="chart-detailing-investments-group">
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>TAEE11</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="fiagro-progress-bar progress-bar">
-                  <h2>25,00%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 13.123,12
-              </div>
-            </div>
-
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>BBDC3</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="fiagro-progress-bar progress-bar">
-                  <h2>25,00%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 3.123,12
-              </div>
-            </div>
-
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>CPLE6</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="fiagro-progress-bar progress-bar">
-                  <h2>25,00%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 3.123,12
-              </div>
-            </div>
-
-            <div class="chart-detailing-investments-group-content">
-              <div class="chart-detailing-investments-group-title">
-                <h3>RANI3</h3>
-                <span>110</span>
-              </div>
-              <div class="progress-sub-bar-container">
-                <div class="fiagro-progress-bar progress-bar">
-                  <h2>25,00%</h2>
-                  <div class="progress-bar-content">
-                    <div></div>
-                  </div>
-                </div>
-              </div>
-              <div class="chart-detailing-investments-value">
-                R$ 3.123,12
-              </div>
-            </div>
-          </div>
-        </mat-expansion-panel>
+        <app-investment-panel *ngIf="user" [allInvestments]="this.user.investments"
+          [investmentList]="this.user.investments.fiagro" [investmentType]="'Fiagro'"
+          [className]="'fiagro'"></app-investment-panel>
       </div>
 
     </div>
 
     <div class="input-investments">
-      <form class="div-investments">
+      <form class="div-investments" [formGroup]="investmentsForm" (ngSubmit)="handleAddInvestment($event)">
         <h2>Adicione um novo Investimento</h2>
 
         <div class="div-investments-form-content">
           <div class="div-investments-form-content-group-flex">
             <div class="div-investments-form-content-group">
               <label for="description">Ativo: </label>
-              <input id="description" class="input-payment" type="text">
+              <select name="type" id="investment-type" formControlName='type'>
+                <optgroup label="AÇÕES">
+                  <option value="BBAS3">BBAS3</option>
+                  <option value="BBDC3">BBDC3</option>
+                  <option value="CPLE6">CPLE6</option>
+                  <option value="PETR4">PETR4</option>
+                </optgroup>
+                <optgroup label="FIIS">
+                  <option value="BCFF11">BCFF11</option>
+                  <option value="GAME11">GAME11</option>
+                  <option value="GGRC11">GGRC11</option>
+                  <option value="MORE11">MORE11</option>
+                </optgroup>
+                <optgroup label="TESOURO">
+                  <option value="PREFIXADO">PREFIXADO</option>
+                  <option value="SELIC">SELIC</option>
+                  <option value="IPCA+">IPCA+</option>
+                  <option value="RENDA+">RENDA+</option>
+                </optgroup>
+                <optgroup label="FIAGRO">
+                  <option value="AGRX11">AGRX11</option>
+                  <option value="DCRA11">DCRA11</option>
+                  <option value="RZAG11">RZAG11</option>
+                  <option value="VGIA11">VGIA11</option>
+                </optgroup>
+              </select>
             </div>
             <div class="div-investments-form-content-group">
               <label for="description">Quantidade: </label>
-              <input id="description" class="input-payment" type="number">
+              <input id="description" class="input-payment" type="number" formControlName='quantity'>
             </div>
           </div>
 
           <div class="div-investments-form-content-group">
             <label for="description">Data: </label>
-            <input id="input-data" class="input-payment" type="date">
+            <input id="input-data" class="input-payment" type="date" formControlName='date'>
           </div>
 
           <div class="div-investments-form-content-group">
             <label for="description">Valor: </label>
-            <input id="value-input" class="input-payment" type="number" placeholder="Valor">
+            <input id="value-input" class="input-payment" type="number" placeholder="Valor" formControlName='amount'>
           </div>
         </div>
         <button class="button-payments">ADICIONAR</button>

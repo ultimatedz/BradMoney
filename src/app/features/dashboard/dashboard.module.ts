@@ -19,6 +19,7 @@ import { InvestmentsComponent } from './pages/investments/investments.component'
 import { TablePaymentsComponent } from './components/table-payments/table-payments.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ModalComponent } from './components/modal/modal.component';
+import { InvestmentPanelComponent } from './components/investment-panel/investment-panel.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ModalComponent } from './components/modal/modal.component';
     InvestmentsComponent,
     TablePaymentsComponent,
     ModalComponent,
+    InvestmentPanelComponent,
   ],
   imports: [
     CommonModule,

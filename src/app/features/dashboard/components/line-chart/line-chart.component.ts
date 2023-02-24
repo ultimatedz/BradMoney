@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { SupabaseService } from 'src/app/shared/services/supabase.service';
@@ -11,66 +11,57 @@ import { SupabaseService } from 'src/app/shared/services/supabase.service';
 })
 export class LineChartComponent implements OnInit {
   public chart: any;
-  user!: any
+  groupTotalizer!: any
+  investmentListTotalizer!: any
+  investmentListArray!: any
 
-  constructor(
-    private supaBaseService: SupabaseService,
-  ) { }
+  @Input() allInvestments!: any
 
-  async ngOnInit() {
-    const session = this.supaBaseService.session
+  constructor() { }
 
-    const { data } = await this.supaBaseService.getUser(session?.user.email!)
-    this.user = await JSON.parse(JSON.stringify(data![0]))
+  ngOnInit() {
 
-    if (Object.keys(this.user.investments['fiis']).length || Object.keys(this.user.investments['stocks']).length || Object.keys(this.user.investments['treasure']).length || Object.keys(this.user.investments['fiagro']).length) {
+    const fiisArray: Array<number> = this.calcAmountTotal('fiis')
+    const stocksArray: Array<number> = this.calcAmountTotal('stocks')
+    const treasureArray: Array<number> = this.calcAmountTotal('treasure')
+    const fiagroArray: Array<number> = this.calcAmountTotal('fiagro')
 
-      const totalizerFiis = this.reducerElements('fiis')
-      const totalizerStocks = this.reducerElements('stocks')
-      const totalizerTreasure = this.reducerElements('treasure')
-      const totalizerFiagro = this.reducerElements('fiagro')
+    const fiisArrayPercentage = this.calcPercentage(fiisArray, stocksArray, treasureArray, fiagroArray)
+    const stocksArrayPercentage = this.calcPercentage(stocksArray, fiisArray, treasureArray, fiagroArray)
+    const treasureArrayPercentage = this.calcPercentage(treasureArray, fiisArray, stocksArray, fiagroArray)
+    const fiagroArrayPercentage = this.calcPercentage(fiagroArray, fiisArray, stocksArray, treasureArray)
 
-      const total = totalizerFiis.map((element, i) => {
-        return element + totalizerStocks[i] + totalizerTreasure[i] + totalizerFiagro[i]
-      })
-   
-      const totalizerFiisPercentage = this.reducerElementsPercentage(total, totalizerFiis)
-      const totalizerStocksPercentage = this.reducerElementsPercentage(total, totalizerStocks)
-      const totalizerTreasurePercentage = this.reducerElementsPercentage(total, totalizerTreasure)
-      const totalizerFiagroPercentage = this.reducerElementsPercentage(total, totalizerFiagro)
-
-      this.createChart(totalizerFiisPercentage, totalizerStocksPercentage, totalizerTreasurePercentage, totalizerFiagroPercentage);
-    } else {
-      this.createChart([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
-    }
+    this.createChart(fiisArrayPercentage, stocksArrayPercentage, treasureArrayPercentage, fiagroArrayPercentage);
 
     const canvas = <HTMLCanvasElement>document.getElementById('myChart');
     const ctx = canvas.getContext('2d');
   }
 
-  reducerElementsPercentage(total: Array<number>, currentArray: Array<number>) {
-    const totalizerPercentage = currentArray.map((element, i) => {
-      return Number((element / total[i] * 100).toFixed(2))
+  calcPercentage(arrayTarget: Array<number>, secondArray: Array<number>, thirdArray: Array<number>, fourthArray: Array<number>){
+    const newArray = arrayTarget.map((value, i) => {
+      const totalMonth = arrayTarget[i] + secondArray[i] + thirdArray[i] + fourthArray[i]
+      if(isNaN(Number((arrayTarget[i] / totalMonth * 100).toFixed(2)))){
+        return 0
+      } else {
+        return Number((arrayTarget[i] / totalMonth * 100).toFixed(2))
+      }
     })
 
-    return totalizerPercentage
+    return newArray
   }
 
-  reducerElements(category: string) {
-    let totalizer = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  calcAmountTotal(group: string) {
+    const newArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-    // for (let i = 1; i <= 12; i++) {
-    //   totalizer.push(this.user.investments[`${category}`]['2022'][i].reduce((accumulator: any, currentValue: any) => {
-    //     return (accumulator + currentValue.amount)
-    //   }, 0))
-    // }
+    const actions = Object.keys(this.allInvestments[group])
 
-    this.user.investments[`${category}`].forEach((element: any) => {
-      const date = element.date.split('/')
-      totalizer[Number(date[1]) - 1] += element.amount
+    actions.forEach(investment => {
+      this.allInvestments[group][investment].forEach((element: any) => {
+        const date = element.date.split('/')
+        newArray[date[1] - 1] += element.amount
+      })
     })
-
-    return totalizer
+    return newArray
   }
 
   createChart(fiss: Array<number>, stocks: Array<number>, treasure: Array<number>, fiagro: Array<number>) {

@@ -1,0 +1,220 @@
+@use '../../../../../scss/variables';
+
+.header-investimentos, .header-detailing-investments {
+  padding: .5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title-investimentos, .title-detailing-investments {
+  line-height: 21px;
+  font-size: 16px;
+  color: variables.$gray-600;
+}
+
+.year-investimentos span, .year-detailing-investments span {
+  margin-right: 0.6rem;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 700;
+}
+
+.chart-detailing-investments-value{
+  font-weight: 500;
+  font-size: .85rem;
+}
+
+.mat-expansion-panel-header{
+  padding: 0;
+  height: 40px;
+}
+
+.chart-detailing-investments-group{
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+
+  .chart-detailing-investments-group-content {
+    width: 96.5%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    color: variables.$gray-600;
+  }
+}
+
+.chart-detailing-investments-group-title {
+  h3 {
+    width: 70px;
+  }
+
+  span {
+    width: 70px;
+  }
+
+  display: flex;
+  gap: 1.25rem;
+}
+
+.mat-expansion-panel-header-description{
+  justify-content: space-between;
+}
+
+.stocks-chart {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+  border-radius: 4px;
+  height: 42px;
+}
+
+.stock-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem;
+  color: variables.$gray-600;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.stock-button, .fiis-button, .treasure-button, .fiagro-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px 0px 0px 4px;
+  margin-right: 1rem;
+  height: 40px;
+  max-width: 60px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.title, .title-amount {
+  color: variables.$gray-600;
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.title{
+  width: 90px;
+}
+
+.progress-bar-container{
+  flex: 1;  
+}
+
+
+.progress-bar{
+  max-width: 300px;
+
+  h2 {
+    text-align: start;
+    margin-left: .5rem;
+    font-weight: bold;
+    font-size: 1.125rem;
+  }
+
+  .progress-bar-content {
+      margin-top: .125rem;
+      width: 100%;
+      height: 6px;
+      background-color: variables.$gray-300;
+      border-radius: 6px;
+      overflow: hidden;
+    
+      div{
+        height: 6px;
+      }
+  }  
+}
+
+.stock-progress-bar{
+
+  h2 {
+    color: variables.$red-600;
+  }
+
+  div{
+    background-color: variables.$red-600;
+  }
+}
+
+.fiis-progress-bar{
+
+  h2 {
+    color: variables.$blue-600;
+  }
+
+  div{
+    background-color: variables.$blue-600;
+  }
+}
+
+.treasure-progress-bar{
+
+  h2 {
+    color: variables.$yellow-600;
+  }
+
+  div{
+    background-color: variables.$yellow-600;
+  }
+}
+
+.fiagro-progress-bar{
+
+  h2 {
+    color: variables.$green-600;
+  }
+
+  div{
+    background-color: variables.$green-600;
+  }
+}
+
+.progress-sub-bar-container{
+  display: block;
+  max-width: 250px;
+  width: 100%;
+
+  .progress-bar-content{
+    div{
+      width: 60%;
+    }
+    
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .progress-bar-content{
+    height: 4px;
+
+    div{
+      height: 4px;
+    }
+  }
+}
+
+.stock-button {
+  background-color: variables.$red-600;
+}
+
+.fiis-button {
+  background-color: variables.$blue-600;
+}
+
+.treasure-button {
+  background-color: variables.$yellow-600;
+}
+
+.fiagro-button {
+  background-color: variables.$green-600;
+}
