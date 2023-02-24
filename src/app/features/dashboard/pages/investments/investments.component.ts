@@ -10,6 +10,7 @@ import { SupabaseService } from 'src/app/shared/services/supabase.service';
 export class InvestmentsComponent implements OnInit {
   investmentsForm!: FormGroup<any>
   user!:any
+  showTable: boolean = true
 
   constructor(
     private supaBaseService: SupabaseService,
@@ -19,9 +20,8 @@ export class InvestmentsComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.investmentsForm = this.formBuilder.group({
       type: ['', [Validators.required]],
-      quantity: ['', Validators.required],
-      date: ['', Validators.required],
       amount: ['', Validators.required],
+      date: ['', Validators.required],
     })
 
     const session = this.supaBaseService.session
@@ -34,36 +34,37 @@ export class InvestmentsComponent implements OnInit {
     event.preventDefault()
 
     if (this.investmentsForm.valid) {
-      const dateMonth = Number(this.investmentsForm.get('date')?.value!.split('-')[1])
-      const dateYear = Number(this.investmentsForm.get('date')?.value!.split('-')[0])
+      const typeElement = this.investmentsForm.get('type')?.value
+      const typeCategory = typeElement.split("-")[0]
+      const typeInvestment =  typeElement.split("-")[1]
+      // const dateMonth = Number(this.investmentsForm.get('date')?.value!.split('-')[1])
+      // const dateYear = Number(this.investmentsForm.get('date')?.value!.split('-')[0])
 
-      const dataPaymentFormated = {
-        id: new Date().getTime(),
+      const dataInvestmentFormated = {
         date: new Intl.DateTimeFormat('pt-BR', {timeZone: 'UTC'}).format(new Date(this.investmentsForm.get('date')?.value!)),
-        title: this.investmentsForm.get('title')?.value!,
         amount: this.investmentsForm.get('amount')?.value!
       }
 
       const { data } = await this.supaBaseService.getUser(this.user.email)
       this.user = await JSON.parse(JSON.stringify(data![0]))
 
-      let newList = this.user.payments
+      const newList = this.user.investments
 
-      newList.unshift(dataPaymentFormated)
+      newList[typeCategory][typeInvestment].push(dataInvestmentFormated)
 
-      // try {
-      //   this.showTable = false
-      //   this.investmentsForm.reset()
+      try {
+        this.showTable = false
+        this.investmentsForm.reset()
 
-      //   const {data, error} = await this.supaBaseService.updatePaymentsUser(newList, this.user.email)
+        const {data, error} = await this.supaBaseService.updateInvestmentsUser(newList, this.user.email)
 
-      //   if(error) throw error
+        if(error) throw error
 
-      //   this.showTable = true
+        this.showTable = true
         
-      // } catch(error){
-      //   console.log(error)
-      // }
+      } catch(error){
+        console.log(error)
+      }
     }
   }
 }

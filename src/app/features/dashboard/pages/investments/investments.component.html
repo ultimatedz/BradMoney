@@ -6,7 +6,7 @@
         <span>CONTROLE DE INVESTIMENTOS</span>
       </div>
       <hr>
-      <div class="inner-stocks">
+      <div class="inner-stocks" *ngIf="showTable">
 
         <app-investment-panel *ngIf="user" [allInvestments]="this.user.investments"
           [investmentList]="this.user.investments.stocks" [investmentType]="'Ações'"
@@ -35,47 +35,42 @@
           <div class="div-investments-form-content-group-flex">
             <div class="div-investments-form-content-group">
               <label for="description">Ativo: </label>
-              <select name="type" id="investment-type" formControlName='type'>
+              <select class="input-investment" name="type" id="investment-type" formControlName='type'>
                 <optgroup label="AÇÕES">
-                  <option value="BBAS3">BBAS3</option>
-                  <option value="BBDC3">BBDC3</option>
-                  <option value="CPLE6">CPLE6</option>
-                  <option value="PETR4">PETR4</option>
+                  <option value="stocks-BBAS3">BBAS3</option>
+                  <option value="stocks-BBDC3">BBDC3</option>
+                  <option value="stocks-CPLE6">CPLE6</option>
+                  <option value="stocks-PETR4">PETR4</option>
                 </optgroup>
                 <optgroup label="FIIS">
-                  <option value="BCFF11">BCFF11</option>
-                  <option value="GAME11">GAME11</option>
-                  <option value="GGRC11">GGRC11</option>
-                  <option value="MORE11">MORE11</option>
+                  <option value="fiis-BCFF11">BCFF11</option>
+                  <option value="fiis-GAME11">GAME11</option>
+                  <option value="fiis-GGRC11">GGRC11</option>
+                  <option value="fiis-MORE11">MORE11</option>
                 </optgroup>
                 <optgroup label="TESOURO">
-                  <option value="PREFIXADO">PREFIXADO</option>
-                  <option value="SELIC">SELIC</option>
-                  <option value="IPCA+">IPCA+</option>
-                  <option value="RENDA+">RENDA+</option>
+                  <option value="treasure-PREFIXADO">PREFIXADO</option>
+                  <option value="treasure-SELIC">SELIC</option>
+                  <option value="treasure-IPCA+">IPCA+</option>
+                  <option value="treasure-RENDA+">RENDA+</option>
                 </optgroup>
                 <optgroup label="FIAGRO">
-                  <option value="AGRX11">AGRX11</option>
-                  <option value="DCRA11">DCRA11</option>
-                  <option value="RZAG11">RZAG11</option>
-                  <option value="VGIA11">VGIA11</option>
+                  <option value="fiagro-AGRX11">AGRX11</option>
+                  <option value="fiagro-DCRA11">DCRA11</option>
+                  <option value="fiagro-RZAG11">RZAG11</option>
+                  <option value="fiagro-VGIA11">VGIA11</option>
                 </optgroup>
               </select>
             </div>
             <div class="div-investments-form-content-group">
               <label for="description">Quantidade: </label>
-              <input id="description" class="input-payment" type="number" formControlName='quantity'>
+              <input id="description" class="input-investment" type="number" formControlName='amount'>
             </div>
           </div>
 
           <div class="div-investments-form-content-group">
             <label for="description">Data: </label>
-            <input id="input-data" class="input-payment" type="date" formControlName='date'>
-          </div>
-
-          <div class="div-investments-form-content-group">
-            <label for="description">Valor: </label>
-            <input id="value-input" class="input-payment" type="number" placeholder="Valor" formControlName='amount'>
+            <input id="input-data" class="input-investment" type="date" formControlName='date'>
           </div>
         </div>
         <button class="button-payments">ADICIONAR</button>

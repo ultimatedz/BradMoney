@@ -53,6 +53,10 @@ export class SupabaseService {
     })
   }
 
+  updateInvestmentsUser(newValue: any, email: string){
+    return this.supabase.from('users').update({ investments : newValue }).eq('email', email)
+  }
+
   updatePaymentsUser(newValue: any, email: string){
     return this.supabase.from('users').update({ payments : newValue }).eq('email', email)
   }
