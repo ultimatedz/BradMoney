@@ -42,14 +42,16 @@ export class PaymentsComponent implements OnInit {
       const dateMonth = Number(this.paymentsForm.get('date')?.value!.split('-')[1])
       const dateYear = Number(this.paymentsForm.get('date')?.value!.split('-')[0])
 
-      const dataInvestmentFormated = {
+      const dataPaymentFormated = {
+        id: new Date().getTime(),
         date: new Intl.DateTimeFormat('pt-BR', {timeZone: 'UTC'}).format(new Date(this.paymentsForm.get('date')?.value!)),
+        title: this.paymentsForm.get('title')?.value!,
         amount: this.paymentsForm.get('amount')?.value!
       }
 
       let newList = this.user.payments
 
-      newList.unshift(dataInvestmentFormated)
+      newList.unshift(dataPaymentFormated)
 
       try {
         this.showTable = false
