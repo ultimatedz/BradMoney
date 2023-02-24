@@ -330,3 +330,15 @@ hr {
 }
 }
 
+
+@media only screen and (max-width: 450px) {
+  .upper-container{
+    margin-top: 3.7rem;
+    margin-bottom: 0;
+  }
+
+  .main-container{
+    gap: 0px;
+  }
+
+}
