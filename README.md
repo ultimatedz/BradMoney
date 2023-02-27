@@ -1,27 +1,33 @@
 # BradMoney
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.5.
+<p align="center">
+  <a href="https://ant.design">
+    <img  src="https://user-images.githubusercontent.com/12867589/221651946-1164a3a8-d4f2-4abb-8d28-b67696ab779b.png">
+  </a>
+</p>
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+ #### BradMoney is a finance manager that allows the user to store their payments and investments and be able to view this data on the dashboard with intuitive graphics. The application has database integration and email authentication, ensuring that the user can create their account and have access to their data safely.
 
-## Code scaffolding
+## ✨ Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+> ✅ Integration with database as a service\
+> ✅ Account creation with email confirmation\
+> ✅ Password recovery\
+> ✅ Access control per session\
+> ✅ CRUD for payments\
+> ✅ Addition of investments by category
 
-## Build
+## 📝 Instructions for execution
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<em>The project can be accessed by clicking [here](https://brad-money-second-b805jnn00-ultimatedz.vercel.app/)</em>
 
-## Running unit tests
+1. Download or clone the project
+2. Install all dependencies with `npm i` or `yarn` command
+3. Run the project with `ng s` command
+4. Create your account and start using 😉
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Contribuidores
+ - [Caio Henrique](https://github.com/ultimatedz)
+ - [Douglas Campos](https://github.com/DouglasCampos1501)
+ - [Luis Fernando](https://github.com/luisfcodes)
