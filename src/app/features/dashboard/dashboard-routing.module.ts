@@ -7,11 +7,12 @@ import { InvestmentsComponent } from "./pages/investments/investments.component"
 import { PaymentsComponent } from "./pages/payments/payments.component";
 
 const routes: Routes = [
-  {path: '', component: HomeComponent, pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full' },
+  {path: 'home', component: HomeComponent },
   {path: 'payments', component: PaymentsComponent},
   {path: 'investments', component: InvestmentsComponent},
   {path: 'exit', component: ExitComponent},
-  {path: 'contact', component: ContactComponent}
+  {path: 'contact', component: ContactComponent},
 ];
 
 @NgModule({

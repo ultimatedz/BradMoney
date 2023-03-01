@@ -1,6 +1,5 @@
 <div class="main-container">
 
-
   <header class="container header-mobile">
     <div>
       <button mat-button [matMenuTriggerFor]="menu">Menu</button>
@@ -26,7 +25,7 @@
       </div>
       <hr class="hr-main">
       <div class="dashboard-options-content">
-        <a [routerLink]="['../dashboard']">
+        <a [routerLink]="['../home']">
           <div class="dashboard-card" routerLinkActive="dashboard-active" #routeHome="routerLinkActive">
             <img [src]="routeHome.isActive ? './../../../assets/icons/user-icon-white.svg' : './../../../assets/icons/user-icon-gray.svg'" class="dashboard-icons">
             <span>Home</span>

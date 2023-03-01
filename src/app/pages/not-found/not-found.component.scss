@@ -1,0 +1,46 @@
+@use '../../../scss/variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  h1, p {
+    margin-top: 1rem;
+    font-weight: 700;
+    color: variables.$gray-600;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  div {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    button {
+      padding: 1rem 4rem;
+      background-color: variables.$green-600;
+      border: none;
+      border-radius: 4px;
+      color: variables.$white;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      font-weight: 500;
+
+      &:hover {
+        filter: brightness(.9);
+      }
+    }
+  }
+}

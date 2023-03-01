@@ -7,6 +7,7 @@ import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { NewPasswordComponent } from './pages/new-password/new-password.component';
 import { ServicePageComponent } from './pages/service-page/service-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'service', component: ServicePageComponent},
   {path: 'contacts', component: ContactPageComponent},
   {path: 'dashboard', loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule)},
+  {path: '**', pathMatch: 'full', component: NotFoundComponent }
 ];
 
 @NgModule({

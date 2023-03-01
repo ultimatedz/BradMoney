@@ -17,11 +17,10 @@ import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { NewPasswordComponent } from './pages/new-password/new-password.component';
-import { ChartComponent } from './features/dashboard/components/chart/chart.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
-import { DashboardRoutingModule } from './features/dashboard/dashboard-routing.module';
 import { ServicePageComponent } from './pages/service-page/service-page.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 @NgModule({
@@ -34,7 +33,8 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
         NewPasswordComponent,
         ModalComponent,
         ServicePageComponent,
-        ContactPageComponent
+        ContactPageComponent,
+        NotFoundComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
