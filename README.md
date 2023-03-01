@@ -20,7 +20,7 @@
 
 ## 📝 Instructions for execution
 
-<em>The project can be accessed by clicking [here](https://brad-money-second-b805jnn00-ultimatedz.vercel.app/)</em>
+<em>The project can be accessed by clicking [here](https://brad-money.vercel.app/)</em>
 
 1. Download or clone the project
 2. Install all dependencies with `npm i` or `yarn` command
