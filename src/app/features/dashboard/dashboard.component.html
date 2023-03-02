@@ -1,10 +1,10 @@
 <div class="main-container">
 
-  <header class="container header-mobile">
+  <header class="header-mobile">
     <div>
       <button mat-button [matMenuTriggerFor]="menu">Menu</button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item><a [routerLink]="['../dashboard']">Home</a></button>
+        <button mat-menu-item><a [routerLink]="['../home']">Home</a></button>
         <button mat-menu-item><a [routerLink]="['../payments']">Pagamentos</a></button>
         <button mat-menu-item><a [routerLink]="['../investments']">Investimentos</a></button>
         <button mat-menu-item><a [routerLink]="['../contact']">Contato</a></button>

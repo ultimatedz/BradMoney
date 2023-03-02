@@ -132,206 +132,27 @@
   }
 }
 
+// Medias Queries
 
-
-
-@media only screen and (max-width: 900px) {
-  .card{
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
+@media only screen and (max-width: 475px) {
   .left-content {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    .recovery-loader{
-      position: absolute;
-      background-color: rgba(0, 0, 0, .6);
-      width: 100%;
-      height: calc(100% + 2rem);
-      top: -1rem;
-      left: 0;
-      border-radius: 20px 0 0 20px;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    display: flex;
-    flex: 1;
-  
-    flex-direction: column;
-    padding: 2.5rem;
-    background-color: white;
-  
     h1 {
-      font-weight: 900;
-      font-size: 2rem;
-      color: variables.$gray-600;
-      padding-top: 0.6rem;
+      font-size: 1.4rem;
     }
-  
+
     p {
-      color: variables.$gray-300;
-      padding-top: 0.8rem;
+      font-size: .85rem;
     }
-  
-    .paddTop {
-      padding-top: 2rem;
-    }
-  
+
     .inputLogin {
-      width: 65%;
-      height: 40px;
-      border-radius: 4px;
-      border: 1px solid variables.$gray-300;
-      outline-color: variables.$gray-600;
-      margin-top: 18px;
-      padding-left: 10px;
-      color: variables.$gray-600;
+      width: 80%;
     }
-  
-    input :focus,
-    input :hover {
-      border-color: variables.$gray-300;
-      color: variables.$gray-300;
-    }
-  
-    ::placeholder {
-      color: variables.$gray-300
-    }
-  
-    .buttonConfirm,
-    .buttonCancel {
-      text-transform: uppercase;
-    }
-  
-    .buttonConfirm {
-      border-color: variables.$gray-300;
-    }
-  
-    .buttonCancel {
-      margin-left: 1.5rem;
+
+    .main-content-buttons{
+      button {
+        width: 40%;
+        padding: 1rem 0;
+      }
     }
   }
-  
-  .backGround {
-    height: calc(100% - 240px);
-  
-    &::before {
-      content: '';
-      position: absolute;
-      min-height: 100%;
-      width: 100%;
-      top: 0;
-      background-image: url("../../../assets/images/background.png");
-      z-index: -1;
-    }
-  }
-
-
-  .button-submit,.button-cancel{
-    width: 100%;
-    background-color: blue;
-  }
-
-}
-
-
-@media only screen and (max-width: 600px) {
-  
-
-  .left-content {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    .recovery-loader{
-      position: absolute;
-      background-color: rgba(0, 0, 0, .6);
-      width: 100%;
-      height: calc(100% + 2rem);
-      top: -1rem;
-      left: 0;
-      border-radius: 20px 0 0 20px;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    display: flex;
-    flex: 1;
-  
-    flex-direction: column;
-    padding: 2.5rem;
-    background-color: white;
-  
-    h1 {
-      font-weight: 900;
-      font-size: 2rem;
-      color: variables.$gray-600;
-      padding-top: 0.6rem;
-    }
-  
-    p {
-      color: variables.$gray-300;
-      padding-top: 0.8rem;
-    }
-  
-    .paddTop {
-      padding-top: 2rem;
-    }
-  
-    .inputLogin {
-      width: 65%;
-      height: 40px;
-      border-radius: 4px;
-      border: 1px solid variables.$gray-300;
-      outline-color: variables.$gray-600;
-      margin-top: 18px;
-      padding-left: 10px;
-      color: variables.$gray-600;
-    }
-  
-    input :focus,
-    input :hover {
-      border-color: variables.$gray-300;
-      color: variables.$gray-300;
-    }
-  
-    ::placeholder {
-      color: variables.$gray-300
-    }
-  
-    .buttonConfirm,
-    .buttonCancel {
-      width: 90px;
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-  
-    .buttonConfirm {
-      border-color: variables.$gray-300;
-    }
-  
-    .buttonCancel {
-      margin-left: 0.5rem;
-    }
-  }
-  
-  .backGround {
-    height: calc(100% - 240px);
-  
-    &::before {
-      content: '';
-      position: absolute;
-      min-height: 100%;
-      width: 100%;
-      top: 0;
-      background-image: url("../../../assets/images/background.png");
-      z-index: -1;
-    }
-  }
-
-
-
 }

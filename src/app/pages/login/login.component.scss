@@ -88,7 +88,6 @@
   }
 }
 
-
 .right-content {
   display: flex;
   width: 50%;
@@ -141,8 +140,7 @@
   }
 }
 
-
-
+// Medias Queries
 
 @media only screen and (max-width: 750px) {
   .right-content{
@@ -158,9 +156,7 @@
   }
 }
 
-
-
-@media only screen and (max-width: 356px) {
+@media only screen and (max-width: 475px) {
 
   .left-content {
     display: flex;
@@ -181,8 +177,6 @@
     p {
       color: variables.$gray-300;
     }
-
-
 
     .paddTop {
       padding-top: 15%;

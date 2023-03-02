@@ -290,6 +290,10 @@
 // Medias Queries
 
 @media only screen and (max-width: 1024px) {
+  .main-container {
+    min-height: 100%;
+  }
+
   .main-content {
     margin-top: 1rem;
 
@@ -349,11 +353,7 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .main-container {
-    min-height: calc(100vh - 2rem);
-  }
-  
+@media only screen and (max-width: 768px) {  
   .main-content {
     margin-top: 2rem;
 
@@ -408,7 +408,7 @@
     padding: 0 1rem;
     position: relative;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 8rem;
     
     div{
       max-width: 100%;
@@ -444,6 +444,12 @@
         border-radius: 10px;
         max-width: 48%;
         min-height: 380px;
+
+        mat-card-actions{
+          button {
+            border-radius: 0 0 10px 10px;
+          }  
+        }
       }
     }
   
@@ -498,6 +504,13 @@
 @media only screen and (max-width: 425px) {
   .main-content h1 {
     line-height: 3rem;
+  }
+
+  .main-content-buttons {
+  
+    button:last-of-type {
+      padding: 1rem;
+    }
   }
   
   .main-description {

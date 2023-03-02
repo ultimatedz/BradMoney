@@ -44,7 +44,6 @@
     .form-buttons button{
       text-transform: uppercase;
     }
-
   }
 
   .checkbox {
@@ -59,7 +58,6 @@
     font-size: 0.7em;
     padding-left: 60%;
     color: variables.$green-600;
-
   }
 
   small :hover,
@@ -211,8 +209,7 @@
   overflow: hidden;
 }
 
-
-
+// Medias Queries
 
 @media only screen and (max-width: 900px) {
   .right-content{
@@ -233,13 +230,7 @@
   }
 }
 
-
-
-
 @media only screen and (max-width: 600px) {
-
-
-
   .left-content {
     display: flex;
     flex: 1;
@@ -284,9 +275,7 @@
       .form-buttons button{
         text-transform: uppercase;
       }
-
     }
-
  
     .checkbox {
       color: variables.$gray-300;
@@ -300,7 +289,6 @@
       font-size: 0.7em;
       padding-left: 60%;
       color: variables.$green-600;
-
     }
 
     small :hover,
@@ -346,7 +334,6 @@
       border-color: variables.$gray-300;
     }
 
-
     .buttonCancel {
       font-size: 7px;
       width: 45%;
@@ -366,5 +353,23 @@
       --mdc-checkbox-unselected-pressed-icon-color: rgba(0, 0, 0, 0.1);
     }
   }
+}
 
+@media only screen and (max-width: 475px) {
+  .backGround{
+    padding: 1rem;
+    height: calc(100% - 108px);
+  }
+
+  .card {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .left-content {
+    .buttonLogin, .buttonCancel {
+      font-size: .85rem;
+      width: 47%;
+    }
+  }
 }

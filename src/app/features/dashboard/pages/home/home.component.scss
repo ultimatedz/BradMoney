@@ -35,7 +35,7 @@
   margin-top: 1rem;
   justify-content: space-between;
   gap: 1rem;
-  
+
 }
 
 .lower-container {
@@ -46,7 +46,8 @@
   min-height: 400px;
 }
 
-.investimento-content, .detailing-investments-content {
+.investimento-content,
+.detailing-investments-content {
   background-color: variables.$white;
   flex: 45%;
   padding: 1rem;
@@ -55,20 +56,22 @@
   border-radius: 4px;
 }
 
-.header-investimentos, .header-detailing-investments {
+.header-investimentos,
+.header-detailing-investments {
   padding: .5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.title-investimentos, .title-detailing-investments {
+.title-investimentos,
+.title-detailing-investments {
   line-height: 21px;
   font-size: 16px;
   color: variables.$gray-600;
 }
 
-.chart-investimento{
+.chart-investimento {
   width: 100%;
   height: 90%;
 }
@@ -81,7 +84,7 @@
   color: variables.$gray-600;
 }
 
-.chart-detailing-investments-value{
+.chart-detailing-investments-value {
   font-weight: 500;
   font-size: .85rem;
 }
@@ -93,12 +96,12 @@
   gap: 1rem;
 }
 
-.mat-expansion-panel-header{
+.mat-expansion-panel-header {
   padding: 0;
   height: 40px;
 }
 
-.chart-detailing-investments-group{
+.chart-detailing-investments-group {
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
@@ -114,7 +117,7 @@
   }
 }
 
-.mat-expansion-panel-header-description{
+.mat-expansion-panel-header-description {
   justify-content: space-between;
 }
 
@@ -137,7 +140,10 @@
   font-weight: 700;
 }
 
-.stock-button, .fiis-button, .tesouro-button, .fiagro-button{
+.stock-button,
+.fiis-button,
+.tesouro-button,
+.fiagro-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,9 +163,9 @@
   font-size: 1rem;
 }
 
-.progress-bar{
+.progress-bar {
   flex: 1;
-  
+
   max-width: 300px;
 
   h2 {
@@ -170,62 +176,62 @@
   }
 
   .progress-bar-content {
-      margin-top: .125rem;
-      width: 100%;
+    margin-top: .125rem;
+    width: 100%;
+    height: 6px;
+    background-color: variables.$gray-300;
+    border-radius: 6px;
+    overflow: hidden;
+
+    div {
       height: 6px;
-      background-color: variables.$gray-300;
-      border-radius: 6px;
-      overflow: hidden;
-    
-      div{
-        height: 6px;
-      }
-  }  
+    }
+  }
 }
 
-.stock-progress-bar{
+.stock-progress-bar {
 
   h2 {
     color: variables.$red-600;
   }
 
-  div{
+  div {
     width: 42.9%;
     background-color: variables.$red-600;
   }
 }
 
-.fiis-progress-bar{
+.fiis-progress-bar {
 
   h2 {
     color: variables.$blue-600;
   }
 
-  div{
+  div {
     width: 22.9%;
     background-color: variables.$blue-600;
   }
 }
 
-.treasure-progress-bar{
+.treasure-progress-bar {
 
   h2 {
     color: variables.$yellow-600;
   }
 
-  div{
+  div {
     width: 18.9%;
     background-color: variables.$yellow-600;
   }
 }
 
-.fiagro-progress-bar{
+.fiagro-progress-bar {
 
   h2 {
     color: variables.$green-600;
   }
 
-  div{
+  div {
     width: 12.13%;
     background-color: variables.$green-600;
   }
@@ -299,42 +305,46 @@ hr {
   color: variables.$gray-600;
 }
 
-
+// Medias Queries
 
 @media only screen and (max-width: 1024px) {
-
-  .upper-container{
+  .upper-container {
     flex-direction: column;
     display: flex;
     margin: 1.5rem;
   }
 
-  .lower-container{
+  .lower-container {
     display: flex;
     flex-direction: column;
     margin: 1.5rem;
   }
 
-  
-.main-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  gap: 1rem;
-  margin-right: 3rem;
-}
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+    margin-right: 3rem;
+  }
 }
 
-
-@media only screen and (max-width: 450px) {
-  .upper-container{
-    margin-top: 3.7rem;
+@media only screen and (max-width: 768px) {
+  .upper-container {
+    margin-top: 2rem;
     margin-bottom: 0;
   }
 
-  .main-container{
+  .main-container {
     gap: 0px;
   }
+}
 
+@media only screen and (max-width: 475px) {
+  .main-container {
+    padding: 0;
+    margin-top: 2rem;
+  }
 }

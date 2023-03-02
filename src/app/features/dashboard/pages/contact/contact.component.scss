@@ -98,3 +98,11 @@
     }
   }
 }
+
+// Medias Queries
+
+@media only screen and (max-width: 475px) {
+  .main-container {
+    padding: 0 1rem;
+  }
+}
